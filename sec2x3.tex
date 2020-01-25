@@ -1,0 +1,306 @@
+\section{位相空間，積空間，等化空間}
+
+距離空間における開集合の概念を一般化して，
+位相空間を定義する．
+集合$X$の部分集合族$\mathscr{O}$が与えられ，次の3つの条件を満たすとする．
+\begin{list}{}{}
+	\item	O1.	$X	\in	\mathscr{O},\varnothing	\in	\mathscr{O}$
+	\item	O2.	$G_1,G_2,\cdots	,	G_n	\in	\mathscr{O}	\\simightarrow	G_1	\cap	G_2	\cap	\cdots	\cap	G_n	\in	\mathscr{O}$
+	\item	O3.	$\Lambda$を任意の集合とする．すべての$\lambda	\in	\Lambda$に対し$G_\lambda	\in	\mathscr{O}	\\simightarrow	\bigcup_{\lambda	\in	\Lambda}	G_\lambda	\in	\mathscr{O}$.
+\end{list}
+このとき，$\mathscr{O}$に属する$X$の部分集合を$X$の\textbf{開集合}といい，
+開集合族$\mathscr{O}$を定められた集合$X$の\textbf{位相空間}という．
+開集合族$\mathscr{O}$を$X$の\textbf{位相}という．
+位相空間に属する元を\textbf{点}という．
+
+近傍，点列，部分列，閉集合，閉包，集積点等の概念も，距離空間におけるものと同様に
+定義され，定理6，補題10は位相空間に対しても成り立つことが同様に証明される．
+
+\例{5}
+§2.1で定義された距離空間の開集合は，定理2により条件O1～O3を満たす．
+この位相空間を\textbf{距離の定め位相空間}（または単に\textbf{距離空間}）
+といい，この位相を\textbf{距離位相}という．
+
+　
+
+位相空間$X$において，任意の相異なる2点$x,y$に対して$U	\cap	V	=	\varnothing$となる
+$x$の近傍$U$と$y$の近傍$V$が存在するとき，$X$を\textbf{Hausdorff（ハウスドルフ）空間}
+という．
+
+\補題{11}
+Hausdorff空間$X$の1点からなる集合$\{x\}$は閉集合である．
+
+\証明
+$y	\in	X	-	\{x\}$とすると$x	\ne	y$であるから，$U(x)	\cap	V(y)	=	\varnothing$となる$x$の
+近傍$U(x)$と$y$の近傍$V(y)$が存在する．このとき，$V(y)	\subset	X	-	U(x)	\subset	X	-	\{x\}$.
+$x$と異なる$y$についてすべての$V(y)$を考えると，その和$\bigcup_{y	\ne	x}	V(y)$は
+$X	-	\{x\}$に等しく，O3より開集合であるから，$X-	\{x\}$は開集合である．
+\■
+
+\例{6}
+定理2の$H$により，距離空間はHausdorff空間である
+
+　
+
+$X$を位相空間，$A$をその空でない部分集合とする．$A$の部分集合$U$が$A$の\textbf{開集合}
+であることを，$U	=	A	\cap	G$となる$X$の開集合$G$が存在することと定める．
+言い換えれば，$X$の位相$\mathscr{O}$に対して，$A$の部分集合族$\mathscr{O}(A)$を，
+\[
+	\mathscr{O}(A)	=	\{	A	\cap	G	\:	|	\:	G	\in	\mathscr{O}	\}
+\]
+によって定める．このとき，条件O1～O3が満たされ，$\mathscr{O}(A)$は$A$の位相となる．
+この位相を$X$に関する\textbf{$A$の相対位相}といい，相対位相が与えられた部分集合
+$A$を$X$の\textbf{部分空間}という．
+
+　
+
+\補題{12}
+$A$を$X$の部分空間とする．$H$が$A$の閉集合ならば，$X$の適当な閉集合$F$が存在して，
+$H	=	A	\cap	F$となる．
+
+\証明
+$A-H$は$A$の開集合であるから，$X$の適当な開集合$G$が存在して，
+$A-H	=	A	\cap	G$となる．よって，$H	=	A	-	A\cap	G=	A	\cap	(X-G)$が成り立つ．
+$F	=	X	-G$とおけば，$F$は$X$の閉集合である．
+\■
+
+\問{3}
+$\mathscr{O}(A)$はO1～O3を満たすことを示せ．
+
+\証明
+O1.	$A	\cap	X	=A$，$A	\cap	\varnothing	=	\varnothing$であるから，
+						$A	\in	\mathscr{O}(A),	\varnothing	\in	\mathscr{O}(A)$.
+
+O2.	$A	\cap	G_i	\in	\mathscr{O}(A),	\:	G_i	\in	\mathscr{O}	\:	(1	\leqq	i	\leqq	n)$
+ならば，$\displaystyle	\bigcap_{i=1}^n	(A	\cap	G_i)	=	A	\cap	\left(	\bigcap_{i=1}^n	G_i	\right)	\in	\mathscr{O}(A)$.
+
+O3.	$A	\cap	G_\lambda	\in	\mathscr{O}(A),	\:	G_\lambda	\in	\mathscr{O}	\:
+(\lambda	\in	\Lambda)$ならば，$\displaystyle	\bigcup_\lambda	(A	\cap	G_\lambda)	=	A	\cap	\left(	\bigcup_\lambda	G_\lambda	\right)	\in	\mathscr{O}(A)$.
+\■
+
+$X,Y$を位相空間とし，$\mathscr{O}(X),\mathscr{O}(Y)$をそれぞれ
+$X,Y$の開集合族とする．$X	\times	Y$の部分集合$G$が$X	\times	Y$の\textbf{開集合}，
+すなわち，$	G	\in	\mathscr{O}(X	\times	Y)$であるとは，
+$G$の任意の点$x$に対して
+\[
+	x	\in	U	\times	V	\subset	G
+\]
+を満たす$U	\in	\mathscr{O}(X)$，$V	\in	\mathscr{Y}$が存在することと定義する．
+$X	\times	Y$の開集合全体$\mathscr{O}	(X	\times	Y)$を位相とする位相空間
+$X	\times	Y$を$X$と$Y$の\textbf{直積空間}，その位相を\textbf{直積位相}という．
+
+一般に，位相空間の族$\{X_\mu	\:	|	\:	\mu	\in	\Gamma	\}$が与えられたとき，
+それらの集合としての直積$\prod_{\mu	\in	\Gamma}	X_\mu$は，各$\mu	\in	\Gamma$に対し
+$f(\mu)	\in	X_\mu$となる写像$f:\Gamma	\rightarrow	\bigcup_{\mu\in\Gamma}	X_\mu$全体の
+集合であるが，$X	=	\prod_{\mu	\in	\Gamma}	X_\mu$につぎのような位相を定義する．
+$U_\mu$を$X_\mu$の開集合とし，$\prod_{\mu	\in	\Gamma}	U_\mu$の形の集合で，
+有限個の$\mu$を除いて$U_\mu	=	X_\mu$となるもの全体を$\mathscr{B}(X)$とする．
+$X$の部分集合$G$が$X$の\textbf{開集合}，すなわち，$G	\in	\mathscr{O}(X)$であるとは，
+$G$の任意の点$x$に対して
+\[
+	x	\in	U	\subset	G
+\]
+を満たす元$U	\in	\mathscr{B}(X)$が存在することと定義する．
+こうして定められた開集合全体$\mathscr{O}	\left(\prod_{\mu	\in	\Gamma}	X_\mu	\right)$を
+位相とする位相空間を\textbf{直積空間}，その位相を\textbf{直積位相}という．
+
+\問{4}
+$\mathscr{O}=\mathscr{O}\left(\prod_{\mu	\in	\Gamma}	X_\mu	\right)$は
+O1～O3を満たすことを示せ．
+
+\証明
+O1．を満たすことは明らか．
+
+O2．$G_1,G_2,	\cdots	,	G_n	\in	\mathscr{O},	x	\in	\bigcap_{i=1}^n	G_i$とする．
+任意の$i$に対し$x	\in	G_i$であるから，$x	\in	U_i	\subset	G_i$を満たす
+$U_i	\:	(	\in	\mathscr{B}(X))$が存在する．
+$\bigcap_i	U_i	=	\bigcap_i	\prod_\lambda	U_{i\lambda}	=	\prod_\lambda	\bigcap_i	U_{i\lambda}$
+\footnote{小林貞一著『集合と位相』第１章の章末問題3の拡張}.
+$\bigcap_{i}	U_{i\lambda}$は$X_\lambda$の開集合で，
+有限個の$\lambda$について$U_{i\lambda}	\subset	X_\lambda$．
+これらの$\lambda$については$\bigcap_i	U_{i\lambda}	\subset	X_\lambda$．
+よって$\bigcap_i	U_i	\in	\mathscr{B}(X)$が示され，
+$x	\in	\bigcap_{i=1}^n	U_i	\subset	\bigcap_{i=1}^n	G_i$が成り立つから，
+$\bigcap_{i=1}^n	G_i	\in	\mathscr{O}$.
+
+O3．$G_\lambda	\in	\mathscr{O}	\:	(\lambda	\in	\Lambda)$，
+$	x	\in	\bigcup_{\lambda}	G_\lambda$とする．ある$\lambda$に対し
+$x	\in	G_\lambda$であるから，$x	\in	U	\subset	G_\lambda$を満たす
+$U	\:	(	\in	\mathscr{B}(X))$が存在する．ゆえに，$x	\in	U	\subset	\bigcup_\lambda	G_\lambda$
+が成り立つから，$\bigcup_\lambda	G_\lambda	\in	\mathscr{O}$.
+\■
+
+位相空間$X$から集合$Y$への全射$f:X	\rightarrow	Y$が与えられたとする．$Y$の部分集合$U$が
+$Y$の開集合であることを，$f^{-1}(U)$が$X$の開集合であることと定める．
+すなわち，$X$の位相$\mathscr{O}(X)$に対して$Y$の部分集合族$\mathscr{O}(Y)$を，
+\[
+	\mathscr{O}(Y)	=	\{U	\:	|	\:	U	\subset	Y	,	\:	f^{-1}(U)	\in	\mathscr{O}(X)	\}
+\]
+によって定める．このとき，条件O1～O3が満たされ，$\mathscr{O}(Y)$は$Y$の位相となる．
+この位相を$f$による\textbf{等化位相}といい，等化位相が与えられた位相空間$Y$を
+\textbf{等化空間}という．
+
+\問{5}
+$\mathscr{O}(Y)$はO1～O3を満たすことを示せ．
+
+\証明
+O1．$f^{-1}(Y)	=	X	\in	\mathscr{O},	\:	f^{-1}(\varnothing)=\varnothing	\in	\mathscr{O}$
+であるから，$Y	\in	\mathscr{O}(Y),	\:	\varnothing	\in	\mathscr{O}(Y)$.
+
+O2．$U_1,U_2,	\cdots	,	U_n	\in	\mathscr{O}(Y)$とすると，
+$f^{-1}	\left(\bigcap_{i=1}^n	U_i	\right)	=	\bigcap_{i=1}^n	f^{-1}(U_i)	\in	\mathscr{O}$であるから，
+\footnote{
+小林貞一著『集合と位相』§2.2定理9
+}
+$\bigcap_{i=1}^n	U_i	\in	\mathscr{O}(Y)$.
+
+O3．$U_\lambda	\in	\mathscr{O}(Y)	\:	(	\lambda	\in	\Lambda)$とすると，
+$f^{-1}\left(\bigcup_\lambda	U_\lambda	\right)	=	\bigcup_\lambda	f^{-1}(U_\lambda)	\in	\mathscr{O}$
+であるから，$\bigcup_\lambda	U_\lambda	\in	\mathscr{O}(Y)$．
+\■
+
+位相空間$X$に１つの同値関係$\sim$が与えられたとき，同値類全体の集合を，
+$X	/	\sim$とし，$x	\in	X$をその同値類$[x]	\in	X	/	\sim$にうつす写像を
+$g	:	X	\rightarrow	X	/	\sim$とすると，$g$は全射である．
+この$g$による等化位相が与えられた等化空間$X	/	\sim$は，\textbf{商空間}ともいわれる．
+$g$は\textbf{自然は射影}といわれる．
+
+一方，位相空間$X$から集合$Y$への全射$f:X	\rightarrow	Y$から与えられたとき，
+$x,x'	\in	X$に対して，関係$\sim$を
+\[
+	x	\sim	x'	\Leftrightarrow	f(x)	=	f(x')
+\]
+と定めるとこの関係$\sim$は同値関係になる．この同値類全体の集合$X	/	\sim$は，
+対応$[x]	\mapsto	f(x)$により$Y$と1対1対応にあり，$f$による等化位相が与えられた
+等化空間は，自然な射影$g$による等化位相が与えられた商空間と同じものと考えてよい．
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,4)
+
+	%座標軸
+	\thicklines\put(0.7,4.1){$X$}
+	\thicklines\put(0.4,0.9){$X/	\sim$}
+	\thicklines\put(4,1){$Y$}
+
+	\thicklines \put(1.5,1){\vector(1,0){2.4}}
+	\thicklines \put(0.8,4){\vector(0,-1){2.8}}	\put(0.5,2.5){$g$}
+	\thicklines \put(1,4){\vector(1,-1){2.8}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\例{7}
+$I^2$に次のような同値関係を定める：$(0,t)\sim(1,t)$，$(s,0)\sim(s,1)$，
+$(s,t)	\:	(0	<	s	<	1,	0	<	t	<	1)$は$(s,t)$とだけ同値．
+このとき得られる等化空間$I^2/\sim$は\textgt{円環面}といわれる．
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(2,3)
+	%I	\times	I
+	\thicklines\put(-2,-1){\vector(0,3){2}}\path(-2,1)(-2,2)
+	\thicklines\put(-2.9,0){$(0,t)$}
+	\thicklines\put(-2,0){\circle{0.07}}
+	\thicklines\put(1,-1){\vector(0,3){2}}\path(1,1)(1,2)
+	\thicklines\put(1.2,0){$(1,1-t)$}
+	\thicklines\put(1,0){\circle{0.07}}
+
+	\thicklines\put(-2,2){\vector(1,0){2}}\path(0,2)(1,2)
+	\thicklines\put(-1.5,2.3){$(s,1)$}
+	\thicklines\put(-1.2,1.82){*}
+
+	\thicklines\put(-2,-1){\vector(1,0){2}}\path(0,-1)(1,-1)
+	\thicklines\put(-1.5,-1.5){$(s,0)$}
+	\thicklines\put(-1.2,-1.19){*}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\pagebreak
+\例{8}
+$I^2$に次のような同値関係を定める：
+$(0,t)\sim(1,1-t),	\:	(s,t)	\:	(0	<	s	<	1,	\:	0	\leqq	t	\leqq	1)$
+は$(s,t)$とだけ同値．このとき得られる等化空間$I^2/\sim$は\textgt{メビウス(Mobius)の帯}といわれる．
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,4)
+
+		%I	\times	I
+	\thicklines\put(-2,4){\vector(0,-3){1}}\path(-2,3)(-2,1)
+	\thicklines\put(1,1){\vector(0,3){1}}\path(1,2)(1,4)
+	\thicklines\put(1,3){\circle{0.07}}
+	\thicklines\put(-2.9,2){$(0,t)$}
+	\thicklines\put(-2,2){\circle{0.07}}
+	\thicklines\put(1.2,3){$(1,1-t)$}
+	\thicklines\path(-2,1)(1,1)
+	\thicklines\path(-2,4)(1,4)
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\例{9}$I^2$に次のような同値関係$\sim$を定める：$(s,0)\sim(s,1)$，$(0,t)\sim(1,1-t)$
+，$(s,t)	\:\:	(0	<	s	<	1,	0	<	t	<	1)$は$(s,t)$とだけ同値．
+このとき，等化空間$I^2/\sim$は\textgt{クライン(Klein)の壷}といわれる．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,1)
+
+	%I	\times	I
+	\thicklines\put(-2,-3){\vector(0,3){2}}\path(-2,-1)(-2,0)
+	\thicklines\put(-2.9,-2){$(s,0)$}
+	\thicklines\put(-2,-2){\circle{0.07}}
+
+	\thicklines\put(1,-3){\vector(0,3){2}}\path(1,-1)(1,0)
+	\thicklines\put(1.2,-2){$(s,1)$}
+	\thicklines\put(1,-2){\circle{0.07}}
+
+	\thicklines\put(0,0){\vector(-1,0){1}}\path(-2,0)(1,0)
+	\thicklines\put(-0.5,0.3){$(1,1-t)$}
+	\thicklines\put(-0.2,-0.18){*}
+
+	\thicklines\put(-2,-3){\vector(1,0){2}}\path(0,-3)(1,-3)
+	\thicklines\put(-1.5,-3.5){$(0,t)$}
+	\thicklines\put(-1.2,-3.19){*}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\vspace{3cm}
+\例{10}
+$I^2$に次のような同値関係$\sim$を定める：$(0,t)\sim(1,1-t)$，$(s,0)\sim(1-s,1)$，
+$(s,t)	\:\:	(0	<	s	<	1,	0	<	t	<	1)$は$(s,t)$とだけ同値．
+このとき，等化空間$I^2/R$は\textgt{射影平面}と称される．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,1)
+
+	%I	\times	I
+	\thicklines\put(-2,-3){\vector(0,3){2}}\path(-2,-1)(-2,0)
+	\thicklines\put(-2.9,-2){$(0,t)$}
+	\thicklines\put(-2,-2){\circle{0.07}}
+
+	\thicklines\put(1,0){\vector(0,-3){2}}\path(1,-2)(1,-3)
+	\thicklines\put(1.2,-1){$(1,1-t)$}
+	\thicklines\put(1,-1){\circle{0.07}}
+
+	\thicklines\put(0,0){\vector(-1,0){1}}\path(-2,0)(1,0)
+	\thicklines\put(-0.5,0.3){$(1-s,1)$}
+	\thicklines\put(-0.2,-0.18){*}
+
+	\thicklines\put(-2,-3){\vector(1,0){2}}\path(0,-3)(1,-3)
+	\thicklines\put(-1.5,-3.5){$(s,0)$}
+	\thicklines\put(-1.2,-3.19){*}
+
+\end{picture}
+\end{center}
+\end{figure}

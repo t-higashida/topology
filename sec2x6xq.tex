@@ -1,0 +1,101 @@
+\textbf{第２章の問題}
+
+	
+
+１．距離空間の部分集合$A,B$が有界であるならば，和集合$A	\cup	B$も有界であり，
+$d(A	\cup	B)	\leqq	d(A,B)	+	d(A)	+	d(B)$が成り立つ．
+
+\証明
+$A,B$は有界であるから$d(A),	d(B)$が存在する．
+
+まず$A	\cap	B	\ne	\varnothing$とする．
+$a	\in	A	,	b	\in	B	,	c	\in	A	\cap	B$に対して$d(a,b)	\leqq	d(a,c)	+	d(c,b)	\leqq	d(A)	+	d(B)$，
+よって$d	(a,b)	\leqq	d(A)	+	d(B)$．上限として$d(A	\cup	B)$と$\leqq$を比較して，ゆえに$d(A	\cup	B)	\leqq	d(A)	+	d(B)$．
+
+次に$A	\cap	B	=	\varnothing$とする．$a	\in	A	,	b	\in	B$に対して，
+$\{	a	,	b\}	\cap	A	\ne	\varnothing$であるから，前半の結果を用いて$d(A	\cup	\{b\})	=	d(\{a,b\}	\cup	A)
+\leqq	d(\{a,b\})	+	d(A)	=	d(a,b)	+	d(A)$．$(A	\cup	\{b\})	\cap	B	\ne	\varnothing$であるから，
+同様に考えて，
+$d(A	\cup	B)	=	d((A	\cup	\{b\})	\cup	B)	\leqq	d(A	\cup	\{b\})	+	d(B)	\leqq	d(a,b)	+	d(A)	+	d(B)$.
+$a	\in	A	,	b	\in	B$は任意であるから，下限としての$d(A,B)$と$\leqq$を比較して$d(A	\cup	B)	\leqq	d(A,B)	+	d(A)	+d(B)$.
+\■
+
+２．距離空間$X$の点列$\{x_n\}$が収束するならば，その極限はただ１つである．
+
+\証明
+$n	\rightarrow	\infty$のとき，$x_n	\rightarrow	x,	x_n	\rightarrow	y,	x	\ne	y$と仮定する．
+$d	(x,y)	/2	=	\varepsilon$とおくと，$\varepsilon >	0$であり，
+$U(x;	\varepsilon )	\cap	U(y;	\varepsilon )	=	\varnothing$が成り立つ．
+このような$\varepsilon $に対して$m_0	\in	\N$が存在して，$n	>	m_0$なるすべての$n	\in	\N$に対して
+$x_n	\in	U(y;\varepsilon )$．
+またこのような$\varepsilon $に対して$n_0	\in	\N$が存在して$n	>	n_0$なるすべての$n$に対して
+$x_n	\in	U(x;	\varepsilon )$．ゆえに$n	>	\max	\{n_0	,	m_0\}$とすれば，
+$x_n	\in	U(x;	\varepsilon )	\cap	U(y	;	\varepsilon )$となり矛盾である．
+\■
+
+３．$X,Y$を位相空間とし，$f:	X	\rightarrow	Y$を写像とする．$G_\lambda	\:	(\lambda	\in	\Lambda)$を
+$X	=	\bigcup_{\lambda	\in	\Lambda}	G_\lambda$であるような$X$の開集合とする．
+任意の$\lambda	\in	\Lambda$に対して$f$の制限写像$f|G_\lambda	;	G_\lambda	\rightarrow	Y$が連続ならば，
+$f$は連続である．
+
+\証明
+$Y$の任意の開集合を$V$とすると，
+$f^{-1}(V)=	f^{-1}(V)	\cap	(\bigcup_\lambda	G_\lambda)
+					=	\bigcup_\lambda	(f^{-1}(V)	\cap	G_\lambda)
+					=	\bigcup_\lambda	(f|G_\lambda)^{-1}	(V)$
+である．$(f|G_\lambda)^{-1}	(V)$は開集合であるから，O3より
+$f^{-1}(V)$は開集合である．
+\■
+
+４．コンパクト位相空間からハウスドルフ空間$Y$への連続な全単射$f:X	\rightarrow	Y$は，
+同相写像である．
+
+\証明
+$F$をコンパクト位相空間$X$の任意の閉集合とすれば，$F$はコンパクトである．
+（問7）．$f$は連続写像であるから，$f(F)$もコンパクトで，（定理17），$Y$はHausdorff空間であるから，
+$f(F)$は閉集合である．$f$は全単射であるから，$(f^{-1})^{-1}	=	f$．
+よって，定理13より$f^{-1}$は連続となる．
+\■
+
+５．コンパクト位相空間$X$で定義された連続な実数値関数$f:X	\rightarrow	\R$は，
+$X$のある点で最大値，そしてある点で最小値をとる．
+
+\証明
+$f(X)$は$\R$のコンパクトな部分集合である（定理17）から閉集合である（問8）．
+よって，$\alpha	=	\sup	\{f(x)	\:	|	\:	x	\in	X\}$，$\beta	=	\inf	\{f(x)	\:	|	\:	x	\in	X\}$
+とすれば，$\alpha	,	\beta	\in	\overline{f(X)}	=	f(X)$（定理7,8）となり，$\alpha	=	f(x_0)	,	\beta	=	f(y_0)$を
+満たす点$x_0	,	y_0	\in	X$が存在する．
+\■
+
+６．$\{0,1\}$を$0,1$からなる$\R$の部分空間とする．
+位相空間$X$が連結であるための必要十分条件は，写像$f:X	\rightarrow	\{0,1\}$が連続であるならば，
+$f(X)	=	\{0\}$または$f(X)=\{1\}$となることである．
+
+\証明
+必要性：$f:	X	\rightarrow	\{0,1\}$が連続写像であるとする．$f^{-1}	(	\{	0	\})$，$f^{-1}(\{1\})$は
+$X$で開集合で$X=f^{-1}(\{0\})	\cup	f^{-1}(\{1\}),	f^{-1}(\{0\})	\cap	f^{-1}(\{1\})	=	\varnothing$であるから，
+$X$の連結性より，$f^{-1}(\{0\})	=	\varnothing$または$f^{-1}(\{1\})=	\varnothing$，
+すなわち$f(X)=\{1\}$または$f(X)=\varnothing$．
+
+十分性：$X$が連結でないと仮定する．$X	=	A	\cup	B$，$A	\cap	B	=	\varnothing$を満たす$X$の空でない
+開集合$A,B$が存在する．写像$X	\rightarrow	\{0,1\}$を$f(x)=0	\:	(x	\in	A),	\:	f(x)=1	\:	(x\in	B)$
+によって定義するとき，$\{0,1\}$のすべての開集合$\varnothing	,	\{0\},	\{1\}	,	\{0,1\}$に
+対して，$f^{-1}(\varnothing)	=	\varnothing,	f^{-1}(\{0\})=A,	f^{-1}(\{1\})=B,
+f^{-1}(\{0,1\})=X$はいずれも$X$の開集合であるから，$f$は連続写像である．然るに$f$は定値写像では
+ないから矛盾．
+\■
+
+７．位相空間$X$の部分集合$C$が連結であるならば，$C	\subset	M	\subset	\overline{C}$を満たす
+任意の部分集合$M$も連結である．
+
+\証明
+$M=	(	A	\cap	M)	\cup	(B	\cap	M),	\:	(A	\cap	M)	\cap	(B	\cap	M)	=	\varnothing,	\:
+A	,	B$は$X$の開集合とする．このとき$C	=	M	\cap	C	=	(A	\cap	C	)	\cup	(B	\cap	C)$，
+$(A	\cap	C)	\cap	(B	\cap	C)	=	\varnothing$となり，$A	\cap	C,	\:	B	\cap	C$は
+$C$の開集合であるから，$C$の連結性より$A	\cap	C	=	\varnothing$または$B	\cap	C	=	\varnothing$，
+すなわち$C	\subset	X	-	A$または$C	\subset	X-B$，$A	,B$は開集合であるから，
+$\overline{C}	\subset	X	-	A$または$\overline{C}	\subset	X-B$．
+仮定より$M	\subset	\overline{C}$であるから，$M	\subset	X	-	A$または$M	\subset	X	-B$．
+すなわち，$A	\cap	M	=	\varnothing$または$B	\cap	M	=	\varnothing$．したがって
+$M$は連結である．
+\■

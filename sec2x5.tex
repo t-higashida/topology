@@ -1,0 +1,273 @@
+\section{コンパクト性と点列コンパクト性}
+
+位相空間$X$の開集合$U_\alpha	\:	(\alpha	\in	\Gamma)$から成る部分集合族
+$\mathscr{U}=\{U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$が
+$X$の\textbf{開被覆}であるとは，
+\[
+	\bigcup_{\alpha	\in	\Gamma}	U_\alpha	=	X
+\]
+が成り立つことである．$\mathscr{U}$の部分集合$\mathscr{S}$がやはり$X$の開被覆であるとき，
+$\mathscr{S}$を$\mathscr{U}$の\textbf{部分開被覆}という．
+
+位相空間$X$は，その任意の開被覆が有限部分開被覆をもつとき，すなわち，
+$\bigcup_{\alpha	\in	\Gamma}	U_\alpha	=	X$を満たす任意の開集合族$\mathscr{U}=\{U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$
+に対し，適当な有限個の開集合$U_{\alpha_1},U_{\alpha_2},\cdots	,U_{\alpha_n}	\in	\mathscr{U}$を選んで
+$U_{\alpha_1}	\cup	U_{\alpha_2}	\cup	\cdots	\cup	U_{\alpha_n}	=	X$
+となるようにできるとき，\textbf{コンパクト}であるといわれる．$X$の部分集合$A$が\textbf{コンパクト}であるとは，
+部分空間$A$がコンパクトであることである．
+
+\問{6}
+$X$の部分集合$A_1,	A_2,	\cdots	,	A_n$がすべてコンパクトであるならば，和集合
+$A_1	\cup	A_2	\cup		\cdots	\cup	A_n$もコンパクトであることを証明せよ．
+
+\証明
+
+$n=2$の場合を示す．一般の場合は帰納法による．$A_1	\cup	A_2$の任意の開被覆を
+$\{	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$とすると，
+$\{	U_\alpha	\cap	A_1	\:	|	\:	\alpha	\in	\Gamma\}$,
+$\{	U_\alpha	\cap	A_2	\:	|	\:	\alpha	\in	\Gamma\}$はそれぞれ
+$A_1,	A_2$の開被覆である．$A_1,A_2$はコンパクトであるから，
+$\bigcup_{i=1}^k	(U_{\alpha_i}	\cap	A_1)	=A_1$，
+$\bigcup_{j=1}^l	(U_{\beta_j}	\cap	A_2)	=A_2$を満たす$\alpha_i,	\beta_j	\in	\Gamma$が
+存在する．このとき，
+$U_{\alpha_1}	\cup	\cdots	\cup	U_{\alpha_k}	\cup	U_{\beta_1}	\cup	\cdots	\cup	U_{\beta_l}	=	A_1	\cup	A_2$
+となるから$A_1	\cup	A_2$はコンパクトである．
+\■
+
+\定理{17}
+コンパクト位相空間$X$から位相空間$Y$への連続写像$f:X	\rightarrow	Y$が
+全射ならば，$Y$もコンパクトである．したがって，$X$と$Y$が同相であるとき，
+$X$がコンパクトならば，$Y$もコンパクトである．
+
+\証明
+$\mathscr{U}=	\{	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$を$Y$の任意の開被覆とする．
+$f$は連続写像であるから，$\mathscr{V}=\{f^{-1}(U_\alpha)	\:	|	\:	\alpha	\in	\Gamma\}$
+は$X$の開被覆である．$X$はコンパクトであるから，
+$\mathscr{V}$は有限開被覆$\mathscr{S}$をもつ．$f$は全射であるから，
+$\{U	\:	|	\:	U	\in	\mathscr{U},	f^{-1}(U)	\in	\mathscr{S}	\}$
+は$\mathscr{U}$の有限部分開被覆である．ゆえに，$Y$はコンパクトである．
+\■
+
+\問{7}
+コンパクト位相空間$X$の閉集合$A$はコンパクトであることを証明せよ．
+
+\証明
+$A$の任意の開被覆を$\{	U_\alpha	\cap	A	\:	|	\:	\alpha	\in	\Gamma\}$とする．
+ここで，$U_\alpha$は$X$の開集合である．このとき，
+$\{X	-	A,	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$は$X$の開被覆である．
+$X$はコンパクトであるから，$X=(X-A)	\cup	\bigcup_{i=1}^k	U_{\alpha_i}$または
+$X=	\bigcup_{i=1}^k	U_{\alpha_i}	\:	(\alpha	\in	\Gamma)$となる．
+いずれにしても，$A	=	X	\cap	A	=	\bigcup_{i=1}^k	(U_{\alpha_i}	\cap	A)$が得られる．
+\■
+
+集合族$\mathscr{F}$が\textbf{有限交叉性}をもつとは，
+任意の有限個の集合$F_1	,	F_2	,	\cdots	,	F_n	\in	\mathscr{F}$
+に対し，$F_1	\cap	F_2	\cap	\cdots	\cap	F_n	\ne	\varnothing$となることをいう．
+
+\補題{18}
+位相空間$X$がコンパクトであるための必要十分条件は，$X$の閉集合$F_\lambda	\:	(\lambda	\in	\Lambda)$
+よりなる族$\mathscr{F}	=	\{	F_\lambda	\:	|	\:	\lambda	\in	\Lambda\}$が有限交叉性をもつならば
+$\bigcap_{\lambda	\in	\Lambda}	F_\lambda	\ne	\varnothing$となることである．
+
+\証明
+
+必要性．$\bigcap_{\lambda	\in	\Lambda}	F_\lambda	=	\varnothing$と仮定すると，
+de Morganの公式により$X	=	X-	\bigcap_{\lambda	\in	\Lambda}	F_\lambda	=	\bigcup_{\lambda	\in	\Lambda}	(X-F_\lambda)$
+となるから，部分集合族$\{	X	-	F_\lambda	\:	|	\:	\lambda	\in	\Lambda\}$は$X$の開被覆となる．
+$X$はコンパクトであるから，適当な有限個の$\lambda_1	,	\lambda_2,	\cdots	,	\lambda_n	\in	\Lambda$を
+選んで$(X-F_{\lambda_1})	\cup	(X-F_{\lambda_2})	\cup	\cdots	\cup	(X-F_{\lambda_n})	=	X$とできる．
+再びde	Morganの公式により
+$F_{\lambda_1}		\cap	F_{\lambda_2}	\cap	\cdots	\cap	F_{\lambda_n}	=	\varnothing$となる．
+これは$\mathscr{F}$が有限交叉性をもつことに矛盾する．
+
+十分性．$X$がコンパクトでないと仮定すると，$X$の適当な開被覆$\mathscr{U}	=	\{	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$
+でそのいかなる有限個の要素に対しても$U_{\alpha_1}	\cup	U_{\alpha_2}	\cup	\cdots	\cup	U_{\alpha_n}	\ne	X$と
+なるものが存在する．de Morganの公式により$\{	X	-	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$は
+有限交叉性をもつ閉集合である．仮定より$\bigcap_{\alpha	\in	\Gamma}	(X	-	U_\alpha)	\ne	\varnothing$となるが，
+再びde Morganの公式により$\bigcup_{\alpha	\in	\Gamma}	U_\alpha	\ne	X$となり，
+$\mathscr{U}$が$X$の開被覆であることに反する．
+\■
+
+位相空間$X$が\textbf{点列コンパクト}であるとは，$X$の任意の点列$\{x_n\}$が$X$のある1点$x$に収束する部分列
+$\{x_{k_n}\}$をもつことである．$X$の部分集合$A$が\textbf{点列コンパクト}であるとは，
+部分空間$A$が点列コンパクトであることである．
+
+\定理{19}
+$m$次元ユークリッド空間$\R^m$の部分集合$A$が点列コンパクトであるための必要十分条件は，
+$A$が$\R^m$の有界閉集合であることである．
+
+\証明
+必要性．$A$が有界でないと仮定すれば，任意の$n	\in	\N$に対して，
+$A	\not\subset	U(O	;	n)$，すなわち$A	-	U(O	;	n)	\ne	\varnothing$となる．
+各$n	\in	\N$に対して
+\[
+	x_n	\in	A	-	U(O	;	n)	\quad	(\text{すなわち}x_n	\in	A	\text{かつ}	d(x_n	,	O	)	\geqq	n)
+\]
+を選んで点列$\{x_{k_n}\}$をつくると，$A$は点列コンパクトであるから，
+$A$の1点$x$に収束する部分列$\{x_{k_n}\}$が存在する．すなわち，任意の$\varepsilon >	0$に対して，
+$n_0	\in	\N$が存在して，$n	>	n_0$ならば$d(x_{k_n},	x)	<	\varepsilon $となる．
+$n	>	n_0$かつ$n	>	\varepsilon +d(x,O)$を満たす$n	\in	\N$をとれば
+\[
+	n	\leqq	k_n	\leqq	d(x_{k_n},	O	)	\leqq	d(x_{k_n},x)	+	d(x,O)	<	\varepsilon +	d(x,O)	<	n.
+\]
+したがって，$n	<	n$となるから矛盾である．ゆえに，$A$は有界である．
+
+$A$の点列$\{x_n\}$が点$x	\in	\R^m$に収束すれば，定理4によりその任意の部分列$\{x_{k_n}\}$
+も$x$に収束するから，$A$が点列コンパクトであることより，$x	\in	A$である．
+したたがって，定理8により$A$は$\R^m$の閉集合である．
+
+十分性．$A$が有界ならば，$A$の任意の点列$\{x_n\}$も有界である．
+定理5より点$x	\in	\R^m$に収束する部分列$\{x_{k_n}\}$が存在する．
+$A$が閉集合ならば，定理8より$x	\in	A$となる．したがって，$A$は点列コンパクトである．
+\■
+
+次の補題は\textbf{Lebesque（ルベーク）の補題}といわれる．
+
+\補題{20}
+距離空間$X$が点列コンパクトならば，$X$の任意の開被覆$\mathscr{U}=\{U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$
+に対して
+\[
+	d(A)	<	\rho	,	A	\subset	X	\Rightarrow	\text{適当な}	\alpha	\in	\Gamma\text{をとれば}A	\subset	U_\alpha
+\text{となる}
+\]
+が成り立つような正数$\rho$が存在する．$\rho$を$\mathscr{U}$の\textbf{Lebesque（ルベーク）数}という．
+
+\証明
+
+このような$\rho$が存在しないと仮定すれば，任意の$n	\in	\N$に対して
+\[
+	d(A_n)	<	1/n,	\quad	\text{かつ，すべての}	\alpha	\in	\Gamma\text{に対し}A_n	\not\subset	U_\alpha
+\]
+を満たす部分集合$A_n	\subset	X$が存在する．各$n	\in	\N$に対して
+$x_n	\in	A_n$をとり点列$\{x_n\}$をつくれば，$X$は点列コンパクトであるから，
+$\{x_n\}$は点$x	\in	X$に収束する部分列を含む．$\mathscr{U}$は開被覆であるから，
+$x	\in	X	=	\bigcup_{\alpha	\in	\Gamma}	U_\alpha$，
+\[
+	x	\in	U(x	;	\varepsilon)	\subset	U_\alpha	\in	\mathscr{U}
+\]
+を満たす$\alpha	\in	\Gamma$と$\varepsilon >	0$が存在する．
+$n\varepsilon 	\geqq	2$，$d(x_n	,	x)	\leqq	\varepsilon /2$を満たす$n	\in	\N$を
+選べば，$d(A_n)	<	1/n	\leqq	\varepsilon /2$であるから，
+$A_n	\subset	U(x	;	\varepsilon )$，したがって，$A_n	\subset	U_n$となるが，これは矛盾である．
+\■
+距離空間$X$が\textbf{全有界}であるとは，任意の正数$\varepsilon $に対して，適当な有限個の点
+$x_1,x_2,	\cdots	x_m	\in	X$が存在して
+\[
+	X=U(x_1	;	\varepsilon )	\cup	U(x_2;	\varepsilon )	\cup	\cdots	\cup	U(x_m;	\varepsilon )
+\]
+が成り立つことである．
+
+\補題{21}
+距離空間$X$は，点列コンパクトならば全有界である．
+
+\証明
+$X$が全有界でないと仮定すると，適当な正数$\varepsilon $をとるとき，
+任意の有限個の点$x_1,	x_2	,	\cdots	,	x_m	\in	X$に対して
+\[
+	X	\ne	U(x_1	;	\varepsilon )	\cup	
+				U(x_2	;	\varepsilon )	\cup	\cdots	\cup
+				U(x_m	;	\varepsilon )
+\]
+となる．
+\begin{align*}
+	&x_1	\in	X,	\\
+	&x_2	\in	X-U(x_1	;\varepsilon ),	\\
+	&x_3	\in	X-U(x_1	;\varepsilon )	\cup	U(x_2	;	\varepsilon ),	\\
+	&\cdots\cdots	\\
+	&x_{m+1}	\in	X-U(x_1	;\varepsilon )	\cup	U(x_2	;	\varepsilon )	\cup	\cdots	\cup	U(x_2	;	\varepsilon ),	\\
+	&\cdots\cdots
+\end{align*}
+のように点列$\{x_m\}$をとれば，この点列の異なる2点$x_m,x_n$をとっても
+$d(x_m,	x_n)	\geqq	\varepsilon $となるから，
+$\{x_m\}$のいかなる部分列も収束しない．これは矛盾である．
+\■
+
+\定理{22}
+距離空間$X$について，コンパクト	$\Longleftrightarrow$点列コンパクト，
+
+\証明
+$\Longrightarrow$：$X$がコンパクトであると仮定する．$X$の任意の点列$\{x_n\}$に対し，
+集合$\{x_n,	x_{n+1}	,	\cdots	\}	=	\{x_i	\:	|	\:	i	\geqq	n\}$の
+閉包を$F_n$とおくと，
+\[
+	F_1	\supset	F_2	\supset	\cdots	\supset	F_n	\supset	F_{n+1}	\supset	\cdots,
+		\quad	F_n	\ne	\varnothing
+\]
+であるから，$\{F_n\}$は有限交叉性をもつ．$X$はコンパクトであるから，
+補題18より$\bigcap_{n=1}^\infty	F_n	\ne	\varnothing$である．
+$a	\in	\bigcap_{n=1}^\infty	F_n$とすると，
+$n=1,2,	\cdots	$に対して$a	\in	F_n$である．
+$a	\in	F_1$より$U(a;1)	\cap	\{	x_1,	x_2,	\cdots	\}	\ne	\varnothing$であるから，
+$x_{k_1}	\in	U(a;1)$が存在する．
+$a	\in	F_{k_1}$より$U(a;	1/2)	\cap	\{x_{k_1},	x_{k_1+1},	\cdots	\}	\ne	\varnothing$
+であるから，$x_{k_2}	\in	U(a;1/2)	\:	(k_1	\leqq	k_2)$が存在する．
+以下，帰納的に，$x_{k_n}	\in	U(a;1/n)	\;	(k_{n-1}	\leqq	k_n)$が存在して，
+$d	(	x_{k_n},a)	<	1/n$であるから，$x_{k_n}	\rightarrow	a	\:	(n	\rightarrow	\infty)$
+となる．したがって，$X$は点列コンパクトである．
+
+$\Longleftrightarrow$:$X$が点列コンパクトであると仮定する．
+$X$の任意の開被覆$\mathscr{U}	=	\{	U_\alpha	\:	|	\:	\alpha	\in	\Gamma\}$
+に対し，$\mathscr{U}$のLebesgue数を$\rho	>	0$とする（補題20）．
+補題21より$X$は全有界であるから，点$x_1,	x_2,	\cdots	,	x_m	\in	X$が存在して，
+\[
+	X=U(x_1;	\rho	/3)	\cup	U(x_2	;	\rho/3)	\cup	\cdots	\cup	U(x_m	;	\rho	/3)
+\]
+が成り立つ．各$i	\:	(1	<	i	<	m)$に対し，
+$d(U(x_i	;	\rho/3))=2\rho	/3	$であるから，
+Lebesque数の性質より$U(x_i	;	\rho	/3)	\subset	U_{\alpha_i}$となる
+$\alpha_i	\in	\Gamma$が存在する．
+したがって，$X=	U_{\alpha_1}	\cup	U_{\alpha_2}	\cup	\cdots	\cup	U_{\alpha_m}$となる．
+よって，$X$はコンパクトである．
+\■
+
+定理19と22から直ちに次が得られる．
+
+\系{23}
+$\R^m$の部分集合$A$がコンパクトであるための必要十分条件は，$A$が$\R^m$の有界閉集合であることである．
+
+　
+
+距離空間$X$，$Y$の間の写像$f	:	X	\rightarrow	Y$が\textbf{一様連続}であるといわれるのは，
+任意の正数$\varepsilon $に対して，適当な正数$\delta $を選んで
+\[
+	d(x,x')	<	\delta ,	x,	x'	\in	X	\Rightarrow	d(f(x),f(x'))	<	\varepsilon 
+\]
+が成り立つようにできるときである．一般の連続写像においては，正数$\delta $は
+点$x	\in	X$と$\varepsilon >0$に関係するが，この$\delta >0$が点$x	\in	X$には関係せずに
+$\varepsilon >0$だけに関係する場合が一様連続である．明らかに，1次関数は一様連続である．
+
+\例{15}
+2次関数$f	:	\R	\rightarrow	\R	;	x	\mapsto	x^2$は一様連続ではない．
+
+\定理{24}
+コンパクト距離空間$X$から距離空間$Y$への連続写像$f:	X	\rightarrow	Y$は一様連続である．
+
+\証明
+任意の$\varepsilon >0$に対して，$X$の開被覆$\mathscr{U}	=	\{f^{-1}(U(f(x)	;	\varepsilon /2))
+\:	|	\:	x	\in	X	\}$のLebesgue数を$\rho$とする．このとき，
+$	U(x	;	\rho	/	3)	\subset	f^{-1}	(	U	(	f(x_0)	;	\varepsilon /2))$
+を満たす$x_0	\in	X$が存在するから，$d(x,	x')	<	\rho	/3	\:\:	(x,x'	\in	X)$ならば，
+$x,	x'	\in	f^{-1}(f(x_0)	;	\varepsilon /2))$．したがって，
+$d(f(x)	,	f(x'))	\leqq	d(f(x),f(x_0))	+	d(f(x_0),f(x'))	<	\varepsilon /2	+	\varepsilon /2	
+=	\varepsilon $となる．この$\rho$は点$x	\in	X$には関係せず$\varepsilon $（$\varepsilon$が決定する
+開被覆）だけに関係するから，
+$f$は一様連続である．
+\■
+
+\問{8}
+Hausdorff空間$X$の部分集合$A$がコンパクトであるならば，
+$A$は$X$の閉集合であることを証明せよ．
+
+\証明
+$X-A$が$X$の開集合であることを示す．$X$はHausdorff空間であるから，
+$x	\in	X-A,	\:	y	\in	A$を任意のとると，$x$の近傍$U_y(x)$と$y$の近傍$V(y)$で
+$U_y(x)	\cap	V(y)	=	\varnothing$を満たすものが存在する．$\{V(y)	\cap	A	\;	|	\:	y	\in	A\}$
+は$A$の開被覆であるから$A$のコンパクト性より点$y_1,	y_2,	\cdots	,	y_n	\in	A$が存在して，
+$\bigcup_{i=1}^n	\:	(V(y_i)	\cap	A)	=	A$となる．
+$U(x)	=	\bigcap_{i=1}^n	U_{y_i}(x)$とおけば，
+O2より$U(x)$は$x$を含む開集合で，
+$U(x)	\cap	(	\bigcup_{i=1}^n	V(y_i))	=	\bigcup_{i=1}^n	(U(x)	\cap	V(y_i))
+																				\subset	\bigcup_{i=1}^n	(U_{y_i}(x)	\cap	V(y_i))
+																				=	\varnothing$となる．よって
+$U(x)	\cap	A	=	\varnothing$，すなわち$U(x)	\subset	X-A$が得られる．
+\■

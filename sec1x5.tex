@@ -1,0 +1,131 @@
+\section{直積と直和}
+
+$G_1,G_2,	\cdots	,	G_n$を群，それぞれの群$G_i$の単位元を$e_i$とする．
+集合の直積$G=G_1	\times	G_2	\times	\cdots	\times	G_n$は，
+演算$m	:	G	\times	G	\rightarrow	G$を，$G$の任意の元$(a_1,a_2,\cdots	,	a_n)$，
+$(b_1,b_2,\cdots	,	b_n)$に対して，
+\[
+	m((a_1,a_2,\cdots	,	a_n),(b_1,b_2,\cdots	,	b_n))
+	=
+	(a_1b_1,a_2b_2,\cdots	,	a_nb_n)
+\]
+によって定義すると群になる．実際，結合法則は明らかに成り立ち，単位元は
+$(e_1,e_2,\cdots	,	e_n)$，$(a_1,a_2,\cdots	,	a_n)$の逆元は
+$(a_1^{-1},a_2^{-1},\cdots	,	a_n^{-1})$となる．この群を
+$G_1,G_2,\cdots,G_n$の\textbf{直積}（または\textbf{外直積}）という．
+これを$G=G_1	\times	G_2	\times	\cdots	\times	G_n$あるいは
+$G	=	\prod_{i=1}^n	G_i$と表す．
+
+\例{15}
+加法群$\R$(例4)の2個の直積$\R	\times	\R	=	R^2)$は，写像$(x,y)	\mapsto	x	+	iy$
+によって加法群$\C$(例4)と同形になる．
+
+$G_1,G_2,\cdots,	G_n$が加法群のとき，上の演算$m$を各$G_i$の加法を用いて定義する
+と加法群$G$が得られる．これを$G_1,G_2,\cdots	,	G_n$の\textbf{直和}（または\textbf{外直和}）
+といい，$G=G_1	\oplus	G_2	\oplus	\cdots	\oplus	G_n	$あるいは
+$G=\sum_{i=1}^n	G_i$と表す．
+
+群$G$とその部分群$G_1,G_2,\cdots	,G_n$に対し，次の条件が成り立つとする．
+\begin{list}{}{}
+	\item	（ⅰ）$G$の任意の元$a$は一意的に$a=a_1a_2\cdots	a_n	\:	(a_i	\in	G_i)$と表される．
+							（ここで，一意的とは，
+								$a_1a_2	\cdots	a_n	=	a_1'a_2'	\cdots	a_n'	\quad	a_i,a_i'	\in	G_i$ならば，
+								$i=1,2,\cdots	,n$に対し$a_i=a_i'$が成り立つことである．）
+	\item	（ⅱ）$i	\ne	j$ならば，すべての元$x	\in	G_i$，$y	\in	G_j$に対して，$xy=yx$．
+\end{list}
+このとき，$G$を部分群$G_1,G_2,\cdots	,G_n$の\textbf{内直積}（$G$がアーベル群のときは\textbf{内直和}）
+という．$G$がアーベル群のときは明らかに条件（ⅱ）が成り立っている．
+
+\補題{18}
+$G$が部分群$G_1,G_2,\cdots,	G_n$の内直積のとき，$G_1,G_2,\cdots,G_n$の直積$G'$をつくると，
+写像
+$\varphi :G\rightarrow	G'	;	a_1a_2\cdots	a_n	\mapsto	(a_1,a_2,\cdots	a_n)	\:	(a_i	\in	G_i)$
+は同形写像となる．
+
+\証明
+$a_i,b_i	\in	G_i	\:	(i=1,2,\cdots	,	n)$に対して，
+（ⅱ）および定義により
+\begin{align*}
+	\varphi	((a_1a_2\cdots	a_n)(b_1b_2\cdots	b_n))
+	&=
+	\varphi	((a_1b_1)(a_2b_2)	\cdots	(a_nb_n))	\\
+	&=
+	(a_1b_1,a_2b_2,	\cdots	,a_nb_n)	\\
+	&=
+	(a_1,a_2,	\cdots	,a_n)(b_1,b_2,	\cdots	,b_n)	\\
+	&=
+	\varphi(a_1	a_2	\cdots	a_n)\varphi(b_1	b_2	\cdots		b_n)
+\end{align*}
+となるから，$\varphi $は準同形である．$\varphi $が全単射となることは
+（ⅰ）による．
+\■
+
+補題18により，内直積，内直和もそれぞれ単に直積，直和といってよいことがわかる．
+
+$G$が加法群のときには，上述したように条件（ⅱ）は自動的に成り立つので，
+$G$がその部分群$G_1,G_2,\cdots	,G_n$の直和であるのは，$G$の任意の元$a$が
+一意的に
+\[
+	a=a_1	+	a_2	+	\cdots	+	a_n	\quad	(a_i	\in	G_i)
+\]
+と表されるときである．
+
+\pagebreak
+\補題{19}
+$G_1,G_2,	\cdots	,G_n$をアーベル群$G$の部分群とすると，次が成り立つ．
+\begin{list}{}{}
+	\item（１）$	H=G_1	+	G_2	+	\cdots	+	G_n	
+								=
+								\{a_1	+	a_2	+	\cdots	+	a_n	\:	|	\:	a_i	\in	G_i	
+									\:	(i=1,2,\cdots	,	n)\}$は$G$の部分群である．この群を$G_1,G_2,\cdots,	G_n$の
+						\textbf{和}という．
+	\item
+	\item（２）和$H=G_1	+	G_2	+	\cdots	+	G_n$が直和$H=G_1	\oplus	G_2	\oplus	\cdots	\oplus	G_n$であるための
+						必要十分条件は，$i=1,2,	\cdots	,	n-1$に対し
+						\[
+							(G_1	+	G_2	+	\cdots	+	G_i)	\cap	G_{i+1}	=	\{0\}
+						\]
+						が成り立つことである．
+\end{list}
+\証明
+（１）$H$の任意の２つの元$a_1+a_2+	\cdots	+	a_n,b_1	+	b_2	+	\cdots	+	b_n	\:	(a_i,b_i	\in	G_i)$に対し，
+$(a_1	+	a_2	+	\cdots	+	a_n)	-	(b_1	+	b_2	+	\cdots	+	b_n)=(a_1-b_1)+(a_2	-	b_2)+	\cdots
++	(a_n-b_n)	\in	H$が成り立つから，定理7より$H$は$G$の部分群である．
+
+（２）必要性．$(G_1	+	G_2	+	\cdots	+	G_i)	\cap	G_{i+1}	\ni	a$とすると，
+$a	\in	G_1	+	G_2	+	\cdots	+	G_i$
+より$a=a_1	+	a_2	+	\cdots	+	a_i	+	a_{i+1}	+	\cdots	+	a_n	\:\:	(a_i	\in	G_i	,	a_j	=	0	\:\:	(j	>	i))$
+と表され，$a	\in	G_{i+1}$より
+$a=b_1	+	b_2	+	\cdots	+	b_i	+	b_{i+1}	+	b_n	\;(b_i	\in	G_i	,	b_j=0	\:	(j	\ne	i	+	1))$
+と表されるが，直和であることから$a_j	=	b_j	\: (1	\leqq	j	\leqq	n)$である．
+したがって，$a=b_{i+1}=a_{i+1}=0$．
+
+十分性．任意の$a	\in	G_1	+	G_2	+	\cdots	+	G_n$に対し
+\[
+	a=a_1	+	a_2	+	\cdots	+	a_n	=	b_1	+	b_2	+	\cdots	+	b_n	\quad	(a_i,b_i	\in	G_i)
+\]
+と仮定すると，$a_n	-	b_n	=	(b_1-a_1)+(b_2-a_2)+	\cdots	+	(b_{n-1}-a_{n-1})$となる．
+左辺	$ \in	G_n$，右辺$	\in	G_1	+	G_2	+	\cdots	+	G_{n-1}$であるから，
+両辺$\in	(G_1	+	G_2	+	\cdots	+	G_{n-1})	\cap	G_n	=	\{0\}$となり，
+$a_n-b_n=0$，$(b_1-a_1)	+	(b_2-a_2)	+	\cdots	+	(b_{n-1}-a_{n-1})=0$．
+よって，$a_{n-1}-b_{n-1}=(b_1-a_1)+(b_2-a_2)	+	\cdots	+	(b_{n-2}-a_{n-2})$となるが，
+両辺$\in	(G_1+G_2	+	\cdots	+	G_{n-2})	\cap	G_{n-1}=\{0\}$となることより，
+$a_{n-1}	-	b_{n-1}=0,	\:	(b_1	-a_1)+(b_2	-	a_2)	+	\cdots	+	(b_{n-2}-a_{n-2})=0$.
+以下，この手順を繰り返すことにより，すべての$i=n,n-1,\cdots	,	2,1$に対して$a_i=b_i$を得る．
+\■
+
+\系{20}
+和$H=G_1+G_2$が直和$H=G_1	\oplus	G_2$であるための必要十分条件は，
+$G_1	\cap	G_2	=	\{0\}$となることである．
+
+\補題{21}
+$G,H$をアーベル群，$f:G	\rightarrow	H$，$g:H	\rightarrow	G$を準同形とする．
+$g	\circ	f	=	\text{id}:	G	\rightarrow	G$ならば，$H=\text{Ker }g	\oplus	\text{Im } f$である．
+
+\証明
+$H$の任意の元$a$に対し，$a=a-f(g(a))+f(g(a))$，$a-f(g(a))	\in	\text{Ker }g$，
+$f(g(a))	\in	\text{Im }f$と表されるから，$H=\text{Ker }g + \text{Im }f$である．
+次に，$\text{Ker }g \cap \text{Im } f \ni f(b) \: (b \in G)$とすると，
+$b=g(f(b))=0$であるから，$f(b)=0$．ゆえに，$\text{Ker } g \cap \text{Im } f=\{0\}$となる．
+したがって，系20より$H=\text{Ker } g \oplus \text{Im } f$.
+\■

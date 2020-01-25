@@ -1,0 +1,175 @@
+\section{距離空間の閉集合と閉包}
+
+距離空間$X$の部分集合$F$が$X$の\textbf{閉集合}であるとは，
+$F$の補集合$X-F$が$X$の開集合であること，すなわち，$X-F	\in	\mathscr{O}$であることをいう．
+
+de Morganの公式により，開集合の性質（定理2）から閉集合の性質が導かれる．
+
+\定理{6}
+距離空間$X$の閉集合について，次が成り立つ．
+\begin{list}{}{}
+	\item[]	F1．$X$および$\varnothing$は閉集合である．
+	\item[]	F2．任意の有限個の閉集合の和集合は閉集合である．
+	\item[]	F3．任意この閉集合の共通部分は閉集合である．
+\end{list}
+
+\問{2}
+定理6を証明せよ．
+
+\証明
+F1．$X-X	=	\varnothing	\in	\mathscr{O},X-\varnothing	=	X	\in	\mathscr{O}$であるから，
+$X,\varnothing$は閉集合である．
+
+F2．$F_1,F_2,	\cdots	,	F_n$を閉集合とすると，
+$X	-	\bigcup_{i=1}^n	F_i	=	\bigcap_{i=1}^n	(X	-	F_i)	\in	\mathscr{O}$であるから，
+$\bigcup_{F_i}$は閉集合である．
+
+F3．$F_\lambda	\:	(	\lambda	\in	\Lambda)$を閉集合とすると，
+$X	-	\bigcup_{\lambda	\in	\Lambda}	F_\lambda	=	\bigcup_{\lambda}	(X	-	F_\lambda)	\in	\mathscr{O}$
+であるから，$\bigcap_\lambda	F_\lambda$は閉集合である．
+
+\■
+
+\例{3}
+閉区間$[a,b]	=	\{	x	\in	\R	\:	|	\:	a	\leqq	x	\leqq	b	\}$は$\R$の閉集合である．
+実際，$\R	-	[a,b]	\ni	x$に対し，$x	<	a$ならば$U(x;	a-x)	\subset	\R	-	[a,b]$，
+$x	>	b$ならば$U(x;x-b)	\subset	\R-[a,b]$であるから，$\R	-	[a,b]$は開集合である．
+
+\例{4}
+距離空間$X$の点$x$について，1点$x$のみからなる集合$\{x\}$は閉集合である．
+実際，$X-\{x\}	\ni	y$に対し，$x	\ne	y$であるから
+$d(x,y)	>	0$であり，$U(y;d(x,y))	\subset	X	-	\{x\}$が以下のようにして成り立つから，
+$X-\{x\}$は開集合である．
+\begin{align*}
+		z	\in	U(y;d(x,y))	&	\Longrightarrow	d(y,z)	<	d(x,y)	\\
+											&	\Longrightarrow	z	\ne	x	
+												\Longrightarrow	z	\in	X	-	\{x	\}
+\end{align*}
+
+
+距離空間$X$の部分集合$A$に対して，$A$を含むすべての閉集合の共通部分を
+$A$の\textbf{閉包}といい，$\overline{A}$で表す．
+F3により，$\overline{A}$は閉集合であり，しかも$A$を含む最小の閉集合である．
+$\overline{A}$に属する点のことを$A$の\textbf{触点}という．
+$A$自身が閉集合のときは，$A$を含む最小の閉集合は明らかに$A$と一致するから，
+$\overline{A}=A$である．
+
+\定理{7}
+距離空間$X$の部分集合を$A$とするとき，
+次の条件は同値である．
+\begin{list}{}{}
+	\item	（１）$x	\in	\overline{A}$.
+	\item	（２）$x$の任意の近傍$U$に対して，$U	\cap	A	\ne	\varnothing$.
+	\item	（３）$x$の任意の$\varepsilon $近傍$U(x;\varepsilon )$に対して，$U(x;\varepsilon )	\cap	A	\ne	\varnothing$.
+	\item	（４）$x$は$A$に属するある点列$\{x_n\}$の極限である．
+\end{list}
+
+\証明（１）$\Longrightarrow$（２）．$x	\in	\overline{A}$とする．
+$x	\in	A$ならば，$x$の任意の近傍$U$に対して$x	\in	U	\cap	A$
+となって明らかに（２）が成立する．
+$x	\notin	A$として，背理法により証明する．
+いま，$x$の適当な近傍$U$に対し$U	\cap	A	=	\varnothing$，すなわち，
+$A	\subset	X	-	U$と仮定する．閉包の定義より
+$\overline{A}	\subset	\overline{X-U}$
+\footnote{
+『集合と位相』小林貞一著§5.1.1定理8を参照
+}
+．
+$U$は開集合であるから，$X-U$は閉集合であり，ゆえに，
+$\overline{X-U}	=	X-U$．したがって，
+$\overline{A}	\subset	X-U$，すなわち
+$U	\cap	\overline{A}	=	\varnothing$が得られる．
+ところが，$U	\cap	\overline{A}	\ni	x$であるから矛盾である
+
+（２）$\Longrightarrow$（３）．
+$x$の$\varepsilon$近傍は$x$の近傍であるから明らか．
+
+（３）$\Longrightarrow$（４）．
+任意の$n	\in	\N$に対して，$U(x;1/n)	\cap	A	\ne	\varnothing$であるから，
+点$x_n	\in	U(x;	1/n)	\cap	A$を選べば，$A$の点列$\{x_n\}$が得られ，
+各$n	\in	\N$に対して$d(x_n	,	x	)	<	1/n$であるから，
+$d(x_n	,	x)	\rightarrow	0\:	(n	\rightarrow	\infty)$となる．
+補題3よりこれは$x_n	\rightarrow	x	\:\:	(n	\rightarrow	\infty)$を意味する．
+
+（４）$\Longrightarrow$（１）．
+対偶を証明する．$x	\in	X	-	\overline{A}$と仮定する．
+$\overline{A}$は閉集合であるから$X	-	\overline{A}$は開集合であり，
+適当な正数$\varepsilon$を選ぶと
+$U(x;	\varepsilon )	\subset	X	-	\overline{A}$，
+すなわち，$x_{k_n}	\in	U(x;\varepsilon )	\cap	\overline{A}	=	\varnothing$
+となる．$A$に属するいかなる点列$\{x_n\}$をとっても，すべての$n	\in	\N$に対して
+$x_n	\notin	U(x;	\varepsilon )$であるから，
+$d(x_n,	x)	\geqq	\varepsilon >0$であり，$\{x_n\}$は$x$に収束しない．
+これは（４）に反する．
+\■
+
+定理7から次が導かれる．
+
+\定理{8}
+距離空間$X$の部分集合を$A$とするとき，つぎの条件は同値である．
+\begin{list}{}{}
+	\item	（１）$A$は$X$の閉集合である．
+	\item	（２）$\overline{A}=A$．
+	\item	（３）$A$の点列$\{x_n\}$が点$x	\in	X$に収束すれば$x	\in	A$である．
+\end{list}
+
+（１）$\Longrightarrow$（２）．
+すでに述べたように，閉包の定義から明らか．
+
+（２）$\Longrightarrow$（３）．
+定理７の（４）$\Longrightarrow$（１）より，$A$の点列$\{x_n\}$
+が点$x	\in	X$に収束すれば，$x	\in	\overline{A}$であるが，仮定より
+$\overline{A}=A$であるから，$x	\in	A$となる．
+
+（３）$\Longrightarrow$（１）．
+$X-A$が$X$の開集合であることを示そう．任意の点$x	\in	X-A$に対して
+適当な正数$\varepsilon $を選べば，$U(x;\varepsilon )	\subset	X=A$となることを，
+背理法によって証明する．いかなる正数$\varepsilon $に対しても
+$U	(x;\varepsilon )	\not\subset	X-A$，つまり$U	(x;\varepsilon )	\cap A	\ne	\varnothing$
+と仮定する．このとき，任意の自然数$n$に対して$U	(x;1/n )	\cap	A	\ne	\varnothing$
+であるから，$x_n	\in	U(x	;	1/n)	\cap	A$をとれば，$\{x_n\}$は$A$の点列で，
+$x_n	\rightarrow	x	\:\:	(n	\rightarrow	\infty)$である．
+（３）より$x	\in	A$となるが，これは矛盾である．
+\■
+
+距離空間$X$の部分集合を$A$とする．$X$の点$x$が$A$の\textbf{集積点}であるとは，
+$x$の任意の近傍$U$に対して
+\[
+	U	\cap	(A	-	\{x\})	\ne	\varnothing
+\]
+が成り立つことである．$A$のすべての集積点の集合を$A$の\textbf{導集合}といい，
+$D(A)$と書く．$A$の点$x$が$A$の集積点でないとき，$x$を$A$の\textbf{孤立点}という．
+集積点のことばの由来は次の補題による．
+
+\補題{9}
+距離空間$X$の点$x$が$A	(\subset	X)$の集積点ならば，
+任意の正数$\varepsilon$に対して，$x$の$\varepsilon$近傍$U(x	;	\varepsilon )$が
+$A$の点を無限に多く含む．
+
+\証明
+背理法によって示そう．ある$\varepsilon_0	>	0$に対して，
+$U(x	;	\varepsilon_0)$が$x$以外には$k$個の$A$の点$x_1,	x_2,	\cdots	,	x_k$
+しか含まないとする．$k	>	0$のときは
+\[
+	\min	\{	d(x,x_1),d(x,x_2),\cdots	,	d(x,x_k)	\}	=	\delta	>	0
+\]
+とすれば，$U(x;	\delta	)$は$x$以外に$A$の点を含まないから，
+$U(x	;	\delta)	\cap	(A	-	\{x\})	=	\varnothing$が成り立ち，
+$x$は$A$の集積点ではない．$k=0$のときは，$\varepsilon =\varepsilon $とおくと，明らか．
+\■
+
+\補題{10}
+$\overline{A}	=	A	\cup	D(A)$.
+
+\証明
+$A	\subset	\overline{A},	D(A)	\subset	\overline{A}$となることは定義と補題9，
+補題8，定理7より明らかであるから，$A	\cup	D(A)	\subset	\overline{A}$である．
+$\overline{A}	\subset	A	\cup	D(A)$を示そう．
+$x	\in	\overline{A}$に対し，$x	\notin	A$かつ$x	\notin	D(A)$と仮定する．
+$x	\notin	D(A)$より，$x$のある近傍$U$に対して
+$U	\cap	(A	-	\{x\})	=	\varnothing$であるが，
+$x	\notin	A$より，$A	-	\{	x	\}	=A$であるから，
+$U	\cap	A	=	\varnothing$が得られる．
+これは$x	\notin	\overline{A}$を意味する（定理7）から矛盾である．ゆえに，$x	\in	A$または
+$x	\in	D(A)$が成り立つ．よって，$\overline{A}	\subset	A	\cup	D(A)$が示された．
+\■	

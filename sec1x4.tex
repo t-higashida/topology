@@ -1,0 +1,167 @@
+\section{準同形写像，同形定理}
+
+群$G$から$G'$への写像$f:G	\rightarrow	G'$が\textbf{準同形写像}(または単に\textbf{準同形})とよばれるのは，
+$G$の任意の元$a,b$に対して
+\[
+	f(ab)=f(a)f(b)
+\]
+が成り立つときである．
+
+\補題{12}
+$f:G	\rightarrow	G'$を準同形とすると，次が成り立つ．
+\begin{list}{}{}
+	\item（１）$G,G'$の単位元をそれぞれ$e,e'$とすると，$f(e)=e'$．
+	\item（２）すべての元$a	\in	G$に対して，$f(a^{-1})=f(a)^{-1}$.
+	\item（３）$\text{Im}f	=f(G)$は$G'$の部分群である．
+	\item（４）$N$が$G$の正規部分群ならば，$f(N)$は$\text{Im}	f$の正規部分群である．
+	\item（５）$N'$が$G'$の正規部分群ならば，$f^{-1}(N')$は$G$の正規部分群である．
+\end{list}
+
+\証明
+（１）$e=ee$であるから，$f(e)=f(ee)=f(e)f(e)$．$f(e)^{-1}$を右から掛けて，
+$e'=f(e)(f(e)f(e)^{-1})=f(e)e'=f(e)$．
+
+（２）$a^{-1}a=e$であるから，$f(a^{-1})f(a)=f(a^{-1}a)=f(e)=e'$．$f(a)^{-1}$を
+右から掛けて，$f(a^{-1})=e'f(a)^{-1}=f(a)^{-1}$.
+
+（３）$a',b'	\in	\text{Im}f$とすると，$f(a)=a'$，$f(b)=b'$となる$a,b	\in	G$が存在し，
+（２）より$a'	b^{\prime-1}=f(a)f(b)^{-1}=f(a)	f(b^{-1})=f(ab^{-1})	\in	\text{Im}	f$.
+よって定理7より$\text{Im}f$は$G'$の部分群である．
+
+（４）$N$が$G$の部分群であるとき，$f(N)$が$\text{Im}f$の部分群であることは，（３）
+と同様に示される．$N$を$G$の正規部分群とし，$x'	\in	f(N)$，$a'	\in	\text{Im}f$とする．
+$f(x)=x'$，$f(a)=a'$となる$x	\in	N$，$a	\in	G$をとれば，（２）より
+\[
+	a'x'{a}^{\prime-1}=f(a)f(x)f(a)^{-1}=f(a)f(x)f(a^{-1})	=	f(axa^{-1})	\in	f(N)
+\]
+となるから，補題9より$f(N)$は$\text{Im}f$の正規部分群である．
+
+（５）$x,y	\in	f^{-1}(N')$とすると，$f(x),f(y)	\in	N'$．よって，（２）と定理7
+により$f(xy^{-1})=f(x)f(y)^{-1}\in	N'$となるから，$xy^{-1}	\in	f^{-1}(N')$．
+ゆえに，定理7より$f^{-1}(N)$は$G$の部分群である．次に，$x\in	f^{-1}(N'),a\in	G$に
+対して，（２）より
+\[
+	f(axa^{-1})=f(a)f(x)f(a)^{-1}	\in	f(a)N'f(a)^{-1}	=	N'.
+\]
+よって，$axa^{-1}	\in	f^{-1}(N')$となり，$af^{-1}(N')a^{-1}	\subset	f^{-1}(N')$
+が成り立つから，補題9により$f^{-1}(N')$は$G$の正規部分群である．
+\■
+
+自明な部分群$\{e'\}$は$G'$の正規部分群であるから， 補題12(5)より
+\[
+	f^{-1}(e')	=	\{a|a	\in	G,	f(a)=e'	\}
+\]
+は$G$の正規部分群である．これを$f$の\textbf{核}といい，$\text{Ker }	f$で表す．
+
+\補題{13}
+$f$を群$G$から群$G'$のへの準同形とする．$f$が単射であるための必要十分条件は，
+$\text{Ker }	f	=	\{e\}$となることである．
+
+\証明
+必要性．$f$が単射であるとする．$\text{Ker }	f$の任意の元$a$に対し$f(a)=e'$．
+一方，補題12(1)より$f(e)=e'$であるから，$f(a)=f(e)$．$f$は単射であるから，
+$a=e$，ゆえに，$\text{Ker }	f	=	\{e\}$．
+
+十分性．$\text{Ker }f=\{e\}$とする．$a,b\in	G$に対して$f(a)=f(b)$ならば，
+補題12(2)より$f(ab^{-1}=f(a)f(b)^{-1}=e'$．よって，$ab^{-1}	\in	\text{Ker }f$．
+ゆえに，$ab^{-1}=e$.すなわち，$a=b$．したがって，$f$は単射である．
+\■
+
+群$G$から群$G'$への準同形$f$は，それが全単射であるとき，\textbf{同形写像}といわれる．
+少なくとも1つの同形写像$f:G	\rightarrow	G'$が存在するとき，$G$と$G'$は\textbf{同形}
+であるといい，$G	\cong	G'$と表す．
+
+\問{7}
+同形であるという関係$\cong$は，同値関係であることを示せ．
+
+\証明
+反射律$G	\cong	G$は，$\text{id}:G	\rightarrow	G$は同形写像であることから従う．
+対象律は，同形写像$G	\rightarrow	G'$の逆写像$G'	\rightarrow	G$が同形写像であることによる．
+推移律は，同形写像$G	\rightarrow	G'$，$G'	\rightarrow	G''$の合成写像$G	\rightarrow	G''$
+が同形写像であることによる．
+\■
+
+\例{13}
+$R^+=\{a	\:	|	\:	a	\in	\R,	a	>	0	\}$は，通常の積に関して可換群をつくる．
+加法群$\R$から乗法群$\R^+$への指数写像$\text{exp}:\R	\rightarrow	\R^+	;	x	\mapsto	e^x$は，
+同形写像である．実際$\text{exp}$は準同形であり，
+$\text{log}:\R^+	\rightarrow	\R,	y	\mapsto	\log	y$が$\text{exp}$の逆写像となる．
+
+\補題{14}
+$N$を群$G$の正規部分群とする．写像
+\[
+	p:G	\rightarrow	G/N;	a	\mapsto	aN
+\]
+は全射準同形で，$\text{Ker }p=N$である．この写像を\textbf{自然は準同形（または射影）}
+と称する．
+
+\証明
+$a,b	\in	G$に対し，$p(ab)=(ab)N=(aN)(bN)=p(a)p(b)$であるから，
+$p$は準同形である．$a	\in	\text{Ker }p	\Leftrightarrow	aN=N	\Leftrightarrow	a	\in	N$であるから，
+$\text{Ker }p=N$である．全射は明らか．
+\■
+
+\定理{15}
+\textbf{(準同形定理)}
+$f$を群$G$から群$G'$への全射準同形で，$N=\text{Ker }f$とする．このとき，
+$f$は同形写像$\overline{f}:G/N	\rightarrow	G'$を引き起こす．
+
+\証明
+$\overline{f}:G/N	\rightarrow	G'$を$\overline{f}(aN)=f(a)$によって定義する．
+$aN=bN$ならば，$a=bc$を満たす$c	\in	N$が存在するから，$f(a)=f(bc)=f(b)f(c)=f(b)e'=f(b)$.
+ゆえに$\overline{f}(aN)$の定義は代表元$a$の選び方によらない．
+\[
+	\overline{f}((aN)(bN))=\overline{f}((ab)N)=f(ab)=f(a)f(b)=\overline{f}(aN)\overline{f}(bN)
+\]
+が成り立つから，$\overline{f}$準同形である．
+
+$aN	\in	\text{Ker }\overline{f}$ならば，$\overline{f}(aN)	=	e'$であるから，
+$f(a)=e'$．よって，$a	\in	N$となり$aN=N$.ゆえに，$\text{Ker }\overline{f}=\{N\}$.
+したがって，補題13より$\overline{f}$は単射である．
+
+$f$が全射であることから，$a'	\in	G'$ならば$f(a)=a'$となる$a	\in	G$があり，
+$\overline{f}(aN)=f(a)=a'$．したがって，$\overline{f}$は全射である．
+\■
+
+\例{14}
+$\Delta	=	\prod_{i<j}(x_i-x_j)$を差積とする．$Z_2=\{1,-1\}$を位数2の
+乗法群とする．
+$\varepsilon :	\mathscr{S}_n	\rightarrow	\Z_2	;	\sigma(\Delta)	=	\varepsilon(\sigma)\Delta$
+（符号を対応させる写像）は全射準同形で，$\text{Ker }	\varepsilon =	\mathscr{A}_n$（$=n$次の交代群）
+である．ゆえに，準同形定理により$\mathscr{S}_n/\mathscr{A}_n	\cong	\Z_2$.
+（保留$\varepsilon$の表現を具体化する）
+
+\定理{16}
+\textbf{(同形定理)}
+$f$を群$G$から$G'$への全射準同形とする．
+$N'$が$G'$の正規部分群ならば，$N=f^{-1}(N')$も$G$の正規部分群で，
+\[
+	G/N	\cong	G'/N'.
+\]
+\証明
+補題12(5)より$N$は$G$の正規部分群である．$p:G'	\rightarrow	G'/N'$を射影
+とすると，補題14より$p	\circ	f	:	G	\rightarrow	G'/N'$は全射準同形である．
+\begin{align*}
+	\text{Ker }	(p	\circ	f)
+		&	=	\{	a	\in	G	\:	|	\:	(p	\circ	f)(a)=N'\}
+			=	\{	a	\in	G	\:	|	\:	f(a)N'	=	N'	\}			\\
+		&	=	\{	a	\in	G	\:	|	\:	f(a)	\in	N'	\}
+			=	f^{-1}(N')=N
+\end{align*}
+が成り立つから，準同形定理により$G/N	\cong	G'/N'$.
+
+この定理で，$N'=\{e'\}$とした場合が準同形定理である．
+
+\系{17}
+群$G$の正規部分群$K$，$N$に対して，$K	\subset	N$ならば，
+$N/K$は$G/K$の正規部分群で，
+\[
+	G/N	\cong	(G/K)	/	(N/K).
+\]
+\証明
+$N$は$G$の正規部分群で，射影$p:G	\rightarrow	G/K$は全射準同形であるから，
+補題12(4)により$p(N)=N/K$は$G/K$の正規部分群である．
+$N=p^{-1}(N/K)$であるから，結果は定理16から従う．
+\■
+
+系17も同形定理といわれる．

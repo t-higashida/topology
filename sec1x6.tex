@@ -1,0 +1,247 @@
+\section{アーベル群の階数}
+
+アーベル群$G$において，その$r$個の元$g_1,g_2,\cdots,g_r$が\textbf{1次独立}
+であるとは，
+\[
+	\sum_{i=1}^r	m_ig_i=0	\quad	(m_i	\in	\Z)	\quad
+	\Rightarrow	m_1=m_2=\cdots	=m_r=0
+\]
+が成り立つときをいう．1次独立でないとき，\textbf{1次従属}であるという．
+
+アーベル群$G$が，ある$r$個の1次独立な元$\{g_1,g_2,\cdots,g_r\}$を含んでいるが，
+任意の$(r+1)$個の元は1次従属なるとき，$G$の\textbf{階数}は$r$であるといい，
+\[
+	\text{rank }G=r
+\]
+と表す．
+
+\補題{22}
+アーベル群$G$の中に，次の条件（ⅰ），（ⅱ）を満たす$r$個の元
+$\{g_1,g_2,\cdots	,	g_r\}$が存在するとする．
+\begin{list}{}{}
+	\item	（ⅰ）$g_1,g_2,	\cdots	,	g_r$は1次独立である．
+	\item	（ⅱ）任意の元$g	\in	G$に対して，$g,g_1,	\cdots	,	g_r$は1次従属である．
+							すなわち，ことごとくは$0$ではない$m_0,m_1,	\cdots,	m_r	\:	(\in	\Z)$が存在して，
+							\[
+									m_0	g	+	m_1	g_1	+	\cdots	+	m_r	g_r	=0
+							\]
+							が成り立つ．
+\end{list}
+このとき，$\text{rank }	G=r$である．
+
+\証明
+任意の$(r+1)$個の元$a_1,a_2,\cdots	,	a_{r+1}	\:	(\in	G)$は1次従属となることを示せばよい．
+（ⅱ）により，ことごとくは$0$でない$m_i,m_{i_1},\cdots	,	m_{i_r}	\:	(\in	\Z)$が
+存在して，
+\[
+	m_ia_i	+	\sum_{j=1}^r	m_{i_j}g_j	=0
+\]
+が成り立つ（$i=1,2,	\cdots	,	r+1$）．このとき，（ⅰ）より$m_i	\ne	0$である．
+$(r+1)$個の変数$x_1,x_2,	\cdots	,	x_{r+1}	$に関する$r$個の連立1次方程式
+\[
+	\sum_{i=1}^{r+1}	m_{i_j}x_i	=	0	\quad	(j=1,2,\cdots	,	r)
+\]
+は，ことごとくは$0$でない有理数の解をもつので，それらの解を
+\[
+	x_i	=	p_i	/	q	\quad	(p_i,q	\ne	0	\in	\Z	,	\:	i=1,2,	\cdots,	r+1)
+\]
+とすると，
+\[
+	\sum_{i=1}^{r+1}	m_i	p_i	a_i	
+		=	-\sum_{i=1}^{r+1}	p_i	\left(\sum_{j=1}^r	m_{i_j}g_j	\right)
+		=	-\sum_{j=1}^r	\left(\sum_{i=1}^{r+1}	m_{i_j}	p_i	\right)	g_j	=0
+\]
+となる．ここで，$m_ip_i$はことごとくは$0$でないから，$a_1,a_2,	\cdots	,	a_{r+1}$
+は1次従属である．
+\■
+
+\pagebreak
+
+\補題{23}
+アーベル群$G$の部分群$H$と剰余群$G/H$の階数が定義されれば，
+$G$の階数も定義されて，$\text{rank } G	= \text{rank }H	+	\text{rank }G/H$が成り立つ．
+
+\証明
+$\text{rank } H=r$とし，$h_1,h_2,	\cdots	,	h_r$を$H$の中の1次独立な元とする．
+射影$p:G	\rightarrow	G/H$による元$g	\in	G$の像を$\overline{g}$で表す．
+$\text{rank }(G/H)	=s$とし，
+$\overline{g}_1,	\overline{g}_2,	\cdots	\overline{g}_s	\:	(g_i	\in	G)$を
+$G/H$の中の1次独立な元とする．このとき，$G$の元$\{h_1	,	\cdots	,	h_r	,	g_1,	\cdots	g_s\}$
+は1次独立となることを示そう．
+\[
+	\text{(*)}\quad	
+	m_1	h_1	+	\cdots	+	m_r	h_r	+	n_1	g_1	+	\cdots	+	n_s	g_s	=	0
+	\quad	(m_i,	n_j	\in	\Z)
+\]
+とする．両辺を射影$p$でうつせば，$G/H$において
+\[
+	n_1	\overline{g}_1	+	\cdots	+	n_s	\overline{g}_s=\overline{0}
+\]
+が成り立つ．$\overline{g}_1	,	\cdots	,	\overline{g}_s$は1次独立であるから，
+$n_1	=	\cdots	=	n_s	=	0$となる．
+よって，式(*)より
+\[
+	m_1	h_1	+	\cdots	+	m_r	h_r	=	0
+\]
+となるが，$h_1,	\cdots	,	h_r$は1次独立であるから，$m_1	=	\cdots	=	m_r	=0$となる．
+ゆえに，$\{h_1	,	\cdots	,	h_r	,	g_1	,	\cdots	,	g_s	\}$は1次独立である．
+
+次に，任意の元$g	\in	G$をとると，$\text{rank }(G/H)=s$であるから，ことごとくは
+$0$でない$n_0,	n_1	,	\cdots	,	n_s	\:	(\in	\Z)$が存在して
+\[
+	n_0	\overline{g}	+	n_1	\overline{g}_1	+	\cdots	+	n_s	\overline{g}_s	=	\overline{0}
+\]
+となる．よって，$n_0	g+	n_1g_1	+	\cdots	+	n_s	g_s	\in	H$である．
+$\text{rank } H =r$であるから，ことごとくは$0$でない
+$m_0	(\ne	0),m_1,	\cdots	,	m_r	(\in	\Z)$が存在して
+\[
+	m_0(n_0	g	+	n_1	g_1	+	\cdots	+	n_s	g_s)+	m_1	h_1	+	\cdots	+	m_r	h_r	=0
+\]
+となる．ここで，$m_0n_0	,	m_0	n_1	,	\cdots	,	m_0	n_s,	m_1	,	\cdots,	m_r$は
+ことごとくは$0$でないから，$g,g_1	,	\cdots	,	g_s,	h_1,	\cdots	,	h_r$は
+1次従属である．したがって，$(r+s)$個の元$g_1	,\cdots	,	g_s	,	h_1	,	\cdots	,	h_r$
+に対して補題22の条件（ⅰ），（ⅱ）が成立するから，$\text{rank }G=r+s$が導かれる．
+\■
+
+\補題{23}
+アーベル群$G$の部分群$H$と剰余群$G/H$の階数が定義されれば，
+$G$の階数も定義されて，$\text{rank }G= \text{rank }H	+ \text{rank }G/H$が
+成り立つ．
+
+\証明$\text{rank }H=r$とし，$h_1,h_2,\cdots	,	h_r$を$H$の中の1次独立な元とする．
+射影$p:	G	\rightarrow	G/H$による元$g	\in	G$の像を$\overline{g}$で表す．
+$\text{rank} (G/H)=s$とし，
+$\overline{g}_1,\overline{g}_2,\cdots	,	\overline{g}_s	\: (g_i	\in G)$を
+$G/H$による元$G/H$の中に1次独立な元とする．このとき，$G$の元$\{h_1,\cdots	,	h_r,
+g_1,\cdots	,	g_s\}$は1次独立となることを示そう．
+\[
+	\text{(*)}	m_1	h_1	+	\cdots	+	m_r	h_r	+	n_1	g_1	+	\cdots	+	n_s	g_s	=	0
+	\quad	(m_i	,	n_j	\in	\Z)
+\]
+とする．両辺を射影$p$でうつせば，$G/H$において
+\[
+	n_1	\overline{g_1}	+	\cdots	+	n_s	\overline{g}_s	=	\overline{0}
+\]
+が成り立つ．$\overline{g}_1	,	\cdots	,\overline{g}_s$は1次独立であるから，
+$n_1	=	\cdots	=	n_s	=0$となる．よって式(*)より
+\[
+	m_1	h_1	+	\cdots	+	m_r	h_r	=0
+\]
+となるが，$h_1	,	\cdots	,	h_r$は1次独立であるから，$m_1	=	\cdots	=	m_r	=0$となる．
+ゆえに，$\{h_1	,	\cdots	,	h_r	,	g_1,	\cdots	,	g_s\}$は1次独立である．
+
+次に，任意の元$g	\in	G$をとると，$\text{rank }(G/H)=s$であるから，ことごとくは
+$0$でない$n_0	,	n_1	,	\cdots	,	n_s	\:	(	\in	\Z)$が存在して
+\[
+	n_0	\overline{g}	+	n_1	\overline{g}_1	+	\cdots	+	n_s	\overline{g}_s	=	\overline{0}
+\]
+となる．よって，$n_0	g	+	n_1	g_1	+	\cdots	+	n_s	g_s	\in	H$である．
+$\text{rank }H=r$であるから，
+ことごとくは$0$でない$m_0	\:	(\ne	0)	,	m_1,	\cdots	,	m_r	\:	(\in	\Z)$が存在して
+\[
+	m_0(n_0	g	+	n_1g_1	+	\cdots	+	n_S	g_s)	+	m_1	h_1	+	\cdots	+	m_r	h_r	=	0
+\]
+となる．ここで，$m_0n_0	,	m_0	n_1	,	\cdots	,	m_0n_s	,	m_1,	\cdots	,	m_r$は
+ことごとくは$0$でないから，$g	,	g_1,	\cdots	,	g_s,h_1,	\cdots	,	h_r$は
+1次従属である．したがって，$(r+s)$個の元$g_1,\cdots	,	g_s,	h_1	,	\cdots	,	h_r$に対して
+補題22の条件（ⅰ），（ⅱ）が成立するから，
+$\text{rank }G	=	r+s$が導かれる．
+\■
+
+$\Lambda$を必ずしも有限ではない添え字の集合とする．アーベル群$G$は，$G$の部分集合
+$S	=	\{	g_\alpha	\:	|	\:	\alpha	\in	\Lambda	\}$が存在して
+$G$の各元$g$が一意的に有限和
+\[
+	g	=	\sum	n_\alpha	g_\alpha	\:	(n_\alpha	\in	\Z)
+\]
+の形に表されるとき，\textbf{自由アーベル群}といわれる．このとき，
+$S$は$G$の\textbf{基底}といわれる．各$g_\alpha	\in	S$の生成する巡回部分群は
+無限巡回群である．
+
+一般に，必ずしも有限ではない$G$の部分集合は，
+そこから任意に取り出された有限個の$h_1,	h_2	,	\cdots	,	h_k$について
+\[
+	\sum_{i=1}^k	m_i	h_i	=	0	\:\:	(m_i	\in	\Z)	\:\:
+	\Rightarrow	\:\:
+	m_1	=	m_2	=	\cdots	=	m_k=0
+\]
+が成り立つとき，\textbf{1次独立}であるといわれる．したがって，基底とは1次独立な生成系
+のことであり，自由アーベル群とは1次独立な生成系をもつアーベル群のことである．
+
+\証明
+$S$を$G$の基底とする．$S$から任意に取り出された有限個の
+$g_1	,	\cdots	,	g_k$について$\forall	g	\in	G$について
+\[
+	\sum_{i=1}^k	m_i	g_i	=	g
+\]
+一意に表されるから特に
+\[
+	\sum_{i=1}^k	m_i	g_i	=	0	\in	G
+\]
+とする．	
+$0	\in	G$で$\sum$は一意に定まるから$\forall m_i=0$．
+$G$が$S$によって生成されること,
+すなわち$G	=	\bigcap_{S	\subset	G_\alpha}	G_\alpha$を示す．
+$G_\alpha$が$S$を含む$G$部分群のとき，補題8より$\bigcap_{S	\subset G_\alpha}	G_\alpha$は
+$G$の部分群である，また
+$	g	\in	G	\Longrightarrow	\exists g_\alpha	\in S,\exists	n_\alpha,	g	=	\sum	n_\alpha	g_\alpha	\in	\bigcap	G_\alpha
+$，つまり$G	\subset \bigcap G_\alpha.$
+\■
+
+$G$が$r$個の元$g_1,	g_2	,	\cdots	,	g_r$から成る基底をもつ自由アーベル群のとき，
+$G$は$\Z$の$r$個の直和$\Z	\oplus	\Z	\oplus	\cdots	\oplus	\Z$と同形となる．
+このことは，
+\[
+	g_i	\mapsto	(0,	\cdots	,	0	,	1	,	0,	\cdots	,	0)	\quad	(i\text{番目の成分のみが$1$で他は$0$})
+\]
+によって定まる写像$G	\rightarrow	\Z	\oplus	\Z	\oplus	\cdots	\oplus	\Z	\: (r\text{個})$
+が同形写像であることからわかる．逆に$\Z$の$r$個の直和
+$\Z	\oplus	\Z	\oplus	\cdots	\oplus	\Z$と同形な群が，$r$個の元からなる基底を
+もつことも明らかであろう．
+
+また，補題22より$r$個の元から成る基底をもつ自由アーベル群の階数は$r$である．
+
+\例{16}
+加法群$\Q$（例4）は自由アーベル群ではない．実際，任意の$u,v	\in	\Q^*$
+（例5）に対し，$xu+yv=0$となる$x	,	y	\in	\Q^*$が存在し，$x,y$の分母の公倍数$m$を
+用いて$(mx)u+(my)v=0	\:	(	mx,	my	\in	\Z-\{0\})$となる．
+
+　
+
+$M$を空でない集合とする．写像$f	:	M	\rightarrow	\Z	;	\sigma	\mapsto	f(\sigma)$を，
+有限個の$\sigma	\in	M$に対してだけ$f(\sigma)	\ne	0$であるようなものとする．
+このような$f$の全体の集合を$A$とする．
+\[
+	A	=	\{	f	:	M	\rightarrow	\Z	;			\:	\sigma	\rightarrow	f(\sigma)	
+						\:	|	\:
+					\#	\{	\:		f(\sigma)	\ne	0	\}	<	\infty	\}
+\]
+$f,g	\in	A$に対し，和$f+g$を，
+\[
+	(f+g)(\sigma)	=	f(\sigma)	+g(\sigma)	\quad	(\sigma	\in	M)
+\]
+によって定義すれば，$f	+	g$でも有限個の$\sigma	\in	M$に対してだけ
+$(f	+	g)(\sigma)	\ne	0$であるから，
+$f	+	g	\in	A$となる．容易にわかるように，$A$はこの和に関してアーベル群となる．
+与えられた$\sigma	\in	M$に対し
+\[
+	f_\sigma	(x)	=	\begin{cases}
+										0	\quad	(	x	\ne	\sigma	\text{のとき})	\\
+										1	\quad	(	x	=		\sigma	\text{のとき})	\\	
+									\end{cases}
+\]
+によって定められる関数$f_\sigma$を$\sigma$の\text{特性関数}という．特性関数全体の集合
+$\{f_\sigma	:	|	\:	\sigma	\in	M	\}$は$A$の基底をなす．
+実際，各関数$f	\in	A$は有限和
+\[
+	f	=	\sum	n_\sigma	f_\sigma	\quad	(n_\sigma	\in	\Z)
+\]
+として一意的に表される．ここで，$n_\sigma	=	f(\sigma)$であり，
+和は$f(\sigma)	\ne	0$であるようなすべての$\sigma	\in	M$についての和である．
+記号を簡略するためにしばしば元$\sigma	\in	M$とその特性関数$f_\sigma$を同一視して，
+上のかわりに形式的な１次結合
+\[
+	f=\sum	n_\sigma	\sigma	\quad	(n_\sigma	\in	\Z)
+\]
+を用いる．この自由アーベル群$A$は，\text{集合$M$によって生成されるアーベル群}
+と称される．

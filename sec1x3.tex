@@ -1,0 +1,144 @@
+\section{対称群}
+
+$S$を有限集合，すなわち有限個の元からなる集合とし，$S$の元の個数を$n$とする．
+全単射$\sigma	:	S	\rightarrow	S$を$n$文字の\textbf{置換}という．
+$\mathscr{S}_n$を$n$文字の置換全体の集合とし，演算$m:\mathscr{S}_n	\times	\mathscr{S}_n	\rightarrow	S_n$を
+$\sigma,\tau	\in	S_n$に対し
+\[
+	m(\sigma,\tau)=\tau	\circ	\sigma	\quad	\text{($\sigma$と$\tau$の合成)}
+\]
+と定義すると$\mathscr{S}_n$は群になる．合成$\tau	\circ	\sigma$を$\sigma$と$\tau$の\textbf{積}という．
+G1を満たすことは合成の性質から明らかで，単位元は恒等写像$\text{id}$，置換$\sigma$の逆元は
+$\sigma$の逆写像$\sigma^{-1}$である．$\text{id}$を\textbf{恒等置換}，$\sigma^{-1}$を
+$\sigma$の\textbf{逆置換}という．
+
+$\mathscr{S}_n$は$n$次の\textbf{対称群}といわれる．
+$n	\geqq	3$に対しては交換法則G4が成立しないので，
+$\mathscr{S}_n	\:	(n	\geqq	3)$はアーベル群ではない．
+$n$文字の置換$\sigma$の総数は$n$文字の順列の
+総数と等しいので，$\#\mathscr{S}_n=n!$である．対称群の部分群を\textbf{置換群}という．
+
+$S=\{1,2,\cdots,n\}	\:	(n	\geqq	2)$とすると，置換$\sigma	:	M	\rightarrow	M$は
+$1,2,\cdots,n$の像$\sigma(1),\sigma(2),\cdots,\sigma(n)$によって完全に定まるので
+\[
+	\sigma=\begin{pmatrix}
+					1					&	2					&	\cdots	&		n				\\
+					\sigma(1)	&	\sigma(2)	&	\cdots	&	\sigma(n)	\\
+					\end{pmatrix}
+\]
+と表される．$i,j$が$S$の異なる元で
+\[
+	\sigma(i)=j	,	\sigma(j)=i,	\quad	k	\in	S-\{i,j\}\text{に対して}\sigma(k)=k
+\]
+が成り立つとき，$\sigma$を\textbf{互換}といい$(i	\:\:	j)$で表す．
+
+\定理{10}
+任意の置換はいくつかの互換の積として表される．
+
+\証明
+文字の個数$n$についての数学的帰納法を用いる．$n=2$の場合は
+\[
+	\begin{pmatrix}
+		1	&	2	\\
+		1	&	2	\\
+	\end{pmatrix}
+	=
+	(1\:\:	2)	\circ	(1\:\:	2),
+	\quad
+	\begin{pmatrix}
+		1	&	2	\\
+		2	&	1	\\
+	\end{pmatrix}
+	=
+	(1\:\:	2)
+\]
+であるから，定理は成り立つ．
+
+$k	\geqq	3$とする．$n=k-1$に対してこの定理が成り立つと仮定して，
+$n=k$の場合を証明しよう．任意の$k$文字の置換$\sigma$と互換$(k	\:\:	\sigma(k))$との積をつくれば
+\[
+	(*)
+	\quad
+	(k	\sigma(k))	\circ
+	\begin{pmatrix}
+		1					&	2					&	\cdots	&	k-1					&	k	\\
+		\sigma(1)	&	\sigma(2)	&	\cdots	&	\sigma(k-1)	&	\sigma(k)	\\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		1		&	2		&	\cdots	&	k-1			&	k	\\
+		p_1	&	p_2	&	\cdots	&	p_{k-1}	&	k	\\
+	\end{pmatrix}
+\]
+となる．ここで，$p_1,p_2,\cdots,	p_{k-1}$は$1,2,\cdots,k-1$の順序を変えたものであるから
+
+右辺は$(k-1)$文字の置換と考えられ，帰納法の仮定により，いくつかの互換の積で表される．
+そこで，$(*)$の両辺に左から$(k\sigma(k))$を掛けると，
+$(k\sigma(k))\circ	(k\sigma(k))=\text{id}$であるから，結局，$\sigma$は互換の積で表される．
+\■
+
+1つの置換を互換の積として表すとき，その表し方は1通りではない．
+
+\例{12}
+\begin{align*}
+	\begin{pmatrix}
+		1	&	2	&	3	\\
+		3	&	1	&	2	\\
+	\end{pmatrix}
+	=	(1	\:\:	2	\:\:	3)
+	&	=	(2\:\:	3)	\circ	(1\:\:	2)
+		=	(1\:\:	2)	\circ	(1\:\:	3)	\\
+	&	=	(1\:\:	2)	\circ	(1\:\:	3)	\circ	(2\:\:	3)	\circ	(2\:\:	3)	
+\end{align*}
+
+\定理{11}
+$n$文字の置換$\sigma$を互換の積で表すとき，その互換の個数が偶数であるか
+奇数であるかは，その表し方に関係なく$\sigma$だけによって定まる．
+
+\証明
+$n$個の変数$x_1,x_2,\cdots,x_n$をとり，多項式
+\begin{align*}
+	\Delta	=	\prod_{i<j}	(x_i	-	x_j)
+					=			&(x_1-x_2)	\cdot	(x_1-x_3)	\cdot	\cdots	\cdot	(x_1-x_n)	\\
+					\cdot	&(x_2-x_3)	\cdot	\cdots	\cdot	(x_2-x_n)	\\
+						&																		\quad	\cdots	\cdots	\\
+					\cdot	&(x_{n-1}-x_n)
+\end{align*}
+を考える($\Delta $は\textbf{差積}とよばれる)．$\Delta$において，$x_i,x_j\:(i\ne	j)$のいずれかを
+含むすべての因数は
+\[
+	x_i-x_j	\quad	\text{および}	\quad	(x_i-x_k)\cdot	(x_j-x_k)	\quad	(k\ne	i,j)
+\]
+である．
+\[
+	\sigma (\pm	\Delta )	=	\pm	\prod_{i<j}	(x_{\sigma(i)}	-	x_{\sigma(j)})	\quad	\text{(複合同順)}
+\]
+と定めると，互換$(i\:\:	j)$に対し$(i\:\:	j)(\Delta )$は$\Delta $において変数$x_i$と
+$x_j$とを交換することによって得られる．このとき，$x_i-x_j$は$-(x_i-x_j)$に変わるが，
+$(x_i-x_k)\cdot	(x_j-x_k)	\:	(k	\ne	i,j)$は変わらない．
+よって，$\Delta$は$-\Delta$に変る．
+定理10により置換$\sigma $を互換
+$\tau_r	,	\tau_{r-1}	,	\cdots	,	\tau_2	,	\tau_1$の積として
+$\tau_r	\circ	\tau_{r-1}	\circ	\cdots	\circ	\tau_2	\circ	\tau_1$
+と表すとき，
+\[
+	\sigma (\Delta )	=\tau_r	\circ	\tau_{r-1}	\circ	\cdots	\circ	\tau_2	\circ	\tau_1(\Delta )=(-1)^r	\Delta 
+\]
+となる．ゆえに，置換$\sigma $をどのように互換の積で表しても$(-1)^r$は一定である．すなわち，
+$r$が偶数であるか奇数であるかは置換$\sigma $によって定まる．
+\■
+
+偶数個の互換の積として表される置換を\textbf{偶置換}，奇数個の互換の積として表される置換を
+\textbf{偶置換}という．
+
+\問{6}
+$n$文字の偶置換全体の集合は，$\mathscr{S}_n$の正規部分群をなすことを示せ．この群を$n$次の
+\textbf{交代群}といい，$\mathscr{A}_n$で表す．
+
+\証明
+２つの偶置換の積は偶置換であり，偶置換の逆置換は偶置換であるから，定理6より
+偶置換全体の集合$\mathscr{A}_n$は$\mathscr{S}_n$の部分群をなす．
+任意の置換$\sigma$，任意の偶置換$\tau$に対して
+$\sigma	\tau	\sigma^{-1}$は偶置換であるから，$\sigma	\mathscr{A}_n	\sigma^{-1}	\subset	\mathscr{A}_n$
+が成り立ち，補題9により$\mathscr{A}_n$は$\mathscr{S}_n$の正規部分群である．
+\■

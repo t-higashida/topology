@@ -1,0 +1,219 @@
+\chapter{単体と複体}
+本章以降が代数的位相幾何学の基礎部分である．図形の位相幾何学的な
+性質の研究を，単体と呼ばれる構成要素から成る複体の形でとらえることから
+はじめよう．本章では，単体と複体の概念を導入し基本的な性質を調べる．
+
+\section{アフィン空間とアフィン写像}
+
+$n$次元ユークリッド空間$\R^n$の点$x$は，\textbf{座標}と呼ばれる$n$個の実数の組
+$(x_1,	x_2,	\cdots	,	x_n)$によって表されるが，座標とベクトル$\overrightarrow{Ox}$とを
+同一視して，$\R^n$のベクトル$x$という言い方をする．$\R^n$の部分集合$M$と$\R^n$のベクトル
+$p$に対して，集合
+\[
+	M+p	=	\{y	\:	|	y	=	x	+	p	,	\:	x	\in	M\}
+\]
+を$M$を$p$だけ\textbf{平行移動}して得られる集合という．
+$M	+	(-p)	$を$M-p$とも書く．
+\underline{$M$が$\R^n$の線形部分空間の}	\underline{とき，
+$\	p	\in	M$ならば，$M	\pm	p	=	M$である}．
+
+$\R^n$の$m$次元線形部分空間を平行移動して得られる集合$E	\subset	\R^n$のことを，
+\textbf{$m$次元アフィン空間}という．すなわち，$E$が$m$次元アフィン空間であるとは，
+$\R^n$のあるベクトル$p$に対して$E	-	p$が$m$次元線形部分空間となることである．
+このとき，$E	-	p	\ni	0$であるから，
+$E	\ni	p$となる．$E$の他の点$q$に対して，
+$q	-	p	\in	E	-p$（線形部分空間）であるから，
+\[
+	E	-	p	=	E	-p	-	(q-p)	=	E	-q
+\]
+となる（下線部参照）．それゆえ，$\R^n$の$m$次元線形部分空間$E	-	p$は$E$の点$p$のとり方によ
+らずに一意的に定まる．これを$E$の\textbf{基準線形空間}といい，$V(E)$と表す．
+$E$と$V(E)$は$\R^n$の部分空間として自然に位相空間となる．
+
+$E$の任意の2点$p,q$に対して，$E-p$のベクトル$v=q-p	=	\overrightarrow{pq}$が
+ただ１つ定まる．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=5cm,height=4cm]{sec3x1x1.bmp}
+\end{figure}
+
+$p$と$v$を用いて，$q=p+v$と書く．明らかに$v,w	\in	V(E)$，$p	\in	E$に対し，
+$(p+v)	+	w	=	p+	(v+	w)$が成り立つ．
+
+\例{1}
+$t	\in	\R,	\:	p,q	\in	E$とする．点
+\[
+	x=	(1-t)	p	+	tq
+\]
+は，$x-p	=	t(q-p)$，すなわち$\overrightarrow{px}	=	t	\overrightarrow{pq}$を満たすただ１つの点
+$x	\in	E$である．$p	\ne	q$のとき，集合
+\[
+	\{	x	\:	|	\:	x	=	(1-t)	p	+	tq,	\:	t	\in	\R	\}
+\]
+は2点$p,q$を通る直線であり，これを$pq$で表す．また，集合
+\[
+	\{x	\:	|	\:	x	=	(1-t)p	+	tq	,	0	\leqq	t	\leqq	1,	t	\in	\R\}
+\]
+は2点$p,q$を結ぶ線分であり，これを$|pq|$で表す．
+$V(pq)$はベクトル$q-p$で生成される1次元線形部分空間である．
+\□
+
+アフィン空間$E,F$の間の写像$f:E	\rightarrow	F$が\textbf{アフィン写像}であるとは，
+$E$の任意の2点$p,q$および任意の実数$t$に対して
+\[
+	f((1-t)p+	tq)	=	(1-t)f(p)	+	tf(q)
+\]
+が成り立つことである．
+
+\補題{1}
+
+$f:	E	\rightarrow	F$をアフィン写像とする．$E$の任意の点$p$を固定して，
+写像$\overline{f}_p	:	V(E)	\rightarrow	V(F)$を
+\[
+	\overline{f}_p(v)	=	f(p+v)	-	f(p)	\quad	(v	\in	V(E))
+\]
+によってを定義する．
+このとき，次が成り立つ．
+
+\begin{list}{}{}
+	\item	（１）$\overline{f}_p	$は線形写像である．
+	\item	（２）$E$の任意の2点$p,q$に対し，$\overline{f}_p	=	\overline{f}_q$.
+\end{list}
+\証明
+（１）任意の$v	\in	V(E)$と$t	\in	\R$に対して，定義より
+\begin{align*}
+	\overline{f}_p(tv)	&=	f(p+tv)	-	f(p)	=	f((1-t)p	+	t(p+v))-f(p)	\\
+											&=	(1-t)f(p)	+	tf(p+v)-f(p)										\\
+											&=	t(f(p+v)-f(p))	=	t\overline{f}_p(v).
+\end{align*}
+次に，任意の$u,v	\in	V(E)$に対して，定義と上の結果を用いて
+\begin{align*}
+	\overline{f}_p(u+v)	&=	f(p+u+v)	-	f(p)	\\
+											&=	f\left(\left(1-\frac{1}{2}\right)(p+2u)	+	\frac{1}{2}(p+2v)	\right)
+													-	f(p)	\\
+											&=	\frac{1}{2}	f(p+2u)	+	\frac{1}{2}	f(p+2v)	-	f(p)	\\
+											&=	\frac{1}{2}	(f(p+2u)	-	f(p))	+	\frac{1}{2}	(f(p+2v)	-	f(p))	\\
+											&=	\frac{1}{2}	\overline{f}_p(2u)	+	\frac{1}{2}	\overline{f}_p	(2v)
+													=	\overline{f}_p(u)	+	\overline{f}_p(v).
+\end{align*}
+（２）
+任意の$v	\in	V(E)$に対して，定義と$\overline{f}_p$の線形性より
+\begin{align*}
+	\overline{f}_q(v)	&\stackrel{\text{def}}{=}	
+												f(q+v)	-	f(q)	=	f(p+v+q-p)	-	f(q)	\\
+										&=	\overline{f}_p(v+q-p)	+	f(p)	-	f(q)	\\
+										&=	\overline{f}_p(v+q-p)	+	f(p)	-	f(p+q-p)	\\
+										&=	\overline{f}_p(v+q-p)	-	\overline{f}_p(q-p)	\\
+										&=	\overline{f}_p(v)
+\end{align*}
+が成り立つから，$\overline{f}_q	=	\overline{f}_p$.
+\■
+この補題により，$f:	E	\rightarrow	F$がアフィン写像ならば
+\[
+	\overline{f}(q-p)	=	f(q)	-	f(p)	\quad	(p,q	\in	E)
+\]
+によって線形写像$\overline{f}	:	V(E)	\rightarrow	V(F)$が一意的に定まることがわかる．
+逆に，$\overline{f}$が線形写像ならば$f$がアフィン写像となることも，次によりわかる．
+
+\補題{2}
+$f:	E	\rightarrow	F$をアフィン空間の間の写像とする．$E$の任意の点$p$を固定して，
+\[
+	\overline{f}_p(v)	=	f(p+v)	-	f(p)	\quad	(v	\in	V(E))
+\]
+によって写像$\overline{f}_p	:	V(E)	\rightarrow	V(F)$を定義する．
+ある点$p_0	\in	E$に対して$\overline{f}_{p_0}$が線形写像であるならば，次が成り立つ．
+\begin{list}{}{}
+	\item	（１）$E$の任意の点$p$に対して$\overline{f}_p$は線形写像である．
+	\item	（２）$f$はアフィン写像である．
+\end{list}
+\証明
+（１）．補題１（２）の証明より$\overline{f}_p=\overline{f}_{p_0}$となるから，
+$\overline{f}_p$も線形写像である
+（（２）の証明では，定義と$\overline{f}_0$の線形性だけを仮定しており，
+$f$がアフィン写像であることは仮定していない）．
+
+（２）（１）より任意の点$p	\in	E$に対して，$\overline{f}_p$は線形写像であるから，
+\begin{align*}
+	f((1-t)p	+	tq)	&=	f(p+t(q-p))	=	\overline{f}_p(t(q-p))+f(p)	\\
+									&=	t	\overline{f}_p(q-p)	+	f(p)	\\
+									&=	t(f(p+q-p)	-	f(p))	+	f(p)	\\
+									&=	t(f(q)	-	f(p))	+	f(p)	\\
+									&=	(1-t)	f(p)	+	t	f(q)	\quad	(p,q	\in	E	,	\:	t	\in	\R)
+\end{align*}
+よって$f$はアフィン写像である．\■
+
+一般に$(r+1)$個の点$p_0,	p_1,	\cdots	,	p_r	\in	E$と，
+$a_0	+	a_1	+	\cdots	+	a_r	=1$を満たす$(r+1)$個の実数$a_0,	a_1	,	\cdots	,	a_r$に対して，点
+\[
+	x	=	\sum_{i=0}^r	a_i	p_i
+\]
+は次に式を満たす点$x	\in	E$である．
+\begin{align*}
+	x	-	p_0	&=	(a_0-1)p_0	+	\sum_{i=1}^r	a_i	p_i	\\
+					&=	-(a_1	+	\cdots	+	a_r)p_0	+	\sum_{i=1}^r	a_i(p_i	-	p_0)	\\
+					&=	\sum_{i=1}^r	a_i(p_i	-	p_0)
+\end{align*}
+
+\問{1}
+$f	:	E	\rightarrow	F$がアフィン写像であるための必要十分条件は，
+任意の$p_0,p_1,	\cdots	,	p_r	\in	E$及び，$a_0	+	a_1	+	\cdots	+	a_r=1$を満たす
+任意の$a_0,	a_1,	\cdots	,	a_r	\in	\R$に対して
+\[
+	f\left(\sum_{i=0}^r	a_i	p_i	\right)	=	\sum_{r=0}^r	a_i	f(p_i)
+\]
+が成り立つことである．これを証明せよ．
+
+\証明
+
+必要性：$r$に関する帰納法による．$r=0$のときは，$a_0=1$となり，
+\begin{align*}
+	f(a_0	p_0	(1-a_0)	q)	&=	a_0	f(p_0)	+	(1-a_0)	f(q)	\\
+												&=	a_0	f(p_0)
+\end{align*}
+で成り立つ．
+$r	>	0$とし，$r-1$に対して結果が成り立つと仮定する．
+$\sum_{i=0}^r	a_i	=1$とすると，$a_0	,	a_1	,	\cdots	,	a_r$
+の中に$1$と等しくないものが存在する．$a_r	\ne	1$と仮定して一般性を失わない．
+このとき，
+\begin{align*}
+	f\left(\sum_{i=0}^r	a_i	p_i\right)
+		&=	f	\left(
+						(1-a_r)	\sum_{i=0}^{r-1}	(1-a_r)^{-1	}a_i	p_i	+	a_r	p_r
+					\right)\\
+		&=	(1-a_r)	f	\left(
+										\sum_{i=0}^{r-1}	(1-a_r)^{-1}	a_i	p_i
+									\right)	+	a_rf(p_r)	\\
+		&=	(*)
+\end{align*}
+$\sum_{i=0}^{r-1}	(1-a_r)^{-1}	a_i	\times	a_i	=1$であるから
+帰納法の仮定より
+\[
+	f	\left(	\sum_{i=0}^{r-1}	(1-a_r)^{-1}	a_i	p_i	\right)
+	=
+	\sum_{i=0}^{r-1}	(1-a_r)^{-1}	a_if(p_i)
+\]
+となる．これを上式に代入すれば，
+\begin{align*}
+	(*)	&=	(1-a_r)	\sum_{i=0}^{r-1}	(1-a_r)^{-1}	a_if(p_i)	+	a_rf(p_r)	\\
+			&=	\sum_{i=0}^{r-1}	a_if(p_i)	a_rf(p_r)	\\
+			&=	\sum_{i=0}^r	a_if(p_i)
+\end{align*}
+が得られる．
+
+十分性：$r=1$の場合に相当するから，明らか．
+\■
+特に，アフィン空間$E$の次元$m$が，$E$を含むユークリッド空間$\R^n$の次元
+$n$に等しいとき，集合としては$E=\R^n$である．
+点$O	\in	E$を固定し，
+点$p	\in	E$に対してベクトル$v	\in	\overrightarrow{Op}=	p-0	\in	\R^n$
+を対応させることによって得られる全単射$E	\leftrightarrow	\R^n$
+により，我々は$n$次元アフィン空間の点を$\R^n$の点と同一視する．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=4cm,height=3cm]{sec3x1x2.bmp}
+\end{figure}
+
+今後，
+殊更，アフィン空間という言い方をせず，ユークリッド空間の点という言い方で
+通すが，適宜この同一視が行われるものとする．

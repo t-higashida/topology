@@ -1,0 +1,170 @@
+\section{連結性と弧状連結性}
+
+位相空間$X$が\textbf{連結}であるとは，
+$X$が共通部分をもたない2つの空でない開集合の和として
+表されないこと，すなわち
+\[
+	X=	A	\cup	B,	\:	A	\cap	B	=	\varnothing,	\:\:
+	A,	B	\text{は$X$の開集合}
+	\Longrightarrow	A	=	\varnothing	\text{または	}	B=\varnothing
+\]
+が成り立つことである．$X$の部分集合$M$が\textbf{連結}であるとは，
+部分空間$M$が連結であるときをいう．
+
+\定理{25}
+位相空間$X$について，次の条件は同値である．
+\begin{list}{}{}
+	\item	（１）$X$は連結である．
+	\item	（２）$X$は部分集合$A$が$X$の開かつ閉集合$\Longrightarrow	A	=	\varnothing$または$A=X$．
+	\item	（３）$X	=	G	\cup	H$，$\overline{G}	\cap	H	=	\varnothing$，$G	\cap	\overline{H}	=	\varnothing$
+							$\Longrightarrow	G	=	\varnothing$または$H	=	\varnothing$．
+	\item	（４）$X	=	G	\cup	H$，$G	\cap	H	=	\varnothing$，$G,H$は$X$の閉集合
+							$\Longrightarrow	G	=	\varnothing$または$H	=	\varnothing$．
+\end{list}
+
+\証明
+（１）$\Longrightarrow$（２）：$A$を$X$の開かつ閉集合であるとすると，
+$X-A$も閉かつ開集合であるから，
+\[
+	X=A	\cup	(X-A)	,	\:	A	\cap	(X-A)	=	\varnothing,	\:	A,	X-A	\text{は$X$の開集合}
+\]
+となる．よって，$A=	\varnothing$または$X-A	=	\varnothing$．すなわち，$A	=	\varnothing$または
+$A=X$．
+
+（２）$\Longrightarrow$（３）：$X	=	G	\cup	H$より$X-H	\subset	G$．$\overline{G}	\cap	H	=	\varnothing$より
+$\overline{G}	\subset	X	-H$．よって，$X	-	H	\subset	G	\subset	\overline{G}	\subset	X-H$．
+ゆえに，$G	=	\overline{G}$となり，$G$は$X$で閉である．
+また，$X=G	\cup	H$より$X	-	G	\subset	H$．$G	\cap	\overline{H}	=	\varnothing$より
+$\overline{H}	\subset	X	-	G$．よって$X	-	G	\subset	H	\subset	\overline{H}	\subset	X-G$．
+ゆえに，$\overline{H}	=	X-G$となり，$G$は$X$で開である．したがって（２）より
+$G	=	\varnothing$または$G	=	X$すなわち，$G	=	\varnothing$または$H	=	\varnothing$である．
+
+（３）$\Longrightarrow$（４）：
+$G,H$が$X$の閉集合ならば，$\overline{G}=G,\overline{H}=H$が成り立つから．
+
+（４）$\Longrightarrow$（１）：
+$A,B$が$X$の開集合ならば，$X-A$,$X-B$は$X$の閉集合であり，
+$(X	-	A)	\cup	(X-B)	=	X	-	A	\cap	B	=	X$，$(X-A)	\cap	(X-B)	=	X-A	\cup	B	=	\varnothing$で
+あるから，$X-A	=	\varnothing$または$X-B	=	\varnothing$．
+したがって，$B=\varnothing$または$A=\varnothing$．
+\■
+
+\定理{26}
+$X$が連結で，$f:X	\rightarrow	Y$が全射連続写像であるならば，
+$Y$も連結である．とくに，$X$と$Y$が同相であるとき，$X$が連結ならば$Y$も連結である．
+
+\証明
+$Y$が連結でないと仮定すると，$A	\cup	B=Y	,	A	\cap	B	=	\varnothing
+,	A	\ne	\varnothing,	B	\ne	\varnothing$であるような$Y$の開集合$A,B$が存在する．
+$f$は全射連続写像であるから，
+$f^{-1}(A),	f^{-1}(B)$はどちらも空でない$X$の開集合で，$f^{-1}(A)	\cup	f^{-1}(B)=X$，
+$f^{-1}(A)	\cap	f^{-1}(B)	=	\varnothing$を満たす．よって，$X$は連結でない．
+これは矛盾である．
+\■
+
+次の定理は，実数直線$\R$の部分集合の連結性を判定する上に有効である．
+
+\定理{27}
+実数直線$\R$の部分集合$X$が連結であるための必要十分条件は，任意の$a,b	\in	X	\:	(a	<	b)$に
+対し閉区間$[a,b]$が$X$に含まれることである．
+
+\証明
+必要性．ある$a,b	\in	X	\:	(a	<	b)$が存在して$[a,b]	\not\subset	X$，
+すなわち$[a,b]	-	X	\ne	\varnothing$と仮定する．このとき，
+$[a,b]	-	X$に属する元$c$をとると，$a	<	c	<	b$である．
+そこで，$A	=	(	-\infty	,	c)	\cap	X$，$B=(c,	\infty)	\cap	X$と定めれば，
+\[
+	\text{（＊）}	\qquad	A	\cup	B	=	X,	A	\cap	B	=	\varnothing,	A,B	\text{は$X$の開集合},A	\ne	\varnothing,	B	\ne	\varnothing
+\]
+となるから，$X$は連続でない．
+
+十分性．部分集合$X$は，任意の$a,b	\in	X	\:	(a	<	b)$に対し$[a,b]	\subset	X$であるが
+連結でないと仮定する．このとき，$X$の開集合$A,B$で上の（＊）を満たすものが存在する．
+$x	\in	A	,	y	\in	B,	\:	x	<	y$として一般性を失わない．
+仮定より$[x,y]	\subset	X$である．$[x,y]	\cap	A$の上限を$c$とする．$c	\in	[x,y]	\subset	X	=	A\cup	B$であるから，
+$c	\in	A$または$c	\in	B$である．
+
+$c	\in	A$ならば，$A$は$X$の開集合であるから$U(c;\varepsilon )	\subset	A$となる$\varepsilon >0$が存在する．
+ただし，$U(c	;	\varepsilon )	=	\{p	\in	X	\:	|	\:	|p-c|<\varepsilon 	\}$である．
+このとき，$y	\in	B$で$A	\cap	B	=	\varnothing$であるから，$c	<	y$であり，
+$c	<	d	<	y$かつ$c	<	d	<	c	+	\varepsilon $となる$d$をとると，
+$d	\in	[x,y]	\cap	U(c	;	\varepsilon )	\subset	[x,y]	\cap	A,	c	<	d$となる．これは
+$c$が$[x,y]	\cap	A$の上限であることに反する．
+
+$c	\in	B$ならば，$B$は$X$の開集合であるから$U(c	;	\varepsilon )	\subset	B$となる$\varepsilon >	0$が
+存在する．$x	\in	A$で$A	\cap	B	=	\varnothing$であるから$x	<	c$であり，
+上限$c$の定義より，$x	<	d	<	c$かつ$c	-	\varepsilon <	d	<	c$となる$d	\in	A$が存在する．
+このとき，$d	\in	[x,c]	\cap	U(c	;	\varepsilon )	\subset	B$となるから，
+$d	\in	A	\cap	B	=	\varnothing$．これは矛盾である．
+\■
+
+\系{28}
+$a,b$を$a	<	b$を満たす実数とする．$(a,b),	(a,b],	[a,b)	,	[a,b],(a,\infty),	[a,\infty),
+(-\infty,	a),	(-\infty,a],\R$はすべて連結である．
+ここで，$(a,b]	=	\{x	\in	\R	\:	|	\:	a	<	x	\leqq	b\},	(-\infty	,	a)	=	\{	x	\in	\R	\:	|	x	<	a\}$など．
+
+　
+
+$x$を位相空間$X$の点とする．$x$を含む最大の連結な部分集合を$X$における$x$の\textbf{連結成分}という．
+
+位相空間$X$が\textbf{弧状連結}であるとは，$X$の任意の2点$x,y$に対して，閉区間$I	=	[0,1]$から
+$X$への連続写像$w	:I	\rightarrow	X$で，$w(0)	=	x	,	w(1)	=	y$を満たすものが存在することである．
+$w$を$x$と$y$を結ぶ\textbf{道}（または$x$から$y$への\textbf{道}）という．
+$x$を$w$の\textbf{始点}，$y$を$w$の\textbf{終点}という．
+
+\定理{29}
+$X$が弧状連結で，$f:	X	\rightarrow	Y$が全射連続写像であるならば，$Y$も弧状連結である．
+特に，$X$と$Y$が同相であるとき，$X$が弧状連結ならば$Y$も弧状連結である．
+
+\証明
+$x,y$を$Y$の任意の2点とすると，$f$は全射であるから，$f(p)=x,	f(q)=y$となるような$X$の点$p,q$がある．
+$X$は弧状連結であるから，$p$と$q$を結ぶ道$w	:	I	\rightarrow	X$が存在する．
+このとき，合成写像$f	\circ	w	:	I	\rightarrow	Y$は$x$と$y$を結ぶ道である．
+したがって，$Y$は弧状連結である．
+\■
+
+\定理{30}
+位相空間$X$は，弧状連結ならば連結である．
+
+\証明
+$X$が連結でないと仮定すれば，$X$の空でない開集合$A,B$で，$A	\cup	B	=	X,	A\cap	B	=	\varnothing$と
+なるものが存在する．$a	\in	A	,	b	\in	B$をとるとき，$X$の弧状連結性より，
+道$w	:	I	\rightarrow	X$で，$w(0)	=	a	,	w(1)	=	b$となるものが存在する．
+このとき，$A'=	w(I)	\cap	A,	B'	=	w(I)	\cap	B$は空でない$w(I)$の開集合で，
+$A'	\cup	B'	=	w(I),	A'	\cap	B'	=	\varnothing$を満たす．したがって，$w(I)$は連結でない．
+ところが，系28より$I$は連結で，それゆえ，定理26より$w(I)$は連結である．これは矛盾である．
+\■
+
+$x$を位相空間$X$の点とする．$x$を含む最大の弧状連結な部分集合を，$X$における$x$の\textbf{弧状連結成分}
+という．
+
+\例{16}
+$A	=	[	0,	1/2]	,	B=\{(x,y)	\in	\R^2	\:	|	\:	x	+	ny=1,	0	<	x	<	1,	n	\in	\N	\}$とする．
+$X=A	\cup	B$は連結であるが弧状連結ではない．したがって$X$における点$(1,0)$の弧状連結成分は$B$，
+連結成分は$X$である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=5cm,height=4cm]{sec2x6x30.bmp}
+\end{figure}
+
+$X$の$(k+1)$個の点$x_0	,	x_1,	\cdots	,	x_k$に対し，$w_i	(	i=1,	2,	\cdots	,	k)$を$k_{i-1}$から
+$x_i$への道とする．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=15cm,height=3cm]{sec2x6x31.bmp}
+\end{figure}
+$w_1,	w_2	,	\cdots	,	w_k$を\textbf{つないだ道}(または道$w_1	,	w_2	,	\cdots	,	w_k	$の\textbf{積})とは，
+\begin{align*}
+	w(s)	=	\begin{cases}
+						w_1	(ks)					&	(0		\leqq	s	\leqq	1/k)			\\
+						w_2	(ks-1)				&	(1/k	\leqq	s	\leqq	2/k)			\\
+						\cdots						&	\cdots												\\
+						w_i	(ks-(i-1))		&	((i-1)/k	\leqq	s	\leqq	i/k)	\\
+						\cdots						&	\cdots												\\
+						w_k	(ks-(k-1))		&	((k-1)/k	\leqq	s	\leqq	1)
+					\end{cases}
+\end{align*}
+によって定義される道$w	:	I	\rightarrow	X$のことである．$w$が連続写像であることは補題15による．
+$w_1,	w_2,	\cdots	,	w_k$の積を$w=w_1	\cdot	w_2	\cdot	\cdots	\cdot	w_k$と書く．
+
+

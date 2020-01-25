@@ -1,0 +1,108 @@
+\section{単体}
+
+ユークリッド空間$\R^n$の$(r+1)$個の点$p_0,	p_1,	\cdots	,	p_r$が
+\textbf{一般の位置}にあるとは，$r$個のベクトル$p_1-p_0,	p_2-p_0,	\cdots	,	p_r	-	r_0$
+が1次独立であること，すなわち，
+\begin{align*}
+	&a_1	(p_1	-	p_0)	+	a_2(p_2	-	p_0)	
+			+	\cdots	+	
+		a_r	(	p_r	-	p_0)	=	0	\quad	(a_i	\in	\R	\:	(1\leqq	i	\leqq	r))	\\
+	&\Longrightarrow	a_1	=	a_2	=	\cdots	=	a_r	=	0	
+\end{align*}
+が成り立つことである．容易にわかるように，$p_0,p_1,	\cdots,	p_r$が一般の位置にあれば，
+これらの点の順序をどのように変えても，それらは一般の位置にある．
+
+$p_0,	p_1,	\cdots	,	p_r$は一般の位置にあるとする．等式
+\[\textstyle
+	x	=	\sum_{i=0}^r	a_i	p_i	\quad	\left(a	\in	\R	\sum_{i=0}^r	a_i=1	\right)
+\]
+は等式
+\[\textstyle
+	x-p_0	=	\sum_{i=1}^r	a_i	(p_i	-	p_0)
+\]
+を意味するが，$p_1-p_0,	p_2	-	p_0,	\cdots	,	p_r	-	p_0$の1次独立性より，
+\[\textstyle
+	a_1,	a_2	,	\cdots,	a_r	,	a_0(=1-a_1	-a_2	-	\cdots	-	a_r)
+\]
+は$x$に対して
+ただ1通りに定まる．実数の組
+\[\textstyle
+	(a_0	,	a_1	,	\cdots	,	a_r)	\quad	\left(\text{ただし}	\sum_{i=0}^r	a_i=1	\right)
+\]
+を$p_0,	p_1	,	\cdots	p_r$に関する点$x$の\textbf{重心座標}という．
+各$p_i$に質量$a_i$の質点をおいた質点系の重心が$x$である．重心座標の各成分$a_i$が
+正または$0$となるような点全体の集合，すなわち集合
+\[\textstyle
+	\sigma	=	\left\{	x	\:	\biggr|	\:	x=\sum_{i=0}^r	a_i	p_i,	\:	\sum_{i=0}^r	a_i=1,	
+	a_i	\geqq	0	\:	(0	\leqq	i	\leqq	r)	\right\}
+\]
+を$p_0	,	p_1	,	\cdots	,	p_r$を\textbf{頂点}とする\textbf{$r$次元単体}
+（または単に\textbf{$r$単体})といい，
+$\sigma=|p_0p_1\cdots	p_r|$と書く．$\sigma$の次元が$r$であることを$\dim	\sigma	=	r$と
+表す．
+
+$r$単体$\sigma$は$\R^n$における有界閉集合であるからコンパクトである（第2章系23）．
+
+\例{2}
+$0$単体$|p_0$は1点$p_0$である．したがって，$0$単体に対しては$p_0$の代わり単に$p_0$と書く．
+1単体$|p_0p_1|$は$p_0,p_1$を両端とｓるう線分，2単体$|p_0p_1p_2|$は$p_0,p_1p_2$を
+頂点とする三角形，3単体$|p_0p_1p_2p_3|$は$p_0,p_1,p_2,p_3$を頂点とする四面体である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=13cm,height=4.2cm]{sec3x1x3.bmp}
+\end{figure}
+$s$を$0	\leqq	s	\leqq	r$を満たす整数とする．$r$単体$\sigma=|p_0	p_1	\cdots	p_r|$の頂点
+$p_0	,	p_1	,	\cdots	,	p_r$の中の$(s+1)$個の点$p_{i_0},p_{i_1},	\cdots	,	p_{i_s}$も
+一般の位置にあり，これらを頂点とする$s$単体$\tau=	|p_{i_0}	p_{i_1}	\cdots	p_{i_s}|$
+を$\sigma$の$\textbf{$s$次元面単体}$という．$s	<	r$のとき，
+$\tau$を$\sigma$の\textbf{固有な面単体}という．$\tau$が$\sigma$の面単体であることを
+$\tau	\leqq	\sigma$または$\sigma	\geqq	\tau$，固有な面単体であることを
+$\tau	<	\sigma$または$\sigma	>	\tau$で表す．
+
+\例{3}
+3単体$\sigma	=	|p_0p_1p_2p_3|$の面単体は，3次元が$\sigma$自身，2次元がいわゆる面で，
+$|p_0p_1p_2|$，$|p_0p_1p_3|$，$|p_0p_2p_3|$，$|p_1p_2p_3|$の4個，
+1次元がいわゆる辺で$|p_0p_1|$，$|p_0p_2|$，$|p_0p_3|$，$|p_1p_2|$，$|p_1p_3|$，
+$|p_2p_3|$の6個，0次元はいわゆる頂点で$p_0$，$p_0$，$p_1$，$p_2$，$p_3$の4個である．
+\□
+
+$\sigma$の固有な面単体全体の和集合を$\sigma$の境界とよび，$\dot{\sigma}$と書く．
+また，集合$\sigma	-	\dot{\sigma}$を内部とよび，$\Int \sigma$と書く．
+$\dot{\sigma}$は重心座標のある成分が$0$となるような$\sigma$の点の集合であり，
+$\Int \sigma$は重心座標のすべての成分がすべて正であるような$\sigma$の点の集合である．
+特に，0単体$\sigma$については，$\dot{\sigma}=\varnothing$，$\Int \sigma	=	\sigma$である．
+$\Int	\sigma$は$\sigma$を含む空間$\R^n$の部分空間と見たときの$\sigma$の内部（$\sigma$に含まれる
+$\R^n$の開集合の中で最大のもの）とは一般には異なることに注意する．
+
+$\R^n$の部分集合$A$が凸集合であるといわれるのは，$A$の任意の異なる2点$p,q$に対し，
+$|pq|	\subset	A$であるとき，すなわち，$A$の任意の2点$p,q$に対し，
+\[
+	(1-t)p	+	tq	\in	A
+\]
+がすべての$t	\in	I=[0,1]$に対して成り立つときをいう．
+
+\問{2}
+$\R^n$の部分集合$A_\lambda	\:	(\lambda	\in	\Lambda)$がすべて凸集合ならば，それらの
+共通部分$\bigcap_{\lambda	\in	\Lambda}	A_\lambda$も凸集合であることを示せ．
+
+\証明
+
+$\bigcap	A_\lambda	\ni	p,q$とすると，すべての$\lambda$に対して，$p,q	\in	A_\lambda$，
+$A_\lambda$は凸集合であるから$(1-t)	p	+	tq	\in	A_\lambda	\:	(t	\in	I)$．
+よって，$(1-t)p+tq	\in	\bigcap	A_\lambda$.
+\■
+
+\例{4}
+$r$単体$|p_0p_1	\cdots	p_r|$は凸単体である．実際，$|p_0	p_1	\cdots	p_r|$に属する任意の2点
+$p,q$を重心座標を用いて，
+\begin{align*}
+	p=\sum_{i=0}^r	a_ip_i	,\quad	\sum_{i=0}^r	a_i=1,	\quad	a_i	\geqq	0	\quad	(0	\leqq	i	\leqq	r)	\\
+	q=\sum_{i=0}^r	b_ip_i	,\quad	\sum_{i=0}^r	b_i=1,	\quad	b_i	\geqq	0	\quad	(0	\leqq	i	\leqq	r)
+\end{align*}
+と表すと，$0	\leqq	t	\leqq	1$に対して
+\begin{align*}
+	&	(1-t)p	+	tq	=	\sum_{i=0}^r	((1-t)a_i	+	t	b_i	)	p_i,	\\
+	&	\sum_{i=0}^r	((1-t)a_i	+t	b_i)=	(1-t)\sum_{i=0}^r	a_i	+t	\sum_{i=0}^rb_i=	(1-t)\cdot	1	+	t\cdot	1,	\\
+	&	\quad	(1-t)a_i	+	tb_i	\geqq	0		\quad	(0	\leqq	i	\leqq	r)
+\end{align*}
+となるから，$(1-t)p	+	tq	\in	|p_0p_1	\cdots	p_r|$が成り立つ．

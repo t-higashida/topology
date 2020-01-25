@@ -1,0 +1,216 @@
+\section{連続関数}
+
+初めに，距離空間$X,Y$の間の写像$f:X	\rightarrow	Y$が点$x	\in	X$で連続であることを
+定義しよう．記号を簡単にするために，$X,Y$の距離関数をともに$d$で表すことにする．
+
+任意の正数$\varepsilon $に対して，適当な正数$\delta $を選んで
+\[
+	(*)	\quad	d(x',x)	<	\delta	,	
+	x'	\in	X	\Rightarrow	d(f(x'),f(x))	<	\varepsilon 
+\]
+となるようにできるとき，写像$f:X	\rightarrow	Y$は点$x	\in	X$で\textbf{連続}
+であるという．
+すべての点$x	\in	X$で連続な写像$f$を\textbf{連続写像}という．
+うえの条件$(*)$は次と同値である．
+\[
+	(*)'	\quad	f(U(x	;	\delta ))	\subset	U(f(x)	;	\varepsilon ),
+\]
+ただし，$U(x;	\delta )$は$X$における$x$の$\delta $近傍，
+$U(f(x)	;	\varepsilon )$は$Y$における$f(x)$の$\varepsilon $近傍である．
+
+\定理{13}
+距離空間$X,Y$において，つぎの条件は同値である．
+\begin{list}{}{}
+	\item	（１）$f	:	X	\rightarrow	Y$は連続写像である．
+	\item	（２）任意の$x	\in	X$と$x$に収束する$X$の任意の点列$\{x_n	\}$に対し，
+							点列$\{f(x_n)\}$は$f(x)$に収束する．
+	\item	（３）$Y$の任意の開集合$G$に対し，$f^{-1}(G)$は$X$の開集合である．
+	\item	（４）$Y$の任意の閉集合$F$に対し，$f^{-1}(F)$は$X$の閉集合である．
+	\item	（５）$X$の任意の部分集合$A$に対し，$f(\overline{A})	\subset	\overline{f(A)}$が
+							成り立つ．ここで，$\overline{A}$は$A$の$X$における閉包，
+							$\overline{f(A)}$は$f(A)$の$Y$における閉包である．
+\end{list}
+\証明
+（１）$\Rightarrow$（２）．
+任意の正数$\varepsilon $に対して$(*)'$を満たす正数$\delta $を選ぶ．
+$x_n	\rightarrow	x	\:	(	n\rightarrow	\infty)$とすれば，$x$の近傍$U(x;	\delta )$に対して
+自然数$n_0$が存在して
+\[
+	n	>	n_0,	n	\in	\N	\Rightarrow	x_n	\in	U(x;\delta )
+\]
+が成り立つ．$(*)'$より$f(x_n)	\in	U(f(x)	;	\varepsilon )$となるから，
+$f(x_n)	\rightarrow	f(x)	\:	(n	\rightarrow	\infty)$である．
+
+（２）$\Rightarrow$（１）．
+背理法による．$f$がある点$x	\in	X$で連続でないと仮定する．
+このとき，ある$\varepsilon >0$が存在して，どんな$\delta >0$に対しても
+\[
+	f(U(x;\delta ))	\not\subset	U(f(x)	;\varepsilon )
+\]
+すなわち，$U(x;	\delta )	-	f^{-1}(U(f(x)	;	\varepsilon )	\ne	\varnothing$となる．
+したがって，任意の自然数$n$に対して
+\[
+	x_n	\in	U(x;	1/n	)	-	f^{-1}(U(f(x)	;	\varepsilon ))
+\]
+を選んで$X$の点列$\{x_n\}$を考えれば，$d(x_n,x)<1/n$であるから，補題3より
+$x_n	\rightarrow	x	(	n	\rightarrow	\infty)$であるが，
+$d(f(x_n),f(x))	\geqq	\varepsilon $であるから，点列$\{f(x_n)\}$は
+$f(x)$に収束しない．これは（２）に矛盾する．
+
+（１）$\Rightarrow$（３）．
+任意の点$x	\in	f^{-1}(G)$をとると$f(x)	\in	G$で，$G$は$Y$の開集合であるから，
+$U(f(x);\varepsilon )	\subset	G$となる$\varepsilon >	0$が存在する．
+$f$は$x	\in	$で連続であるから，$f(U(x	;	\delta ))	\subset	U(f(x)	;	\varepsilon )$を
+満たす$\delta >0$が存在する．このとき，
+$U(x;	\delta )	\subset	f^{-1}(G)$となるから，$f^{-1}(G)$は$X$の開集合である．
+
+（３）$\Rightarrow$（１）．
+任意の点$x	\in	X$と任意の$\varepsilon >0$に対し，$U(f(x)	;	\varepsilon )$は
+$Y$の開集合であるから，仮定により$f^{-1}(U(f(x)	;	\varepsilon ))$は$X$の開集合で，
+$x	\in	f^{-1}(U(f(x)	;	\varepsilon ))$より，適当な$\delta 	>0$に対して
+$U(x	;	\delta )	\subset	f^{-1}	(U(f(x)	;	\varepsilon ))$となる．これは
+$(*)'$を意味する．
+
+（３）$\Leftrightarrow$（４）．
+$Y$の任意の部分集合$H$に対し，$f^{-1}(Y-H)=X-f^{-1}(H)$が成り立つから，
+結果は閉集合の定義から容易に従う．
+
+（４）$\Rightarrow$（５）．
+$A	\subset	X$とする．$\overline{f(A)}$は$Y$の閉集合であるから，
+$f^{-1}(\overline{f(A)})$は$X$の閉集合である．
+$f(A)	\subset	\overline{f(A)}$より，$A	\subset	f^{-1}(\overline{f(A)})$．
+したがって，$\overline{A}	\subset	f^{-1}(\overline{f(A)})$．
+ゆえに，$f(\overline{A})	\subset	\overline{f(A)}$．
+
+（５）$\Rightarrow$（４）．
+$F$を$Y$の閉集合とすれば，$\overline{F}=F$．（５）$f(f^{-1}(F))	\subset	\overline{f(f^{-1}(F))}$
+より，$\overline{f^{-1}(F)}	\subset	f^{-1}(\overline{f^{-1}(F))})	\subset	f^{-1}(\overline{F})$.
+したがって$\overline{f^{-1}(F)}	=	f^{-1}(F)$．ゆえに，$f^{-1}(F)$は$X$の閉集合である．
+\■
+
+$x$を位相空間$X$の点とする．$x$の近傍全体，すなわち$x$を含む開集合全体を，
+$x$の\textbf{近傍系}といい$\mathscr{N}(x)$で表す．$\mathscr{N}(x)$に含まれる
+集合族$\mathscr{N}^*(x)$で，任意の$G	\in	\mathscr{N}(x)$に対して
+\[
+	U	\subset	G
+\]
+を満たす$U	\in	\mathscr{N}^*(x)$が存在するようなものを，点$x$の
+\textbf{基本近傍系}という．すべての点$x	\in	X$の基本近傍系の和集合
+$\bigcup_{x	\in	X}	\mathscr{N}^*	(x)$を$X$の\textbf{開集合の基底}（または単に\textbf{開基}）
+という．
+
+\例{11}
+距離空間$X$の点$x$に対し，$\{U(x	;	\varepsilon )	\:	|	\:	\varepsilon \in	\R	,	\varepsilon >0\}$
+は$x$の基本近傍系である．
+
+位相空間$X,Y$の間の写像$f:	X	\rightarrow	Y$が点$x	\in	X$で\textbf{連続}であるとは，
+$X,Y$の開基$\bigcup_{x\in	X}	\mathscr{N}_1^*(x)	,	\bigcup_{y\in	Y}	\mathscr{N}_2^*(y)$が
+与えられたとき，$G	\in	\mathscr{N}_2^*	(f(x))$ならば
+\[
+	f(U)	\subset	G
+\]
+となる$U	\in	\mathscr{N}_1^*(x)$が存在することである．すべての点$x	\in	X$で連続な
+写像$f$を\textbf{連続写像}という．次は定理13と同様に証明される．
+
+\定理{14}
+位相空間$X,Y$において，次の条件は同値である．
+\begin{list}{}{}
+	\item	（１）$f:X	\rightarrow	Y$は連続写像である．
+	\item	（２）$Y$の任意の開集合$G$に対し，$f^{-1}(G)$は$X$の開集合である．
+	\item	（３）$Y$の任意の閉集合$F$に対し，$f^{-1}(G)$は$X$の閉集合である．
+	\item	（４）$X$の任意の部分集合$A$に対し，$f(\overline{A})	\subset	\overline{f(A)}$が成り立つ．
+\end{list}
+
+\例{12}
+$X,Y$を位相空間，$A$を$X$の部分空間とする．$f:X	\rightarrow	Y$が連続写像ならば，
+$f$の制限写像$f		|	A:	A	\rightarrow	Y;	x	\mapsto	f(x)$も連続写像である．
+実際，$G$を$Y$の任意の開集合とするとき，定理14（２）により$f^{-1}(G)$は$X$の開集合であるから，
+$(f	|	A)^{-1}	(G)=	f^{-1}(G)	\cap	A$は$A$の開集合である．
+
+\例{13}
+$X,Y,Z$を位相空間，$f:	X	\rightarrow	Y$，$g:	Y	\rightarrow	Z$を連続写像とするとき，
+合成写像$	g	\circ	f:	X	\rightarrow	Z$は連続写像である．実際，$Z$の任意の開集合を
+$G$とすると，$g$の連続$g^{-1}(G)$は$Y$の開集合で，
+$f$の連続性よい$f^{-1}(g^{-1}(G))=(g	\circ	f)^{-1}(G)$は$X$の開集合である（定理14（２））．
+
+\補題{15}
+$X$，$Y$を位相空間，$f:X	\rightarrow	Y$を写像とする．$A_i	\:	(i=1,2,\cdots	,	n)$
+を$X	=	\bigcup_{i=1}^n	A_i$であるような$X$の閉集合とする．
+すべての$i	\:	(1	\leqq	i	\leqq	n)$に対して$f$の制限写像$f|A_i	:	A_i	\rightarrow	Y$が
+連続写像ならば，$f$は連続写像である．
+
+\証明
+$F$を$Y$の任意の閉集合とすると，
+\[
+	f^{-1}(F)	=	f^{-1}(F)	\cap	\left(\bigcup_{i=1}^n	A_i	\right)
+						=	\bigcup_{i=1}^n	(f^{-1}(F)	\cap	A_i)
+						=	\bigcup_{i=1}^n	(f|A_i)^{-1}	(F)
+\]
+が成り立つ．仮定より$(f|A_i)^{-1}(F)$は$X$の閉集合$A_i$の閉集合であるから，
+補題12により$X$の閉集合となる．ゆえに，定理6のF2により$f^{-1}(F)$は$X$の
+閉集合である．よって，定理14（３）により，$f$は連続写像である．
+\■
+
+\補題{16}
+位相空間$X_i	\:	(i=1,2,	\cdots,	m)$の直積空間$Y=\prod_{i=1}^m	X_i$を考える．
+\begin{list}{}{}
+	\item	（１）自然な射影$p_i	:	Y	\rightarrow	X_i;	(x_1	,	x_2	,	\cdots	,	x_m)	\mapsto	x_i	\:
+							(i=1,2,	\cdots	,	m)$は連続写像である．
+	\item	（２）位相空間$Z$から$Y$への写像$f:	Z	\rightarrow	Y$が連続写像であるための必要十分条件は，
+							すべての$i	\:	(1	\leqq	i	\leqq	m)$に対して$p_i	\circ	f	:	Z	\rightarrow	X_i$が連続写像となることである．
+\end{list}
+\証明
+（１）$X_i$の任意の開集合を$G$とすれば，$p_i^{-1}(G)	=	X_1	\times	\cdots	\times	X_{i-1}	\times	G	\times	X_{i+1}	\times	X_m$
+			は$Y$の開集合であるから，定理14（２）により$p_i$は連続写像である．
+
+（２）必要性．例13により，結果は（１）と仮定から従う．十分性．$X_i$の任意の開集合$G_i$に対して$f^{-1}(G_1	\times	G_2	\times	\cdots	\times	G_m)$が
+$Z$の開集合であることを示せばよい．$f=(p_1	\circ	f,	p_2	\circ	f,	\cdots	,	p_m	\circ	f)$であるから，
+\[
+	f^{-1}(G_1	\times	G_2	\times	\cdots	\times	G_m)	=	\bigcap_{i=1}^m	(p_i	\circ	f)^{-1}(G_i)
+\]
+が成り立ち，$i=1,	2,	\cdots,	m$に対し，$p_i	\circ	f$が連続ならば，$p_i	\circ	f)^{-1}(G_i)$は$Z$の
+の開集合で，O2より$f{-1}	(G_1	\times	G_2	\times	\cdots	\times	G_m)$も$Z$の開集合である．
+\■
+
+\例{14}
+線形写像$f	:	\R^n	\rightarrow	R^m$は連続写像である．実際，標準基底に関する$f$の表現行列$[a_{ij}]	\:
+(i=1,	2	,	\cdots	,	m;	j=1	,	2,	\cdots	,	n)$を考え，$x	\in	\R^n$の$k$番目の成分を
+$x_k	\in	\R	\:	(k=1,	2,	\cdots	,	n)$とすると，
+\begin{align*}
+	f(x)	&=\begin{bmatrix}
+						a_{11}	&	a_{12}	&	\cdots	&	a_{1n}	\\
+						a_{21}	&	a_{22}	&	\cdots	&	a_{2n}	\\
+						\cdots	&	\cdots	&	\cdots	&	\cdots	\\
+						a_{m1}	&	a_{m2}	&	\cdots	&	a_{mn}	\\
+					\end{bmatrix}
+					\begin{bmatrix}
+						x_1	\\
+						x_2	\\
+						\vdots	\\
+						x_m\\
+					\end{bmatrix}
+					=
+					\begin{bmatrix}
+						a_{11}x_1	+	a_{12}x_2	+	\cdots	+	a_{1n}x_n	\\
+						a_{21}x_1	+	a_{22}x_2	+	\cdots	+	a_{2n}x_n	\\
+						\cdots	\\
+						a_{m1}x_1	+	a_{m2}x_2	+	\cdots	+	a_{mn}x_n	\\
+					\end{bmatrix}	\\
+				&=
+					\begin{bmatrix}
+						(p_1	\circ	f)(x)	\\
+						(p_2	\circ	f)(x)	\\
+						\vdots	\\
+						(p_m	\circ	f)(x)	\\
+					\end{bmatrix}
+\end{align*}
+すなわち，
+\[
+	(p_i	\circ	f)(x)	=	a_{i1}x_1	+	a_{i2}x_2	+	\cdots	+	a_{in}x_n	\quad	(i=1,2,	\cdots	,	m)
+\]
+となるが，$p_i	\circ	f$は連続であるから，定理16（２）により$f$は連続となる．
+
+位相空間$X,Y$の間の連続写像$f:X	\rightarrow	Y$が\textbf{同相写像}（または\textbf{位相写像}）といわれるのは，
+$f$が全単射で，$f$の逆写像$f^{-1}$が連続写像となるときである．$X$から$Y$への同相写像がすくなくとも1つ存在するならば，
+$X$は$Y$と\textbf{同位相}（または\textbf{同相})であるといわれ，$X	\approx	Y$と書く．関係$\approx$はすべての
+位相空間の間の同値関係であることが容易にわかる．

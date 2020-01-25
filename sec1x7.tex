@@ -1,0 +1,290 @@
+\section{完全系列}
+
+アーベル群$G_i$と準同形$f_i:	G_i	\rightarrow	G_{i+1}	\:	(	i	\in	\Z)$の系列
+\[
+	\cdots	\longrightarrow	G_{i-1}	\stackrel{f_{i-1}}{\longrightarrow}
+											G_i			\stackrel{f_i}{\longrightarrow}
+											G_{i+1}	\longrightarrow	\cdots
+\]
+を考える．この系列が$G_i$が\textbf{完全}であるといわれるのは，
+\[
+	\text{Im }f_{i-1}	=	\text{Ker }f_i
+\]
+が成り立つときである．すべての$i$に対して$G_i$で完全であるとき，
+その系列は\text{完全系列}であるといわれる．単位元$0$だけだから成る群$\{0\}$を単に$0$で表す．
+
+\補題{24}
+次が成り立つ．
+\begin{list}{}{}
+	\item	（１）$G_1	\stackrel{f}{\longrightarrow}	G_2	\longrightarrow	0$が完全	
+							$\Leftrightarrow	f$は全射準同形
+	\item	（２）$0	\longrightarrow	G_1	\stackrel{f}{\longrightarrow}	G_2$が完全
+							$\Leftrightarrow	f$は単射準同形
+	\item	（３）$0	\longrightarrow	G_1	\stackrel{f}{\longrightarrow}	G_2	\longrightarrow	0$が完全
+							$\Leftrightarrow	f$は同形写像．
+\end{list}
+\証明
+（１），（２）はそれぞれ次の事実から従う．
+
+$\text{Im } f=G_2	\Leftrightarrow	f$は全射準同形，
+$\quad\text{Ker }f=0 \Leftrightarrow	f$は単射準同形．
+
+（３）は（１），（２）から明らかである．
+\■
+次の系列が完全系列であるとき，これを\textbf{短完全系列}と称する．
+\[
+	0	\longrightarrow								G_1	
+		\stackrel{f}{\longrightarrow}	G_2	
+		\stackrel{g}{\longrightarrow}	G_3
+		\longrightarrow	0
+\]
+\補題{25}
+上の短完全系列において$G_1	\cong \text{Im }f$，$G_2/\text{Im }f \cong G_3$.
+
+\証明
+前半は，補題24（２）により$f$は単射であるから明らか．後半については，
+補題24（１）により$g$は全射であるから，準同形定理（定理15）を用いて$G_2	/	\text{Ker }g \cong G_3$
+が得られ，完全性より$\text{Im }f = \Ker g$であるから結果が従う．
+\■
+
+\[
+	0	\longrightarrow								G_1	
+		\stackrel{f}{\longrightarrow}	G_2	
+		\stackrel{g}{\longrightarrow}	G_3
+		\longrightarrow	0
+\]
+が\textbf{分解}するといわれるのは，$G_2$の部分群$H$で，$G_2	=	\Img f \oplus H$であるものが
+存在するときである．このとき，補題25より$\Img f \cong G_1,	H	\cong G_2	/	\Img f	\cong G_3$
+であるから，$G_2	\cong G_1	\oplus G_3$となる．
+
+\定理{26}
+上の短完全系列に対し，つぎの３つの条件は同値である．
+\begin{list}{}{}
+	\item（ⅰ）この完全系列は分解する．
+	\item（ⅱ）準同形$\varphi :	G_2	\rightarrow	G_1$で$\varphi \circ	f	=	\text{id}$を満たすものが存在する．
+	\item（ⅲ）準同形$\psi	:	G_3	\rightarrow	G_2$で$g	\circ	\psi	=	\id$を満たすものが存在する．
+\end{list}
+（ここで，（ⅱ），（ⅲ）の$\id$はそれぞれ恒等写像$G_1	\rightarrow	G_1,	G_3	\rightarrow	G_3$を意味する．)
+
+\証明
+（ⅰ）$\Longrightarrow$（ⅱ）．$G_2	=	\Img	f	\oplus	H	\ni	f(a)	+	b	\:\:	(a	\in	G_1,	b	\in	H)$
+に対して，$\varphi:	G_2	\rightarrow	G_1$を$\varphi	(f(a)+b)=a$により定義すると，$f(a)$は単射であるから
+この定義は意味をもつ．$\varphi$は明らかに準同形である．また，定義より$\varphi(f(a))=a$，すなわち，
+$\varphi	\circ	f	=	\id$が得られる．
+
+（ⅱ）$\Longrightarrow$（ⅰ）．$\varphi	\circ	f	=	\id	:	G_1	\rightarrow	G_1$であるから，補題21より
+$g_2	=	\Img	f	\oplus	\Ker	\varphi$である．よって，短完全系列は分解する．
+
+（ⅰ）$\Longrightarrow$（ⅲ）．完全性および仮定より$H	\cap	\Ker	g	=	H	\cap	\Img	f	=	0$ であるから
+（系20），$g$の$H$への制限$g	|	H$は$H$から$G_3$への単射（補題13），完全性より$g:G_2	\rightarrow	G_1$
+は全射であるが，$	g(\Img	f)	=	0_3$であるから，$g$の$H$への制限$g	|	H$は$G_3$への全射，したがって
+$g|H$は同形写像である．その逆写像$h:	G_3	\rightarrow	H$と
+包含写像$i	:	H	\rightarrow	G_2$の合成写像を$\psi	=	i	\circ	h$とすれば，
+$g	\circ	\psi	=	g	\circ	i	\circ	h	=	(g	|	H)	\circ	h	=	\id	:	G_3	\rightarrow	G_3$となる．
+
+（ⅲ）$\Longrightarrow$（ⅰ）．$g	\circ	\varphi	=	\id	:	G_3	\rightarrow	G_3$であるから，
+補題21より$G_2	=	\Ker	g	\oplus	\Img	\psi$である．完全性より
+$\Ker	g	=	\Img	f$であるから，$G_2	=	\Img	f	\oplus	\Img	\psi$．
+\■
+
+\問{8}
+短完全系列$0	\rightarrow	G	\stackrel{f}{\rightarrow}	H	\stackrel{f}{\rightarrow}	\Z	\rightarrow	0$は
+分解することを証明せよ．
+
+\証明
+$g^{-1}(1)$に属する元を1つ選び$a$とする．元$n	\in	\Z$に対し$\psi	(n)	=	na$と
+定義すれば，$\psi	:	\Z	\rightarrow	H$は準同形で$	g	\circ	\psi	=	\id$を満たすから，
+定理26によりこの短完全系列は分解する．
+\■
+
+アーベル群$G_i,H_i$と準同形$f_i,g_i,\varphi_i$の図形
+\begin{equation*}
+	\begin{CD}
+		G_1	@>f_1>>				G_2	@>f_2	>>		G_3	@>f_3>>			G_4	@>f_4>>			G_5						\\
+		@V	\varphi_1	VV	@V\varphi_2	VV	@V\varphi_3	VV	@V\varphi_4	VV	@V\varphi_5VV	\\
+		H_1	@>g_1>>				H_2	@>g_2	>>		H_3	@>g_3>>			H_4	@>g_4>>			H_5						\\
+	\end{CD}
+\end{equation*}
+における４つの四角形において，
+\[
+	\varphi_{i+1}	\circ	f_i	=	g_i	\circ	\varphi_i	\quad	(	1	\leqq	i	\leqq	4)
+\]
+が成り立つものとする．このとき，これらの四角形は\textbf{可換}であるといわれ，
+このような図式は\textbf{可換な図式}といわれる．
+
+\補題{27}\textbf{（4補題）}
+上の可換な図式において，2つの行は完全系列であるとする．
+このとき，つぎの（１），（２）が成り立つ．
+\begin{list}{}{}
+	\item	（１）$\varphi_2,\varphi_4$が全射で$\varphi_5$が単射ならば，$\varphi_3$は全射である．
+	\item	（２）$\varphi_2,\varphi_4$が単射で$\varphi_1$が単射ならば，$\varphi_3$は単射である．
+\end{list}
+\証明
+（１）任意の元$a	\in H_3$に対し，$\varphi_4$が全射であることから，
+$\varphi_4(b)	=	g_3(a)$を満たす元$b	\in	G_4$が存在する．可換性と完全性より
+\[
+	\varphi_5(f_4(b))	=	g_4(\varphi_4(b))=g_4(g_3(a))=0
+\]
+となるが，$\varphi _5$は単射であるから，$f_4(b)=0$．完全性より$f_3(c)=b$を満たす元$c	\in	G_3$
+が存在する．このとき，可換性より
+\[
+	g_3(a-\varphi _3(c))=g_3(a)-\varphi _4(f_3(c))=g_3(a)-\varphi _4(b)=0
+\]
+であるから，完全性より$g_2(d)=a-\varphi _3(c)$を満たす元$d	\in	H_3$が存在する．
+$\varphi _2$は全射であるから，$\varphi _2(e)=d$を満たす元$e	\in	G_2$が存在する．
+このとき，可換性より
+\[
+	\varphi _3(c+f_2(e))=\varphi _3(c)+g_2(\varphi _2(e))=\varphi _3(c)+g_2(d)=a
+\]
+が成り立つ．したがって，$\varphi _3$は全射である．
+
+（２）任意の元$a	\in	\Ker	\varphi _3$に対し，可換性より
+$\varphi _4(f_3(a))=g_3(\varphi _3(a))=0$で，
+$\varphi _4$は単射であるから$f_3(a)=0$となる．よって，完全性より
+$f_2(b)=a$を満たす元$b	\in	G_2$が存在する．
+このとき，可換性より$g_2(\varphi _2(b))=\varphi _3(f_2(b))=\varphi _3(a)=0$
+であるから，完全性より$g_1(c)=\varphi _2(b)$を満たす元$c	\in	H_1$が存在する．
+$\varphi _1$は全射であるから，完全性より$g_1(c)=\varphi _2(b)$を満たす元$c	\in	H_1$が
+存在する．$\varphi _1$は全射であるから，$\varphi _1(d)=c$を満たす元$d	\in	G_1$が
+存在する．このとき，可換性より
+\[
+	\varphi _2(f_1(d))=g_1	(	\varphi _1(d))=g_1(c)	=	\varphi _2(b)
+\]
+で，$\varphi _2$は単射であるから，$f_1(d)=b$．ゆえに，完全性より
+\[
+	0	=	f_2(f_1(d))	=	f_2(b)=a
+\]
+である．したがって，$\Ker	\varphi _3=0$となるから，補題13より$\varphi _3$は単射．
+\■
+
+\系{28}\textbf{（5補題）}
+補題27の可換な図式において，2つの行は完全系列であるとする．このとき，
+$\varphi _1,	\varphi _2	,	\varphi _4,\varphi _5$が同形写像ならば，
+$\varphi _3$も同形写像である．
+
+　
+
+\textbf{第1章の問題}
+
+　
+
+1．巡回群$\langle	a	\rangle$の部分群$H$は巡回群である．
+
+\証明
+$H=\{e\}$ならば，$H=\langle	e	\rangle$となる．$H	\ne	\{e\}$のとき，
+$a^n	\in	H	\subset	\langle	a	\rangle$ 整数$n$をとる．
+$a^m	\in	H$とすると，$m	=	nq	+	r	\:	(0	\leqq	r	<	n)$を満たす整数$q,r$が存在する．
+このとき，$a^r=(a^n)^{-q}a^m	\in	H$であるが，
+$n$の選び方から$r=0$．したがって，$m=nq$．すなわち，
+$a^m=(a^n)^q$．よって，$H=\langle	a^n	\rangle$．
+\■
+
+2．$n$次の交代群$\mathscr{A}_n$の位数は$n!/2$である．
+
+\証明
+$\tau$を任意の互換とし，
+$f:\mathscr{A}_n	\rightarrow	\tau	\mathscr{A}_n	;	\sigma	\mapsto	\tau	\sigma$，
+$g:\tau \mathscr{A}_n	\rightarrow	\mathscr{A}_n	;	\tau	\sigma	\mapsto	\tau(\tau\sigma)=\sigma$
+とすると，$f	\circ	g	=	\id$，$g	\circ	f	=\id$となるから，補題3より$f$は全単射である．
+$\tau	\mathscr{A}_n$は$n$文字の奇置換全体の集合で，
+$\mathscr{A}_n	\cup	\tau \mathscr{A}_n	=	\mathscr{S}_n$，
+$\mathscr{A}_n	\cap	\tau	\mathscr{A}_n	=	\varnothing$であるから，
+$\#	\mathscr{A}_n	=	\mathscr{S}_n/2	=	n!/2$．
+\■
+
+3．異なる$r$個の文字$i_1,	i_2,	\cdots	,	i_r	\in	S	=	\{1,2,	\cdots	,	n\}$に対し，
+$	\sigma	(	i_1	)	=	i_2,	\sigma	(	i_2	)	=	i_3,	\sigma	(	i_3	)	=	i_4,
+	\cdots	,
+	\sigma	(	i_{r-1}	)	=	i_r	\:	;	\:	k	\in	S-\{i_1,i_2,	\cdots	,	i_r	\}$に対し，
+$\sigma(k)	=	k$を満たす$n$文字の置換$\sigma$を\textbf{巡回置換}とよび，
+$(i_1	i_2	\cdots	i_r)$と記す．	
+\begin{list}{}{}
+	\item	（１）任意の置換はいくつかの巡回置換の積として表される．
+	\item	（２）任意の巡回置換は互換の積として表される．
+\end{list}
+\証明
+（１）$\sigma$を任意の置換とするとき，$i_1	\in	S$に対して
+$\sigma^r	(i_1)	=	i_1$を満たす最小の正整数$r$をとり，
+$\sigma^m(i_1)	=	i_{m+1}	\:	(1	\leqq	m	<	r)$とすると，
+巡回置換$(i_1	\:	i_2	\:	\cdots	\:	i_r)$が得られる．
+次に，$j_1	\in	S-\{i_1,i_2,	\cdots	,	i_r\}$をとって同様に巡回置換
+$(j_1	\:	j_2	\:	\cdots	\:	j_s)$が得られる．これを続けると，
+$\sigma	=	(k_1	\:	k_2	\:	\cdots	\:	k_t)	\circ	\cdots	\circ
+					(j_1	\:	j_2	\:	\cdots	\:	j_s)	\circ
+					(i_1	\:	i_2	\:	\cdots	\:	i_r)$
+の形となる．
+
+（２）$(i_1	\:	i_2	\:	\cdots	\:	i_r)	=	(i_1	\:	i_r)			\circ
+																						(i_1	\:	i_{r-1})	\circ
+																						\cdots
+																						(i_1	\:	i_2)$.
+\■
+
+4．位数$k$の巡回群を$\Z_k$で表す．$p,q$を互いに素である整数$(>1)$とすると，
+$\Z_{pq}	\cong	\Z_p	\oplus	\Z_q$が成り立つ．
+
+\証明
+$\Z_{pq}=\langle	a	\rangle$とし，$b=qa,c=pa$とおくと，
+$	\#b	=	p,	\#c	=	q,	
+	\Z_p=\langle	b	\rangle,	\:	\Z_q	=	\langle	c	\rangle$．
+$\Z_p	\cap	\Z_q$に属する元の位数は$p$と$q$の公約数$=1$であるから，
+$\Z_p	\cap	\Z_q	=	\{0\}$．よって，系20より
+$\Z_p	+	\Z_q$は直和$\Z_p	\oplus	\Z_q$である．
+まず，
+$\Z_{pq}	\supset	\Z_p	\oplus	\Z_q$を示そう．
+$nb	+	mc	\in	\Z_q	\oplus	\Z_p$とすると，
+$nb	+	mc=	n	qa	+	mpa	=	(nq+mp)a	\in	\langle	a	\rangle	=	\Z_{pq}$.
+つぎに，
+$\Z_{pq}	\subset	\Z_p	\oplus	\Z_q$を示そう．
+$p,q$は互いに素であるから，$mp+nq=1$を満たす整数$m,n$が存在する．よって，
+$a=(mp+nq)a=nb+mc	\in	\Z_p	\oplus	\Z_q$.
+\■
+
+5．$G$を有限群とし，
+その生成元$a_1,	a_2	,	\cdots	a_m$の位数をそれぞれ$d_1,	d_2,	\cdots	,	d_m	(>1)$とする．
+このとき，
+\[
+	G	=	\langle	a_1	\rangle	\oplus
+			\langle	a_2	\rangle	\oplus
+			\cdots	\oplus	
+			\langle	a_m	\rangle
+\]
+となるための必要十分条件は，
+$\alpha _1	a_1	+	\alpha _2	a_2	+	\cdots	+	\alpha _m	a_m	=	0	\:\:	(\alpha_i	\in	\Z)$ならば，
+すべての$i	\;	(	1	\leqq	i	\leqq	m)$に対して$\alpha	_	i$は$d_i$で割り切れることである．
+
+\証明
+必要性．
+一意性より$\alpha_1	a_1	=	0,	\:	\alpha_2	a_2	=	0,	\:	\cdots	,	\:	\alpha_m	a_m	=	0$.
+$\#	a_i	=	d_i$であることから，
+$\alpha_i$は$d_i$で割り切れる．
+
+十分性．$	\alpha_1	a_1	+	\alpha_2	a_2	+	\cdots	+	\alpha_m	a_m	=	
+					\beta_1	a_1	+	\beta_2	a_2	+	\cdots	+	\beta_m	a_m	\:	(\alpha_i,\beta_i	\in	\Z)$
+と仮定すると，
+$(\alpha_1	-	\beta_1)a_1	+	(\alpha_2	-	\beta_2)a_2	+	\cdots	+	(\alpha_m	-	\beta_m)a_m=0$.
+よって，$\alpha_i	-	\beta_i$は$d_i$で割り切れる．ゆえに，$(\alpha_i	-	\beta_i)a_i=0$．
+すなわち，$\alpha_i	a_i	=	\beta_i	a_i	\:	(1	\leqq	i	\leqq	m)$．
+したがって，一意性が成り立つから，
+$G=\langle	a_1	\rangle	+	\langle	a_2	\rangle	+	\cdots	+	\langle	a_m	\rangle$は直和である．
+\■
+
+6．$A	\stackrel{f}{\rightarrow}	B	\stackrel{g}{\rightarrow}
+		C	\stackrel{h}{\rightarrow}	D	\stackrel{i}{\rightarrow}	E$が完全系列，
+		$f$が全射準同形，$i$が単射準同形ならば，$C=\{0\}$である．
+
+\証明
+$C	\ni	x$とすると，完全性より$i(h(x))=0$．$i$は単射であるから，$h(x)=0$．
+完全性より$g(y)=x$となる$y	\in	B$が存在する．$f$は全射であるから，$f(x)=y$となる
+$z	\in	A$が存在する．このとき，完全性より$x	=	g(y)	=g(f(z))=0$.
+\■
+
+7．$A	\stackrel{f}{\rightarrow}	B	\stackrel{g}{\rightarrow}
+		C	\stackrel{h}{\rightarrow}	D	\stackrel{i}{\rightarrow}
+		E	\stackrel{j}{\rightarrow}	F$が完全系列，$f$が全射準同形，$j$が単射準同形ならば，
+$h$は同形写像である．
+
+\証明
+完全性と仮定より$\Img	i	=	\Ker	j=0$．よって，$D	\subset	\Ker	i	=	\Img	h$．
+ゆえに，$h$は全射．つぎに，$\Ker	h	=	g(B)	=	g(f(A))=\{0\}$．ゆえに，$h$は単射．
+\■
