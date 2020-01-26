@@ -1,0 +1,155 @@
+\section{複体と多面体}
+
+$\R^n$の中の有限個の単体を元とする集合$K$が次の条件(i),(ii)を満たすとき，
+単体複体（または単に複体）という．
+\begin{list}{}{}
+	\item	(i)	$K$に属する単体の任意の面単体は，$K$に属する．すなわち，
+\[
+	\sigma	\in	K,	\tau	\leqq	\sigma	\Rightarrow	\tau	\in	K
+\]
+	\item	(ii)	$K$に属する2つの単体の共通部分が空でなければ，それはそれぞれの単体の面単体である．
+すなわち，
+\[
+	\sigma,	\tau	\in	K,	\sigma	\cap \tau	\ne	\varnothing	\Rightarrow \sigma \cap \tau \leqq \sigma , \sigma \cap \tau \leqq \tau.
+\]
+\end{list}
+複体$K$に属する単体の次元の最大値を$K$の次元といい，$\dim $Kと書く．
+
+\例{5}
+$\sigma$をを$r$単体とする．$\sigma$のすべての面単体の集合
+\[
+	K	(	\sigma	)	=	\{	\tau | \tau \leqq \sigma \}
+\]
+は$r$次元複体であり，$r>0$のとき$\sigma$のすべての固有な面単体の集合
+\begin{align*}
+	K(\sigma)	=	\{ \tau | \tau < \sigma \} = K ( \sigma) - \{ \sigma \}
+\end{align*}
+は，$(r-1)$次元複体である．
+
+\例{6}
+
+次の左側の図に示した単体の集合
+\[
+	K=\{ | p_0 p_1 p_2| , |p_0p_1|,	|p_1p_2|, |p_1p_3|, |p_2p_3|, p_0,p_1,p_2,p_3	\}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=200mm,height=5mm]{sec3x3x1.bmp}
+	\label{sec3x3x1}
+\end{figure}
+は複体で，$\dim K = 2$である．その他の図で示し単体の集合はいずれも
+複体ではない．
+
+\例{7}
+複体$K$嘱する単体$\sigma$で，$\dim \sigma \leqq r$を満たすもの全体の集合は
+$r$次元複体である．これを$K$の$r$次元切片（または，$r$次元骨複体）といい，
+$K^{(r)}$で表す．$K^{(0)}$は$K$の$0$単体（すなわち頂点）の集合である．
+$r$弾体$\sigma$に対し，$K(\dot{\sigma})$は
+$K	(	\sigma	)$の$(r-1)$次元切片である．
+
+複体$K$の部分集合$L$がまた複体であるとき，$L$を複体$K$の部分複体という．
+このとき，組$(K,L)$を複体の対とよぶ．
+
+$K$の部分集合$L$が$K$の部分複体であるための必要十分条件は，
+\begin{list}{}{}
+	\item	$L$に属する単体の任意の面単体は$L$に属する
+\end{list}
+ことである（$L$に対する複体の条件(i)）．
+なぜならば$L$に対する複体の条件(ii)は，$L$が$K$の部分集合であることから
+$K$に対する複体の条件(ii)によって成り立つからである．
+
+\例{8}
+複体$K$の$r$次元切片$K^{(r)}$は$K$の部分複体である．$L$および$M$をKの部分複体とするとき，
+$L \cup M$および$ L \cap M$はいずれも$K$の部分複体である．
+
+複体$K$は有限個の単体から成る集合であって，$\R^n$の部分集合ではないが，
+1つ1つの単体は$\R^n$の部分集合，すなわち図形である．したがって，$K$に属する各単体を
+図形と見てそれらの和集合をつくれば，$\R^n$の図形ができる．この図形を
+$|K|$と書き，複体$K$の多面体という．すなわち，
+\[
+	|K| = \bigcup_{\sigma \in K} \sigma
+\]
+である．複体$K$の次元を多面体$|K|$の次元といい，$\dim |K|$と書く．
+
+各単体はコソパクトであるから，それらの有限和である多面体$|K|$もコンパクトである．
+$L$が複体$K$の部分複体のとき，多面体$L$を多面体$|K|$の部分多面体という．
+たとえば，例5における複体に関しては，$| K(\cdot{\sigma}) |=	\sigma$は
+$|	K(\sigma)| = \sigma$の部分多面体である．
+
+\補題{3} $K$を複体とする．
+\begin{list}{}{}
+	\item	(1) $|K|	=	\bigcup_{\sigma \in K} \text{Int } \sigma$
+	\item (2) $\sigma ,\tau \in K, \sigma \ne \tau \Rightarrow \text{Int } \sigma \cap \text{Int } \tau = \varnothing$．
+\end{list}
+\証明 
+(1) $\text{Int } \sigma \subset \sigma$であるから，明らかに
+$\bigcup*{\sigma \in K } \subset \bigcup_{\sigma \in K } \sigma = |K|$．
+逆に，$|K|$に属する任意の点$x$をとれば，$x \in \tau = | p_0p_1 \cdots p_r|$となる単体
+$\tau$が存在する．$x$を$p_0, p_1, \cdots , p_r$に関する重心座標で表したとき，
+成分が正となるものの頂点を$P_{i_0},P_{i_1}, \cdots , p_{i_s}$とすれば，
+\[
+	x	\in \text{Int } p_{i_n} p_{i_1} \cdots p_{i_s} | \: ( | p_{i_0} p_{i_1} \cdots p_{i_s} | \in K )
+\]
+となる．ゆえに，$| K | \subset \bigcup_{\sigma \in K} \text{Int } \sigma$が成り立つ．
+
+(2) $\text{Int} \sigma \cap \text{lnt } \tau \ne \varnothing $と仮定すれば，
+$\sigma \cap \tau \ne \varnothing$であり，複体の条件より$	\sigma \cap \tau \leqq \sigma,
+\sigma \cap \tau \leqq \tau, \sigma \cap \tau \in K$である．
+$\text{Int } \cap \text{Int } \ni x$とすれば，$ x \in \text{Int } \sigma$かつ$ x \in 
+\sigma \cap \tau$より，$ \sigma \leqq \tau$．$x \in \text{Int } \tau $かつ$ x \in \sigma\cap \tau$より，
+より，$\sigma \leqq \tau$．したがって，$\sigma = \tau$となる．
+
+\■
+
+位相空間$X$に対して，複体$K$と同相写像$	t : | K| \to X$が存在するとき，位相
+空間$X$は\textbf{三角形分割可能}（または\textbf{単体分割可能}）であるといい，
+$(K,t)$を$X$の\textbf{三角形分割}（または\textbf{単体分割}）という．このような$X$を
+\textbf{位相多面体}とよぶ．
+
+\例{9}．
+次の図は，球面，円柱面，円環面，M\"{o}biusの帯，Kleinの壷，射影平面を，
+正方形$I \times I$の等化空間と見たときの三角形分割を表す．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=20mm,height=10mm]{sec3x3x2.bmp}
+	\label{sec3x3x2}
+\end{figure}
+
+$A$を$\R^n$の部分集合，$p \in \R^n$の点とする．$A$の任意の点$a$に対して，線分$lPa1$が
+集合$A$と点$a$のみを共有するとき，すなわち，$|pa| $が成り立つとき，
+$A$のすべての点$a$に対する線分$|pa|$上の点の集合
+\[
+	p	*	A	=	\{	\:	x	\:	|	\:	x	\in	|pa	|	,	a\in	A	\}
+\]
+を，$p$と$A$の\textbf{結}または$p$を中心とし$A$を底とする\textbf{錐}という．
+なお，$A = \varnothing$のときには，$p	*	\varnothing	=	p$と定める．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=50mm]{sec3x3x3.bmp}
+	\label{sec3x3x3}
+\end{figure}
+
+\例{10} $S^1 = \{ \: x \in \R \: | \: \| x \| = 1 \}$
+を円周$O$を原点とすれば，$O * S^1 = D^2 = \{ x \in \R^2 \: \| x \| \leqq 1 \}$
+（円板）である．
+
+\例{11} $|p_1p_2 \cdots p_r|$を$(r-1)$単体，$p_0$を$r_0,p_1, \cdots , p_r$が
+一般の位置にあるような点とすれば，$p_0 * | p_1 p_2 \cdots p_r | = | p_1 p_2 \cdots p_r|
+= | p_0 p_1 \cdots p_r |$である．
+
+$K$を複体とする．$p$を多面体$|K|$の任意の点$a$に対して
+$|pa| \cap |K| = \{ a \}$が成り立つような点とする、すなわち，
+$p$は$K$の任意の単体$| p_0 p_1 \cdots p_r|$に対して
+$p/p_0, p_1 , \cdots , p_r$が一般の位置にあるような点とする．
+このとき，単体の集合
+\[
+	p	*	K	=	\{	p	*	\sigma \: | \: \sigma \in K \} \cup K \{ p \} \cup K
+\]
+が複体となることは容易に確かめられる．これを$p$と$K$の\textbf{結複体}
+（または単に\textbf{結}）あるいは$p$を中心とし$K$を底とする\textbf{錐複体}
+（または単に\textbf{錐}）とよぶ．明らかに$	p*K$は$K$を部分複体として含み，
+その多面体に関しては
+\[
+	|	p*	K|	=	p*	|	K	|
+\]
+が成り立つ．

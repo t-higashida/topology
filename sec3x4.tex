@@ -1,0 +1,105 @@
+\section{単体写像}
+
+$K,L$を複体とする．$K$の頂点全体の集合$K^{(0)}$から$L$の頂点全体の集合
+$L^{(0)}$への写像
+\[
+	\varphi	:	K^{(0)}	\to L^{(0)}
+\]
+が存在して，$K$の任意の$r$単体 $ | p_0 p_1 \cdots p_r|$に対し，
+集合$ \{ \varphi	(	p_0) , \varphi	(p_1)	,	\cdots, \varphi	(p_r)	\: \}$が
+$L$の1つの単体の頂点になっているとき，$	\varphi$を$K$から$L$への単体写像と称し，
+\[
+	\varphi	:	K	\to	L
+\]
+と書く．ここで，$	\varphi	(	p_0	)	,	\varphi	(p_1)	,	\cdots	,	\varphi	(	p_r)	$
+の中には同じものがあり得る．明らかに複体$K$の恒等写像
+$ \text{id} : K \to K$は単体写像である．
+また，$M$を$K$の部分複体とするとぎ，包含写像
+$i : M \to K$は単体写像である．
+$ \{ p_0 \}$を頂点$P_0$から成る複体とするとき，定値写像
+$c : K \to \{ p_0 \}$は単体写像である．
+
+\例{12}
+次の図に示す写像について，左側は単体写像であるが，右側は単体写像ではない．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=1856mm,height=464mm]{sec3x4x1.bmp}
+	\label{sec3x4x1}
+\end{figure}
+$K,L,M$を複体，$\varphi	:	K	\to	L$，$	\psi	:	L	\to M$を単体写像とするとき，
+頂点の間の写像$	\varphi	:	K^{(0)} \to L^\{(0)\}, \psi	:	L^{(0)} \to M^{(0)}$
+の合成写像
+\[
+	\psi	\circ	\varphi	:	K^{(0)}	\to M^{(0)}
+\]
+は$K$の任意の$r$単体$|p_0 p_1 \cdots p_r|$に対して，
+$ \{ (	\psi	\circ \varphi	)	(p_0)	,	(	\psi	\circ \varphi	)	(p_1),	\cdots	,	(	\psi	\circ \varphi	)	(p_r)	\}
+=	\{	(	\psi	(	\varphi	(p_0))	,	\psi	(	\varphi	(	p_1))	,	\cdots	,	\psi	(	\varphi	(p_r))	\}
+$が$M$の1つの単体の頂点の集合であるから，単体写像
+\[
+	\psi	\circ	\varphi	:	K	\to	M
+\]
+が定まる．これを単体写像$	\varphi$と$\psi	$の合成という．
+
+
+複体$K$から$L$への単体写像$	\varphi	:	K	\to	L$が同型写像であるといわれるのは，
+$	\varphi	:	K^{(0)} \to L^{(0)}$が全単射で，その逆写像$	\varphi^{-1}	:	L^{(0)} \to K^{(0)}$が
+単体写像$	\varphi	:	K	\to L$が存在するときである．複体が同型であるという関係は，
+容易に確かめられるように同値関係である．
+
+$	\varphi	:	K	\to L$を単体写像とする．$K$の任意の$r$単体$	\sigma	=	|	p_0	p_1	\cdots	p_r|$に属する点
+\[
+	x	=	\sum_{i=0}^{r}	a_i	p_i	\quad	(	\sum_{i=0}^{r}	a_i	\:	a_i	\geqq	0	,\: (	0	\leqq	i	\leqq	1))
+\]
+に対して
+\[
+	\varphi_{\sigma}	(x)	=	\sum_{i=0}^{r}	a_i	\varphi	(	p_i)
+\]
+と定義する．$	\varphi$は単体写像であるから，$	\{	\varphi	(	p_0	)	,	\varphi	(p_1)	,	\cdots	,	\varphi(p_r)	\}$
+は$L$のある1つの単体$	|	q_0	q_1	\cdots	q_s|	\:	(	s	\leqq	r)$の頂点の集合である．
+同じ頂点に関する項をまとめれば，
+\[
+	\varphi_\sigma	(x)
+=	\sum_{j=0}^{s}	b_j	q_j	,	\quad
+	\sum_{j=0}^{s}	b_j	=	\sum_{i=0}^{r}a_i	=	1,	b_j	\geqq	0	(	0	\leqq	j	\leqq	s)
+\]
+となり，写像$	\varphi_\sigma	:	|	p_0	p_1	\cdots	p_r|	\to	|q_0	q_1	\cdots	q_s|$が得られる．
+$\varphi_\sigma$はアフィン写像であるから（問1）連続写像である（補題1.2と第2章例14参照）。
+
+$	\sigma	,	\tau$を$K$の単体で$	\sigma	\cap	\tau \ne \varnothing$であるものとすると，
+$	\sigma \cap \tau \leqq \sigma, \sigma \cap \tau \leqq \tau, \sigma \cap \tau \in K$
+である．上の定義からすぐわかるように，
+\[
+	\varphi_\sigma	|_{\sigma \cap \tau} - \varphi_{\sigma \cap \tau} = \varphi_\tau |_{\sigma \cap \tau}
+\]
+が成り立つ．したがって，各$x \in \sigma$に対して，$|\varphi| (x) = \varphi_\sigma (x)$によって
+定義されてる多面体の間の写像
+\[
+	|	\varphi	|	:	|	K	|	\to	|	L	|	;	|	\varphi|	|_\sigma	=	\varphi_\sigma
+\]
+が定まり，$	|	\varphi	|	$は第2章補題15により連続となる．
+$|\varphi|$を$\varphi|$が定める連続写像という．
+
+$|\varphi|$は$K$の各頂点$p_i$に対しては，$|\varphi|(p_i)	=	\varphi(p_i)$であり，
+各単体ではアフィン写像であるように定義されたものである．明らかに複体$K$の恒等写像が定める
+連続写像は多面体の恒等写像である．
+
+単体写像$	\varphi	:	K	\to L $と$	\psi	:	L	\to	M$の合成
+$	\psi	\circ	\varphi	:	K	\to	M$が定める多面体の連続写像
+$|\psi \circ \varphi| : | K | \to |M|$は，連続写像
+$|	\varphi	|	:	|K|	\to |L|	$ と $	\varphi\psi	|	:	|L	|	\to |M|$
+の合成$|	\psi	|	\circ	|	\varphi	|$に等しいことは，定義から容易にわかる．
+
+\定理{4}
+単体写像	$	\varphi	:	K	\to	L$が同形写像ならば，$	\varphi$が定める連続写像
+$|	\varphi	|	:	|	K	|	\to |L| $は同相写像である．
+
+\証明
+仮定より，単体写像$	\varphi^{-1} : L \to K$で，$	\varphi^{-1} \circ \varphi	=	\text{id}	: K \to K$，
+$	\varphi	\circ	\varphi = \text{id} : L \to L$を満たすものがある．
+したがって，$	|	\varphi^{-1} | \circ | \varphi	|	=	|	\text{id} |K| \to |K|$．
+同様に，$	|	\varphi	|	\circ	|\varphi^{-1}	|	=	\text{id} : |L| \to |L| $が成り立つから，
+$	|	\varphi^{-1}| = | \varphi	|^{-1}$で，$|\varphi|$は同相写縁である．
+\■
+
+

@@ -1,0 +1,286 @@
+\chapter{複体のホモロジー群}
+
+\section{複体のホモロジー群}
+
+本章では，複体に対してホモロジー群を定義し主要な性質を証明する．
+
+
+\subsection{複体のホモロジー群}
+
+$n$次元ユークリッド空間$\R^n$の中の一般の位置にある$(r+1)$個の点
+$p_0, p_1 , \cdots , p_r$に対して，その順序をさまざまに変えて得られる組
+\[
+	\{	p_{i_0}, p_{i_1} , \cdots , p_{i_r}
+	\}
+\]
+全体の集合を考えよう．2つの組$\{ p_{i_0}, p_{i_1}, \cdots , p_{i_r}\} , \{ p_{j_0}, p_{j_1}, \cdots , p_{j_r} \}$
+が同値であるのは，置換
+\[
+	\begin{pmatrix}
+		i_0 & i_1 & \cdots & i_r \\
+		j_0 & j_1 & \cdots & j_r
+	\end{pmatrix}
+\]
+が偶置換であるときと定めると，容易に確かめられるように，この関係は同値関係となる．
+組$\{ p_0 , p_1 , \cdots , p_r \}$に属する同値類を
+\[
+	( p_0 p_1 \cdots p_r )
+\]
+と記し，\textbf{$r$次元有向単体}（または\textbf{有向$r$単体}）という．
+$r > 0$のとき$1$つの$r$単体$ | p_0 p_1 \cdots p_r |$に対して2つの有向$r$単体が定まるが，
+一方を$\sigma$とするとき他方を$-\sigma$と表す．正確に述べると，
+\[
+	\begin{pmatrix}
+		0   & 1   & \cdots & r \\
+    i_0 & i_1 & \cdots & i_r
+	\end{pmatrix}
+\]
+が偶置換のとき，
+\[
+	(p_{i_0} p_{i_1} \cdots p_{i_r} ) = (p_0 p_1 \cdots p_r),
+\]
+奇置換のとき,
+\[
+	(p_{i_0} p_{i_1} \cdots p_{i_r} ) = - ( p_0 p_1 \cdots p_r)
+\]
+である．$r$単体$| p_0 p_1 \cdots p_r |$に対して
+$	\sigma, - \sigma $のいずれかを指定することをこの$r$単体に
+\textbf{向き}をつけるという．
+一方を他方の\textbf{逆の向き}という．$r=O$のとき，
+つまり$0$単体に対しては，有向$0$単体はただ1つであり，したがって，
+向きはただ1つである．
+
+\例{1}
+
+$1$単体$|p_0 p_1 |$は2つの異なる向き$ (p_0 p_1 ) , (p_1 p_0)$をもち，
+$(p_0p_1) = -(p_1 p_1)$が成り立つ．
+
+$2$単体$| p_0 p_1 p_2 |$は2つの異なる向き
+$(p_0 p_1 p_2), (p_0 p_2 p_1)$をもち，$(p_0 p_1 p_0) = ( p_2 p_0 p_1) = - (p_0 p_2 p_1)
+= - (p_2 p_1 p_0) = -(p_1 p_0 p_2)$が成り立つ．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=130.0mm,height=25.0mm]{sec4x1.bmp}
+	\label{sec4x1}
+\end{figure}
+$K$を$m$次元複体とし，$r$を$ 0 \leqq r \leqq m$を満たす整数とする．
+$K$に属するすべての$r$単体を$	\sigma_1 , \sigma_ , \cdots , \sigma_k$とし，
+それぞれに任意に向きをつけて得られる有向単体を
+（簡単にするために同じ記号で）
+$	\sigma_1 , \sigma_2 , \cdots , \sigma_k$とする．
+有向単体$	\sigma_1 , \sigma_2, \cdots , \sigma_k$を生成元とする
+自由アーベル群を$C_r (K) $と書き，$K$の\textbf{$r$次元鎖群}という．
+$C_r (K)$の元$c$は\textbf{$r$鎖}といわれ，形式的な1次結合
+
+\[
+	c	=	\sum_{i=1}^{k}	n_i \sigma_i, n_i \in \Z
+\]
+の形で表される．$n_i$を$\sigma_i$の\textbf{係数}という．
+すべての係数$	n_i$が$0$である$r$鎖
+$	\displaystyle	\sum_{=}^{}	0	\sigma_i$が単位元$0$である．
+$c	=	\sum_{=}^{}	n_i \sigma_i$の逆元は
+$-c	=	\sum (-n_i) \sigma_i$である．
+$	\sigma_i$と異なる向きをもつ有向単体$-	\sigma_i$を$C_r (K)$の
+元$(-1) \sigma_i$と同一視する．
+
+整数$	r > m = \text{dim} K$および負の整数$r$に対しては
+$	C_r (K) = 0$と定める．
+
+$	r > 0$に対して，有向$r$単体	$	\sigma = ( p_0 p_1 \cdots p_r)$
+の\textbf{境界}	$\partial_r ( \sigma )$を$(r-1)$鎖
+\[
+	\partial_r ( \sigma = \sum_{i=0}^{r} (-1)^i ( p_0 p_1 \cdots \hat{p_i} \cdots p_r )
+\]
+として定義する．ここで，
+$	\hat{p}_i $は$p_i$を取り除くことを意味する．すなわち，
+\[
+	(p_0 p_1 \cdots \hat{p}_i \cdots p_r) = 
+( p_0 p_1 \cdots p_{i-1} p_{i+1} \cdots p_r)
+\]
+である．$r$鎖$c = \sum_{i=1}^{k} n_i \sigma_i$に対しては線形的に
+\[
+	\partial_r (c) = \sum_{i=1}^{k} n_i \partial_r ( \sigma_i )
+\]
+と定義する．$r \leqq 0$のとき，任意の$r$鎖$c$に対し
+$	\partial_r (c) = 0 $と定める．
+かくしてすべての整数$r$に対して写像
+\[
+	\partial_r : C_r (K) \to C_{r-1} (K)
+\]
+
+が定義される．$\partial_r$は明らかに準同形であり，
+\textbf{境界作用子}とよばれる．
+
+\例{2}
+\begin{align*}
+ \partial_1 ( p_0 p_1) & = p_1 - p_0 \quad \text{$0$単体$(p_0),(p_1)$を単に$p_0,p_1$と書く．}\\
+ \partial (p_0 p_1 p_2 ) &= (p_1 p_2) - (p_0 p_2) + (p_0 p_1) \\
+                         &= (p_1p_2) + (p_2p_0) + (p_0 p_1).
+\end{align*}
+$	p_0 \cup p_1 , | p_1p_2| \cup | p_2 p_0| \cup | p_0 p_1|$はそれぞれ図形としての
+$|p_0 p_1 | , |p_0 p_1 p_2|$の境界となっている．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=98.6mm,height=28.6mm]{sec4x1x2.bmp}
+	\label{sec4x1x2}
+\end{figure}
+
+\補題{1}
+任意の$(r+1)$鎖$ c\in C_{r+1} (K)$に対して$	\partial_r ( \partial_{r+1} (c))$,すなわち，
+合成写像
+\[
+	\partial_r \circ_{r+1} : C_{r+1} (K) \to C_{r-1} (K)
+\]
+は零写像である．
+
+\証明
+$	C_{r+1} (K)$の生成元	$	\sigma = ( p_0 p_1 \cdots p_{r+1} )$
+に対して$	\partial_r (\partial_{r+1} (\sigma )) = 0$を示せばよい．
+$	r \leqq 0$のときは，$\partial_r = 0$であるから，明らかに
+$ \partial_r \circ \partial_{r+1} = 0$となる．
+$ r > 0$のときは，次のようにして$	\partial_r (\partial_{r+1} ( \sigma )) = 0$が示される．
+\begin{align*}
+	\partial_r ( \partial_{r+1} ( \sigma ))
+&= \partial_r 
+   \left(
+     \sum_{i=0}^{r+1}	(-1)^i ( p_0 p_1 \cdots \hat{p}_i \cdots p_{r+1} 
+   \right) \\
+&= \sum_{i=0}^{r+1} (-1)^i \partial_r (p_0 p_1 \cdots \hat{p}_i \cdots p_{r+1} ) \\
+&= \sum_{i=0}^{r+1} (-1)^i 
+   \bigg\{ \sum_{j=0}^{i-1} (-1)^j ( p_0 \cdots \hat{p}_j \cdots \hat{p}_i \cdots p_{r+1} \\
+&+ \sum_{j=i+1}^{r+1} (-1)^{j-1} ( p_0 \cdots \hat{p}_i \cdots \hat{p}_j \cdots p_{r+1} \bigg\} \\
+&= \sum_{j=i}^{} (-1)^{i+j} ( p_0 \cdots \hat{p}_j \cdots \hat{p}_i \cdots p_{r+1} ) \\
+&- \sum_{i=j}^{} (-1)^{i+j} (p_0 \cdots \hat{p}_i \cdots \hat{p}_j \cdots p_{r+1}) \\
+&= 0.
+\end{align*}
+\■
+
+$C_r (K)$の元$c$は，条件
+\[
+	\partial_r (c) = 0 
+\]
+を満たすとき，$K$の$r$輪体といわれる．
+$K$のすべての$r$輪体全体の集合は，アーベル群
+$C_r (K)$の部分群をなす．これを$K$の$r$次元輪体群と称し，
+$Z_r(K)$でで表す．すなわち，
+\[
+	Z_r (K) = \text{Ker } \partial_r = \partial_r^{-1} (0).
+\]
+$r=0$のときは$	\partial_0 = 0$であるから，
+$	Z_0 (K) C_0 (K)$である．\[
+	c	=	\partial_{r+1} (d) \quad \text{を満たす} \quad d \in C_{r+1} (K) \quad \text{が存在する。}
+\]
+ような$C_r (K)$の元$c$を$K$の$r$境界輪体という．$K$のすべての$r$境界輪体の集合は，
+補題1により，$Z_r(K)$の$r$(K)の部分集合であり，更に部分群をなす．これを$K$の$r$次元境界輪体群と称し，
+$B_r(K)$で表す．すなわち
+\[
+	B_r(K) = \text{Im} \partial_{r+1} = \partial_{r+1} (C_{r+1} (K)).
+\]
+商群
+\[
+	H_r(K) = Z_r (K) / B_r (K)
+\]
+を複体$K$の$r$次元ホモロジー群という．$r$輪体$ c \in Z_r (K)$で代表される
+$H_r (K)$)の元を$[C]$で表し，$c$のホモロジー類という．
+
+\例{3} $K$を1つの頂点$p_0$から成る複体とすると，$r \ne 0$のとき
+$H_r (K) = 0, H_0 (K) \cong \Z$である．実際，$r \ne 0$のときは，
+定義より$C_r(K)=0$であるから，$H_r (K) = 0$．
+
+$ Z_0 (K) = C_0(K) = \{ nP_0 \: | \: n \in \Z \}$であるが，
+この群は対応$ n P_0 \to n $によって$\Z$と同形になる．
+
+$C_1(K)=0$であるから，$B_0 (K) = \partial_1 (C_1 (K)) =0$であり，
+結局，$H_0 (K) \cong \Z$が得られる．
+
+\例{4}
+複体$ K= \{ |P_0P_1| , |P_1 P_2|, |P_2 P_0|, P_0, P_1, P_2 \}$
+に対して，$H_0 (K) \cong H_1(K) \cong \Z$．
+$ H_r (K) = 0 \: (r \ne 0 ,1)$である．
+実際，$ r > 1$または$ r < 0$のときは，
+定義より，$C_r (K) = 0$であるから，
+$H_r (K) = 0$となるので，$r=1,0$のときを計算すれぽよい．
+任意の$1$鎖
+$ c \in C_1 (K)$は，
+$ c = n_1 (p_0p_1) + n_2 (p_1p_2) + n_3 (p_2 p_0)
+\quad (n_1 , n_2, n_3 \in \Z)$の形で
+表されるから，
+\begin{align*}
+	\partial_1 (c) 
+&= n_1 \partial_1 (p_0 p_1) + n_2 \partial_1 (p_1 p_2) + n_3 \partial_1 (p_2 p_0) \\
+&= n_1(p_1 - p_2) + n_2 (p_2 - p_1) + n_3 (p_0 - p_3) \\
+&= (-n_1 + n_3 ) p_1 + (n_1 - n_2) p_1 + (n_2 - n_3) p_2
+\end{align*}
+である．したがって，
+$ \partial_1 (c) = 0 \Leftrightarrow -n_1 + n_3 = 0 , n_1 - n_2 = 0, n_2 - n_3 =0 \Leftrightarrow n_1 = n_2 = n_3$．
+ゆえに，
+\[
+	Z_1 (K) = \{ c \: | \: c=n( (p_0 p_1) + (p_1 p_2) + (p_2 p_0)) , \: n \in \Z \: \} \cong \Z
+\]
+となる．ここで，上の同形は対応$n((p_0 p_1) + (p_1p_2) + (p_2 p_0)) \to n$
+によって得られる．$B_1 (K) = \partial_2 (C_2 (K)) = 0$であるから，
+結局，$H_1 (K) \cong \Z$となる．
+次に，$0$境界輪体$d = m_1 p_0 + m_2 p_1 + m_3 p_2 \in B(K) (m_l,m_22,m_3 \in Z )$は適当な
+$1$鎖$ c = n_1 (p_0 p_1 ) + n_2 (p_1 p_2) + n_3 (p_2 p_0)$により，$d = \partial_1 (c)$
+と表されるから，上の計算により，
+\[
+	m_1 p_0 + m_2 p_1 + m_3 p_2 = ( -n_1 + n_3 ) p_0 + (n_1 - n_2) p_1 + (n_2 - n_3) p_2
+\]
+となり，$ m_1 = - n_1 + n_3, m_2 = n_1 - n_2 , m_3 = n_2 - n_3$が成り立つ．
+したがって，
+$ m_1 + m_2 + m_3 = 0$である．逆に，$m_1 + m_2 + m_3 =0$を満たす
+$ d = m_1 p_0 + m_2 p_1 + m_3 p_2 \in C_1 (K)$をとると，
+\begin{align*}
+	d &= m_1 p_0 + m_2 p_1 + m_3 p_2 - (m_1 + m_2 + m_3) p_0 = m_2 (p_1 - p_0 ) + m_3 (p_2 - p_0) \\
+    &= m_2 \partial_1 (p_0p_1) + m_3 \partial_1 (p_0 p_2) = \partial_1 (m_2 (p_0 p_1)) - m_3 (p_2 p_0)) \in B_0(K)
+\end{align*}
+が成り立つ．ゆえに，
+\[
+	B_0 (K) =
+\{
+  d \: | \: d = m_1 p_0 + m_2 p_2 + m_3 p_2 , \: m_1 + m_2 + m_3 = 0 , m_i \in \Z
+\]
+となる．いま，写像
+\[
+	\varepsilon : C_0 (K) = Z_0 (K) \to  \Z
+\]
+を$d = m_1 p_0 + m_2 p_1 + m_3 p_2 \in Z_0(K)$
+に対して，$\varepsilon (d ) = m_1 + m_2 + m_3 \in \Z$により定義すれば，
+容易にわかるように$ \varepsilon$は全射準同形である．
+ここで，$ \Ker \varepsilon = B_0 (K) $であるから，準同形定理
+（第1章定理15)により，
+\[
+	H_0 (K) = Z_0 (K) / B_0 (K) \cong \Z
+\]
+が得られる.
+
+\問{1}
+複体$ K = \{ |p_0 p_1| , | p_1 p_2| , | p_2 p_0 | , |p_0 p_3|, |p_3 p_4 | , | p_4 p_0|,
+p_0 , p_1 , p_2 , p_3 , p_4 \}$に対して，
+$ \alpha = ( p_0 p_1 ) + (p_1 p_2 ) + (p_2 p_0) ,
+\beta = ( p_0 P_3) + (p_3 p_4) + (p_4 p_0) $とおくと，
+$ Z_1 (K) = \{ m \alpha + n \beta | m , n \in \Z \}$
+となることを示し，$H_1 (K) \cong \Z \oplus \Z$が
+成り立つことを証明せよ．
+
+\証明
+$c = n_ (p_0 p_1  + n_2 (p_1 p_2) + n_3 (p_2 p_0) + n_4 (p_0 p_3) + n_5 (p_3 p_4 ) + n_6 (p_4 p_0) 
+\:  \in C_1 (K) \: (n_i \in \Z) $とすると，
+\begin{align*}
+ \partial_1 (c) 
+&= n_1 (p_1 - p_0) + n_2 (p_2 - p_1) + n_3 (p_0 - p_2) + n_4 (p_3 - p_0) + n_5 ( p_4 - p_3) + n_6 (p_0 - p_4) \\
+&= ( -n_1 + n_3 - n_4 + n_6) p_0 + (n_1 -n_2) p_1 + (n_2 - n_3) p_3 + (n_4 - n_5) p_3 + (n_5 - n_6) p_4  
+\end{align*}
+であるから，$\partial_1(c) = 0 \Leftrightarrow n_1 = n_2 = n_3$かつ$ n_4 = n_5 = n_6$．ゆえに，
+$c \in Z_1(K) \Leftrightarrow c = m \alpha + n \beta \: (m,n \in \Z$．したがって，
+$Z_1(K) \cong \Z$．一方，$B_1 ( k) = \partial (c_2 (K)) = 0 $であるから，$H_1 (K) \cong \Z \oplus \Z$．
+\■
+
+
+\注意{1}
+$G$を$1$をもつ可換環とする．$C_r (K)$の代わりに，
+\[
+	C_r (K; G) = \{ \sum_{n=1}^{k}	n_i \sigma_i \: | \: n_i \in G \}
+\]
+を考え，これまでと同様にして，$H_r (K;G) = Z_r (K ; G) / B_r (K;G)$を定義することができる．
+これを$K$の$G-$係数の$r$次元ホモロジー群という．特に，$H_r (K;\Z) = H_r(K)$である．

@@ -1,0 +1,202 @@
+\chapter{基本群}
+
+本章では，ループのホモトピー類として得られる基本群を定義し，関連する事柄を説明する．
+
+\section{道とホモトピー}
+
+$X,Y$を位相空間，$A$を$X$の部分集合とする．
+
+$f,g:X \to Y$を，$f|A =g|A$，すなわち，すべての$x \in A$に対して$f(x) = g(x) $を満たす連続写像とする．
+$f$と$g$が\textbf{$A$を止めて（または$A$に関して）ホモトープである}とは，連続写像$ F:X \times I \to Y$で，
+すべての$x \in X$に対し，$F(x,0)=f(x), F(x,1)=g(x)$が成り立ち，更に，すべての$x \in A$とすべての
+$t \in I= [ 0,1 ]$に対し，$F(x,t)=f(x)=g(x)$が成り立つようなものが存在するときをいう．
+このとき，$ f \simeq g \:\text{rel}\: A$と記し，$F$を$f$と$g$の間の\textbf{ホモトピー}という．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=80mm,height=40mm]{p158.bmp}
+\end{figure}
+
+$A=\varnothing $の場合が第3章§3.6のホモトピーに外ならない．
+任意の$t \in I$に対して，写像$f : X \to y; \quad f_t(x) = F(x,t) \quad ( x \ in X)$
+は連続で，$f_0=f, f_1 = g $である．この$f_t$も$f$と$g$の間の\textbf{ホモトピー}という．
+
+\補題{1}
+$A$を止めてホモトープであるという関係は，$A$の点では一致するようなすべての連続写像
+$f:X \to Y$の間の同値関係である．
+
+\証明
+$1^\circ$ 反射律: $f \simeq f \: \text{rel} \: A$．
+ホモトピーを，すべての$x \in X, t \in I$に対して，
+$F(x,t) = f(x)$により定義すればよい．このとき
+\[
+	F(x,0)=f(x) , \quad F(x,1) = f(x)
+\]
+更にすべての$x \in A$とすべての$t \in [0,1]$に対し，$F(x,t) = f(x) = f(x)$．
+したがって$ f \simeq f \: \text{rel} \: A$．
+
+
+$2^\circ$ 対称律: $f \simeq g \: \text{rel} \: A \Rightarrow g \simeq f \: \text{rel} \: A$.
+$f$と$g$の間のホモトピー$ F : X \times I \to Y$に対して，
+$G(x,t) = F(x,1-t)$により$G: X \times I \to Y$を定義すれば，$G$は$g$と$f$の間のホモトピーとなる．
+実際，$G(x,0)= F(x,1-0) = F(x,1) = g(x), G(x,1) = F(x,1-1) = f(x)$が成り立ち，すべての
+$x \in A$とすべての$ t\in I = [0,1]$に対して$G(x,t) = F(x,1-t) = F(x,t) = g(x) = f(x)$となる．
+したがって$f \simeq g \: \text{rel} \: A \Rightarrow g \simeq f \: \text{rel} \: A$．
+
+$3^\circ$ 推移律:
+$f \simeq g \text{rel} \: A ,g \simeq h \: \text{rel} \: A \Rightarrow f \simeq g \: \text{rel} \: A$．
+$f$と$g$の間のホモトピー$F$，$g$と$h$の間のホモトピー$G$に対して，$H: X \times 1 \to Y$を
+\[
+	H(x,t) = \begin{cases}
+							F(x,2t)		&\quad	(0 \leqq t \leqq 1/2)	\\
+							G(x,2t-1)	&\quad	(1/2 \leqq t \leqq 1)	\\
+						\end{cases}
+\]
+により定義すれば，$ t = 1/2$のとき，$F(x,1) = g(x) = G(x,0)$であるから
+$H$は連続となる（第2章補題15参照）
+\footnote{ \small
+\補題{15}
+$X,Y$を位相空間，$f: X \to Y$を写像とする．$A_i (i=1,2, \cdots , n)$を
+$X = \bigcup_{i=1}^n A_i$であるような$X$の閉集合とする．すべての$i \: ( 1 \leqq i \leqq n)$
+に対して$f$の制限写像$f|A_i \: : \: A_i \to Y$が連続写像ならば，$f$は連続写像である．
+\■
+
+$X \times [0 ,1/2] \cup X \times [1/2,1] = X \times [0,1]$でそれぞれは閉集合．
+}
+.
+$H$が$f$と$h$の間のホモトピーとなることを確かめてみよう．まず
+\begin{align*}
+	H(x,0) = F(x,0) = f(x)	\\
+	H(x,1) = G(x,1) = h(x).	
+\end{align*}
+である．つぎに，すべての$x \in A$とすべての$t \in [0,1]$に対して，
+\[
+	H(x,t)= f(x) = g(x) = h(x).
+\]
+\■
+
+連続写像$f:X \to Y$の属する同値類を$f$の\textbf{ホモトピー類}といい，$[f]$と書く．
+
+\補題{2}
+$X,Y,Z$を位相空間，$A \subset X,B \subset Y$を部分集合，$f,g: X \to Y$を
+$ f | A= g | A $を満たす連続写像で，$f \simeq g \: \text{rel} \: A$，
+$h , k : Y \to Z$を$ h | B = k | B$を満たす連続写像で，
+$ h \simeq k \: \text{rel} \: B$とする．更に，$f(A) \subset B$とする．
+このとき, $h \circ f \simeq k \circ g \: \text{rel} \: A$が成り立つ．
+
+\証明
+
+$F:X \times I \to Y$を$f$と$g$の間のホモトピー，$G : Y\times I \to Z$を$h$と$k$の問のホモトピーとする．
+$H: X \times I \to Z$を
+\[
+	H(x,t) = G(F(x,t),t) \quad(x \in X , t \in I)
+\]
+により定義すると，$H$は連続で，すべての$x \in X$に対して
+\begin{align*}
+	H(x,0)=G(F(x,0),0)=G(f(x),0)=h(f(x))=(h \circ f)(x),	\\
+	H(x,1)=G(F(x,1),1)=G(g(x),1) = k(g(x)=(h \circ g)(x).
+\end{align*}
+が成り立ち，更に，すべての$x \in A$とすべての$t \in I$に対して，
+$F(x,t)=f(x) = g(x) \in B$に注意すれば，$H(x,t) = G( F(x,t),t) = G(f(x) , t) = h(f(x))= h(g(x)) = h(g(x))$
+となるから，$h \circ fk \circ g \: \text{rel} : A$が得られる．
+\■
+
+第2章 \S 2.6で述べたように，$X$の\textbf{道}とは，閉区間$I = [0,1]$から位相空間
+$X$への連続写像$w:I \to X$のことである．$w(0)=x_0$を\textbf{始点}，$w(1)=x_1$を\textbf{終点}，
+両方を\textbf{端点}という．始点が$x_0$，終点が$x_1$である道を簡単に$x_0$から$x_1$への道という．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=150mm,height=50mm]{p161.bmp}
+\end{figure}
+
+$x_0,x_1 \in X$とする．$x_0$から$x_1$への2つの道
+\[
+	w,w'	: I \to X,		\quad	
+	w(0)=w'(0)	=	x_0,	\quad	
+	w(1)	=	w'(1)	=	x_1
+\]
+が\textbf{端点を止めてホモトープ}であるとは，$ w \simeq w' \: \text{rel} \: \dot{I} $であることをいう．
+ただし，$\dot{I}=\{0,1	\}$は$I$の境界を表す．すなわち，連続写像$F:I \times I \to X$で,
+すべての$s,t \in I$に対して，
+\[
+	F(s,0)	= w(s), \quad  F(s,1) = w'(s) , \quad F(0,t) = x_0 , \quad F(1,t) = x_1
+\]
+を満たすものが存在することをいう．
+
+2つの道$w,v: I \to X$があって，$w$の終点$w(1)$と$v$の始点$v(0)$が同一の点であるとき，
+$w$と$v$を\textbf{つないだ道}（または$w$と$v$の\textbf{積}）とは，
+\[
+	u(s) = \begin{cases}
+						\:	w(2s) 	\quad &	( 0 \leqq s \leqq 1/2)	\\
+						\:	v(2s-1) \quad &	( 1/2 \leqq s \leqq 1)
+					\end{cases}
+\]
+によって定義される道$u:I \to X$のことである．$u$が連続となることは，
+第2章補題15による．$w$と$v$をつないだ道$u$を$w \cdot v$と書く．
+
+道$w:I \to X$の\textbf{逆の道}とは，すべての$s \in I$に対して
+\[
+	w^{-1} (s) = w(1-s)
+\]
+によって定義される道$w^{-1} I \to X$のことである．
+
+\補題{3}
+\begin{align*}
+	w \simeq w' \: \text{rel} \: \dot{I}, \quad
+	v \simeq v' \: \text{rel} \: \dot{I},	\quad
+	w(1)	=	v(0)	\\
+	\Longrightarrow
+	w	\cdot	v \simeq w' \cdot v' \: \text{rel} \: \dot{I}.
+\end{align*}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=150mm,height=50mm]{p162.bmp}
+\end{figure}
+
+\証明
+$ w \simeq w' \: \text{rel} \: \dot{I}, \quad v \simeq v' \: \text{rel} \: \dot{I}$
+のホモトピーをそれぞれ$F,G$とすれば，
+$w \cdot v \simeq w' \dots v' \: \text{rel} \: \dot{I}$のホモトピーは，
+$ (s,t) \in I \times I$に対し
+\[
+	H(s,t) = 
+\begin{cases}
+		\:	F(2s , t) \quad & ( 0 		\leqq s \leqq 1/2)	\\
+		\:	G(2s-1 , t) \quad & ( 1/2 \leqq s \leqq 1)	\\
+\end{cases}
+\]
+で与えられる．
+\footnote{この種の証明では常に，ホモとピー$H$を与えればよい．}
+$H$の連続性は第2章補題15による．
+
+\注意{1}
+$w_t(s) = F(s,t) , v_t(s) = G(s,t)$とすれば，$w_t \cdot v_t)(s) = H(s,t)$となっている．
+
+Wt(s)=F(s・t),Vt(s)=G(∫,t)とすれば,(w、・Vt)(s)=H(s,t)と
+なっている.
+
+\補題{4}.
+\[
+	w \simeq w' \: \text{rel} \: \dot{I} 
+\Longrightarrow w^{-1} \simeq w'{-1} \: \text{rel} \: \dot{I}.
+\]
+\問{1}
+補題4を証明せよ．
+
+\証明
+$w \simeq w' \: \text{rel} \: \dot{I}$のホモとピーを$F$とすれば、
+$w^{-1} \simeq {w'}^{-1} \: \text{rel} \: \dot{I}$のホモとピーは，
+$(s,t) = F(1-s,t)$で与えられる．
+
+\■
+
+$ x_0 \in X$とする．すべての$ s \in I$に対し$c(s)=x_0$によって定義される道
+$c: I \to X$を$x_0$における\textbf{定値道}という．
+
+始点と終点が一致するような道のことを\textbf{ループ}(または\textbf{閉道})という.
+\textbf{つないだループ},\textbf{逆のループ}は,つないだ道,逆の道の特別な場合である.
+\textbf{定値ループ}は定値道に外ならない.始点および終点が$x_0$であるループを,$x_0$を基点と
+するループという.
+
+

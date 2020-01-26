@@ -1,0 +1,163 @@
+\section{連結性とホモロジー群}
+
+$K$を複体，$P$を$K$の任意の単体$K|$の任意の点$a$に対して
+$	|	pa	|	\cap |K| = \{ a \}$
+が成り立つ一般の位置にあるような点とするとき，
+$P$を中心とし$K$を底とする錐
+\[
+	p	*	K	=	\{	p	*	\sigma \: | \: \sigma \in K \} \cup p \} \cup K
+\]
+が定義される（第3章§3.3）．ここで，
+$	p * 1p_0p_1 \cdots p_r| = | pp_0 p_1 \cdots p_r|$である．
+
+錐のホモロジー群を計算しよう.
+
+$	\sigma = ( p_0 p_1 \cdots p_r)$を$K$の有向$r$単体とするとき，$P$と$	\sigma$の
+結	$p	*	\sigma$を,有向$(r+1)$単体
+\[
+	p	*	(p_0 p_1 \cdots p_r) = (p p_0 p_1 \cdots p_r)
+\]
+と定義する．列	$\{	p_0, p_1 , \cdots , p_r \}$の中の2つの頂点の順序を変えると列
+$\{ p_0 , p_1 , \cdots , p_r \}$の中の2つの頂点の順序が変わるので，
+この定義は意味をもつ．一般に$K$の
+$r$鎖	$c = \sum_{=}^{}	n_i \sigma_i$に対しては，$p$と$c$の\textbf{結} $	p	*	c$を次式によって定義する.
+\[
+	p	*	c	=	\sum_{=}^{}n_i ( p * \sigma).
+\]
+$	c	\in C_r ( K )$に対し	$	p	*	c	\in C_{r+1}	( p * K)$を対応させる写像は，
+$	C_r (K)$から$	C_{r+1} ( p * K)$への準同形である．
+
+\補題{8} $r$鎖$c=	\sum_{}^{}	n_i \sigma_i$に対して，次が成り立つ．
+\begin{align*}
+	r	>	0	\quad \text{のとき}	\partial_{r+1} ( p * c ) = c - p * \partial_r ( c) \\
+	r	=	0	\quad \text{のとき}	\partial_{1} ( p * c ) = c - \left(	\sum_{=}^{}	n_i \right)	p. 
+\end{align*}
+
+\証明
+$r>0$のとき，
+\begin{align*}
+	\partial_{r+1} ( p * \sigma ) 
+&= \partial_{r+1} ( p p_0 \cdots p_r) = ( p_0 \cdots p_r) - \sum_{i=0}^{r}	(-1)^i ( p p_0 \cdots \hat{p_i} \cdots p_r \\
+&= \sigma - p	*	\partial_r ( \sigma )
+\end{align*}
+であるから，$	\gamma$鎖 $	c	=	\sum_{=}^{}	n_i \sigma_i$に対しては，
+\begin{align*}
+	\partial_{r+1}	(	p	*	c)	
+&=	\sum_{}^{}	n_i \partial_{r+1} ( p * \sigma_i ) 
+=	\sum_{}^{} n_i ( \sigma_i - p * \partial_r ( \sigma_i	))	\\
+&=	c	-	p	*	\partial_r (c)
+\end{align*}
+となる．$r=0$のとき，
+\[
+	\partial_1 ( p * p_0) = \partial_1 (p p_0)	=	p_0 - p
+\]
+であるから，$0$鎖$c=	\sum_{}^{}	n_i \sigma_i$に対しては，
+\[
+	\partial_1 ( p * c) =	\sum_{}^{} n_i \partial_1 ( p * \sigma_i)
+= \sum_{}^{} ( \sigma_i - p ) = c \left(	\sum_{}^{}	n_i \right) p.	
+\]
+\■
+
+\定理{9}
+錐	$	p	*	K$ に対して，$	H_0 ( p * K) \cong \Z, H_r ( p * K) =0 \: ( r \ne 0 )$.
+\証明
+
+$ p * K $の任意の2つの頂点を	$	q,q'$とすると，$	\sim p , q' \sim p$．
+よって$	q	\sim q'$ゆえに，
+$	p	* K $は連結であり，定理6より$	H_0 ( p*K) \cong \Z$となる．
+次に，$	r	>	0$とする．
+$	C_k ( p * K)$の任意の元$z$は，$C_r(K)$に属する鎖$c$と$C_{r-1}(K)$Kに属する
+鎖$d$によって，
+\[
+	z	=	c	+	p	*	d
+\]
+とただ1通りに表すことができる．$	z	\in \Z (p * K)$ならば，
+$	\partial_{r+1} (p * c)$となることを証明しよう．
+そうすれば	$	z	\in B + ( p * K )$となるから，
+$H_r ( p * K) = 0$がいえる．さて，補題8より
+z-∂。+1(P*c)=c+P*d-(c一ρ*∂。(c))=ρ*(d+∂。(c))
+となる.両辺を∂,でうつせぽ,zはr輪体であることと補題1,8より
+\begin{align*}
+	0	=	
+\begin{cases}
+		d	+	\partial_r ( c ) - p * \partial_{r-1}	(	d	+	\partial_r ( c))	\quad ( r>1) \\
+		d	+	\partial_r ( c ) - \varepsilon ( d + \partial_r ( c)) p				\quad ( r=1)
+\end{cases}
+\end{align*}
+が成り立つ．ただし，$	\varepsilon ( d + \partial_r ( c))$は$	d	+	\partial_r ( c )$の係数の和である．
+この等式において，$	C_r{r-1} (K)$に属する鎖の部分に着目すれぽ，
+$	d	+	\partial_r ( c ) = 0$が得られるから，
+結局，$z	- \partial_{r+1} ( p *c ) = 0$となる．
+$	H_r ( p * K ) = 0$は定義による．
+\■
+
+複体$K$はそのホモロジー群が	$H_0 ( K ) \cong \Z, H_r (K) = 0	\: ( r \ne c)$を満たすとき
+\textbf{非輪状}であると称される．例3により1頂点から成る複体は非輪状である．
+定理9により錐は非輪状である．例4のようにその多面体が輪状の図形となるとき，非輪状にはならない．
+
+\例{5}
+$n$単体$	\sigma = | p_0 p_1 \cdots p_n |$のの任意の頂点
+$p_i$に対して，K(σ)はPiを中心とし
+$	K(	|	p_0 \cdots \hat{p_i}	\cdots	p_n|)$を底とする錐であるから非輪状である．
+
+\例{6}
+$n$単体$	\sigma$の重心を$	b_\sigma$とすると，$Sd	\sigma$は$b_\sigma$を中心とし，
+$	Sd \dot{\sigma}$を底とする錐であるから非輪状である．
+
+$n$を正整数とする．$n$単体$	\sigma $に対し，複体
+$K(	\dot{\sigma} ) =	K(	\sigma	)	-	\{	\sigma	\}	$を$	\Sigma^{n-1}$
+で表そう．$	\Sigma^{n-1}$のホモロジー群は次のようになる．
+
+\定理{10}
+\begin{align*}
+	n	>1	&\text{ならば，}
+H_r \left(	\Sigma^{n-1} \right) \cong 
+										\begin{cases}
+											\Z	\quad ( r = 0 \cdots , n-1)	\\
+											0		\quad (\text{その他})
+										\end{cases}	\\
+	n=1	&\text{ならば，}
+H_r \left(	\Sigma^{0} \right) \cong 
+										\begin{cases}
+											\Z	\oplus \Z	\quad ( r = 0)	\\
+											0							\quad (	r \ne 0)
+										\end{cases}
+\end{align*}
+
+\証明
+
+$n>1$とする．$K(\sigma) $の$(n-1)$次元切片が$	\displaystyle	\Sigma^{n-1}$であるから，
+$	r	=0,1,	\cdots	,	n-1$に対して
+\[
+	C_r \left(	\Sigma^{n-1}	\right)	=	C_r ( K_{(	\sigma	)}	)
+\]
+であり，境界作用子$	\partial_r$は$r	=	0,1,	\cdots	,	n-1$では等しいので，
+\begin{align*}
+	Z_r \left(	\Sigma^{n-1}	\right)	&=	Z_r ( K_{(\sigma)} ) \quad (r=0,1,	\cdots, n-1)	\\
+	B_r \left(	\Sigma^{n-1}	\right)	&=	B_r ( K_{(\sigma)} ) \quad (r=0,1,	\cdots, n-2)
+\end{align*}
+となる．したがって，定理9と例5により
+\begin{align*}
+		H_r \left(	\Sigma^{n-1}	\right)	=	H_r ( K_{(	\sigma	)}	)	\cong 
+	\begin{cases}
+			\Z	\quad	(	r=0)	\\
+			0		\quad	(	1	\leqq	r	\leqq	n-2)
+	\end{cases}
+\end{align*}
+が得られる．
+また定理9より$	Z_{n-1} (K ( \sigma )) / B_{n-1} (K_{( \sigma )} = 0$であるから，
+\[
+	Z_{n-1} (K ( \sigma)) = B_{n-1} (K ( \sigma ))
+\]
+となる．$C_n (K ( \sigma ))$は$	\sigma $で生成される自由アーベル群であるから，
+$	B_{r-1} ( K ( \sigma ))	=	\partial_n ( C_n ( K ( \sigma)))$は
+$	\partial_n ( \sigma )$で生成される自由アーベル群である。ゆえに，
+$Z_{n-1} ( \Sigma^{n-1} ) = \partial_n ( C_n ( \Sigma^{n-1} )) = 0$であるから，
+\[
+	H_{n-1} ( \Sigma^{n-1}) = Z_{n-1} ( \Sigma^{n-1} ) \cong \Z.
+\]
+が得られる．$n=1$のときは，$\Sigma^0$は異なる2点からなる複体であり，
+結果は系7から直ちに従う．
+\■
+
+

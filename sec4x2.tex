@@ -1,0 +1,152 @@
+\section{連結性とホモロジー群}
+
+複体$K$の頂点$p,q$に対して，$K$の頂点の列$p_0 , p_1 , \cdots , p_k$で，
+\[
+	p=p_0 , q=p_k , \quad | p_i p_{i+1} \: ( i = 0 , 1 , \cdots , k-1)
+\]
+は$K$の$1$単体となるものが，存在するとき，$p \sim q$と定め，
+各頂点$p$に対して，$p \sim p$と定めると関係
+$\sim$は明らかに頂点の集合$K^{(0)}$における同値関係となる．複体$K$において，
+この同値類が唯1つのとき，すなわち，$K$の任意の2頂点$p,q$がつねに同値であるとき，
+複体$K$は連結であるといわれる．
+
+一般の複体$K$に対して，頂点の集合$K^{(0)}$は同値関係$\sim $によって
+同値類$V_1 , V_2 , \cdots , V_m$に類別される．$V_i$に属する頂点を含む
+$K$の単体全体の集合を$K_i$とするとき，次の補題が成立する．
+$K_1, K_2, \cdots , K_m$は$K$の連結成分といわれる．
+
+\補題{2}
+\begin{list}{}{}
+	\item	(1) $i=1 , 2, \cdots , m$に対し，$K_i$は$K$の廉潔な部分複体である．
+	\item (2) $K = K_1 \cup K_2 \cup \cdots \cup K_m , \: i \ne j$ならば，$K_i \cap K_j = \varnothing$．
+	\item (3) 部分多面体$|K_1| , |K_2 | , \cdots , |K_m|$は多面体$|K|$の弧状連結成分である．
+\end{list}
+
+\証明
+\begin{list}{}{}
+	\item	(1) $K_i$の任意の単体に対して，そのすべての面単体も$K_i$に属するから，
+$K_i$は$K$の部分複体である．$K_i$が連結であることは明らかである．
+	\item (2) $K^{(0)} = V_1 \cup V_2 \cup \cdots \cup V_m , i \ne j$ならば，
+$V_i \cap V_j = \varnothing$であることから直ちに結果が従う。
+	\item (3) $|K_i|$に属する任意の異なる2点$x,y$に対して，$x,y$をそれぞれ含む単体
+$\sigma, \tau \in K_i$の頂点$pq$をとれば，$p,q \in V_i$であるから，$K_i$の頂点の列
+$p_0 , p_1 , \cdots , p_k$で，
+\[
+	p=p_0 , q=p_k, | p_i p_{i+1} ( i=0,1, \cdots, k-1) \text{は} K_i \text{の$1$単体}
+\]
+となるものが存在する．線分$|xp|$は$\sigma$に含まれ，線分$|qy|$は$\tau$に含まれるので，
+接線$|xp|,|pp_1|, \cdots , |p_{k-1}q|,|qy|$が$x$から$y$への道を与える．（第2章，
+\S \ref{sec2x6} 参照）．よって$|K_i|$は個儒連結である．(2)より，
+\[
+	|K| = |_1 | \cup |K_2 | \cup \cdots \cup |K_m| , i \ne j \quad \text{ならば} |K_i | \cap |K_j | = \varnothing
+\]
+が導かれ，したがって$|K_1|, |K_2| , \cdots , |K_m|$は$|K|$の弧状連結成分である．
+\end{list}
+\■
+
+\定理{3}
+$K_1 , K_2 , \cdots , K_m$を複体$K$の連結成分とすると，すべての整数$r$に対して
+次の同型が成り立つ。
+\[
+	H_r (K) \cong \sum_{i=1}^{m} H_r (K_i) \quad \text{(直和)}.
+\]
+
+\証明
+$K$の各$r$の単体はいずれかの$K_i$に属するから，$K$のすべての$r$鎖$c \in C_r (K)$は，
+\[
+	c = \sum_{i=1}^{m}	c_i \quad c_i \in C_r (K_i)
+\]
+の形に唯1通りに表される．それゆえ，
+\[
+	C_r (K) \cong \sum_{i=1}^{m} C_r (K_i ) \quad \text{(直和)}
+\]
+となる．境界作用子$\partial_r$はそれぞれの直和因子の中で閉じている，つまり
+\begin{align*}
+	&\partial (C_r (K_i) ) \subset C_{r-1} (K_i) \text{であるから，直和分解 } \\
+  &Z_r (K) \cong \sum_{i=1}^{m} Z_r (K_i) , \quad B_r(K) \cong \sum_{i=1}^{m} B_R (K_i)
+\end{align*}
+が成り立つ．したがって，
+\[
+	H_r (K) = Z_r (K) / B_r (K) \cong \sum_{i=1}^{m} Z_r (K_i) / B_r (K_i)  = \sum_{i=1}^{m} H_r (K_i)
+\]
+が得られる．
+\■
+
+\補題{4} 
+$K$を複体，$p_1,p_2,	\cdots	,	p_k$を頂点（すなわ$0$単体）とする.
+$c=	\sum_{=}^{}	n_1	p_i	\in B_0(K)	\quad (n_i \in \Z)$ならば
+$	\sum_{=1}^{k}	n_i	=	0$が成り立つ．
+
+\証明
+
+仮定より$c \partial_1 (d)$となる	$	d=	\sum_{j=1}^{l}	m_j \sigma_j \in C_(K)$
+が存在する．ただし，$	\sigma_j =(q_{j_0}q_{j_1})$は有向1単体である．
+ゆえに,
+\begin{align*}
+	\sum_{i=1}^{k}	n_i p_i 
+&=	\partial_1 (d) = \sum_{j=1}^{l} m_j \partial_1 ( \sigma_j) = \sum_{j=1}^{l}	m_j (q_{j_1} - q_{j_0}	\\
+&=	\\sum_{j=1}^{l}	m_j q_{j_1}	-	\sum_{j=1}^{l}	m_j	q_{j_0}
+\end{align*}
+となる．ここで，左端と右端の辺の係数の和を比較することにより
+\[
+	\sum_{j=1}^{k}	n_j = \sum_{j=1}^{l}	-	\sum_{j=1}^{l}	m_j	=0.
+\]``
+を得る.
+\■
+
+\補題{5}
+$K$漣結な複体とする．$0$鎖$	c	=	\sum_{i=1}^{k}	n_i p_i $に対し，
+$	\sum_{i=1}^{k}	n_i	=	0$が成り立てば，$	c	\in	B_0 (K)$である．
+
+\証明
+
+$K$の頂点を固定する．$K$は連結であるから，各$	p_i ( i=1,2,	\cdots	,	k)$
+に対し，$K$の頂点の列$	q_0, q_1 , \cdots , q_l$で，
+\[
+	p=q_0, p_i = q_l, \quad | q_j q_{j+1}	|	\:	(	j=0, \cdots, l1)\text{は$K$の$1$単体}
+\]
+となるものが存在する．いま，$1$鎖$	\sigma_i$を
+\[
+	\sigma_i = (pq_1)	+	(q_1q_2)	+	\cdots + (q_{l-1}p_i)
+\]
+と定義すると
+\[
+	\partial_1 ( \sigma_i) = (-p + q_1) + (-q_1 + q_2) + \cdots + (-q_{l-1} + p_i )
+=	p_i - p
+\]
+となる．このとき，
+\begin{align*}
+	c	&=	\sum_{i=1}^{k}	n_i p_i - \left(	\sum_{i=1}^{k}	n_i	\right)	p	=	\sum_{i=1}^{k}	n_i (p_i - p)	\\
+		&=	\sum_{i=1}^{k}	n_i \partial	(	\sigma_i) =	\partial_i (	\sum_{i=1}^{k}	n_i \sigma_i) \in B_0 (K).	
+\end{align*}
+が得られる．
+\■
+
+
+\定理{6}
+
+複体$K$が連結ならば，$H_0 (K) \cong \Z$が成り立つ．
+
+\証明
+
+複体$K$が連結ならば，補題4.5lこより，$0$次境界輪体群
+$B_0(K)$は係数の和が$0$であるような$0$鎖全体の集合である．
+いま，写像
+\[
+	\varepsilon	=	c_0 (K) = Z_0 (K) \to \Z
+\]
+を任意の$0$鎖$	c	\in C_0(K) $に対して，
+\[
+	\varepsilon	(	c	)	=	(	\text{$c$の係数の和}
+\]
+と定義すれば，容易に確かめられるように，$	\varepsilon$は全射準同形となる．
+ここで，$	\Ker \varepsilon	=	B_0(K)$であるから，準同形定理（第1章定理15）より
+$H_0 (K) = Z_0 (K) / B_0(K) \cong \Z$が得られる．
+\■
+
+定理3.6 から直ちに次が従う．
+
+\系{7} 複体$K$の連結成分の個数を$m$すると，
+\[
+	H_0 (K) \cong \underbrace{ \Z \oplus \Z \oplus \cdots \oplus \Z}{m\text{個}}	\quad \text{直和}
+\]

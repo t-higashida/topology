@@ -1,0 +1,132 @@
+\section{単体写像による誘導準同形}
+
+$K,L$を複体，$\varphi: K \to L$を単体写像とすると，$K$の任意の$r$単体
+$	|	p_0 p_1 \cdots p_r |$に対し集合$	\{	\varphi ( p_0) , \varphi (p_1) , \cdots, \varphi(p_r) \}$
+は$L$の1つの単体の頂点の集合からなっている．いま，$K$の有向$r$単体$	\sigma ( p_0 p_1 \cdots p_r)$に対して，
+$C_r ( \varphi ) ( \sigma )$を次式で定義する．
+\[
+	C_r( \varphi ) ( \sigma ) = 
+\begin{cases}
+		(	\varphi	(	p_0 ) \varphi (p_1) \cdots \varphi (p_r)) &\text{$\varphi ( p_0) , \varphi ( p_1) , \cdots , \varphi ( p_r)$がすべて異なるとき}	\\
+		0																											&\text{$\varphi	(	p_0) , \varphi ( p_1) ,	\cdots , \varphi ( p_r)$の中に同じものがあるとき}
+\end{cases}
+\]
+列$\{ p_0 , p_1, \cdots , p_r \}$の中の2つの頂点の順序を変えると，列$ \{ \varphi (p_0) , \varphi ( p_1) , \cdots , \varphi (p_r) \}$
+の2つの頂点の順序が分かるので，この定義は意味を持つ．一般に$K$$r$鎖$c = \sum n_i \sigma_i$に対し，
+$C_r ( \varphi) (c)$を次式によって定義する．
+\[
+	C_r ( \varphi ) (c) = \sum n_i C_r ( \varphi ) ( \sigma_r).
+\]
+このとき，$C_r( \varphi ) : C_r(K) \to C_r(L)$ は準同形であり，次の補題11が成り立つことは
+定義から容易にわかる．
+
+\補題{11}
+\begin{list}{}{}
+	\item	(1) $\text{id} K \to K$を恒等写像とすると，$C_r ( \text{id} ) : C_r(K) \to C_r (K)$は恒等写像である．
+	\item (2) $\varphi : K \to L, \psi : L \to M$を単体写像とすると，$C_r ( \psi \circ \varphi ) = C_r ( \varphi ) $.
+\end{list}
+
+\補題{12}
+単体写像	$	\varphi * K \to L$に対して，$\partial_r \circ C_r ( \varphi ) = C_r ( \psi \circ \varphi ) 
+= C_r ( \psi) \circ C_r ( \varphi)$が成り立つ．
+すなわち，次の図式は可換である．
+\[
+	\begin{CD}
+		C_r (K)  @>{ \partial_r } >>		 C_{r-1} (K) \\
+			@V{C_r(\varphi)}VV             @VV{C_{r-1}(\varphi) }V \\
+		C_r(L)   @>{ \partial_r	} >> 			C_{r-1}(L)
+	\end{CD}
+\]
+(本来，2つの境界作用子$	\partial_r : C_r ( K ) \to C_{r-1} (K), \partial_r : C_r(L) \to C_{r-1} (L)$は別のもので，
+それぞれ$	\partial_r (K), \partial_r (L)$と書いて区別すべきであるが，記号を簡単にするためともに$\partial_r$で表す．）
+
+\証明
+$K$の任意の有向$r$単体$	\sigma = ( p_0 p_1 \cdots p_r)$に対して，
+$	\partial_r ( C_r ( \varphi ) ( \sigma )) = C_{r-1} ( \varphi ) ( \partial_r (\sigma)$
+を証明すればよい．集合$\{ \varphi ( p_0) , \varphi ( p_1) , \cdots , \varphi ( p_k) \}$は$L$のある単体
+$	\tau $のの頂点の集合になっている．$	\tau$のの次元について場合分けを考えよう．
+
+(a) $\tau$の次元が$r$に等しい場合は，$	\varphi ( p_0) , \varphi( p_1) , \cdots , \varphi ( p_r)$がすべて
+異なる場合であるから，
+\begin{align*}
+	\partial_r ( C_r ( \varphi ) ( \sigma) 
+&= \partial_r ( \varphi ( p_0) \varphi ( p_1) \cdots \varphi( p_r)) \\
+&= \sum_{i=0}^{r} (-1)^i ( \varphi ( p_0) \cdots \hat{\varphi ( p_i)} \cdots \varphi( p_r)) \\
+&= \sum_{i=0}^{r} (-1)^i C_{r-1} ( \varphi ( p_0 \cdots \hat{ p_i} \cdots p_r) \\
+&= C_{r-1} ( \varphi) ( \partial_r ( \sigma)) 
+\end{align*}
+
+(b) $\tau$の次元が$r-1$に等しい場合は，
+$	\varphi ( p_0) , \varphi ( p_1) , \cdots , \varphi( p_r) $の中のうち，ちょうど2個が
+同じである場合である．$	\varphi ( p_k) = \varphi ( p_k) \: ( k < l) $で残りはすべて
+異なると仮定する．このとき，定義から$	\partial_r ( C_r ( \varphi ) ( \sigma)) =0$であり
+\begin{align*}
+	 C_{r-1} ( \varphi) ( \partial_r ( \sigma )) 
+&= C_{r-1} ( \sum_{i=0}^r ( -1)^i ( p_0 \cdots \hat{p_i} \cdots p_r)) \\
+&= \sum_{i=0}^r ( -1)^i C_{r-1} ( \varphi ) ( p_0 \cdots \hat{p_i} \cdots p_r) \\
+&=(-1)^k ( \varphi ( p_0) \cdots \hat{\varphi } ( p_k ) \cdots \varphi(p_l) \cdots \varphi ( p_r)) \\
+	& (-1)^l ( \varphi ( p_0 ) \cdots \varphi( p_k) \cdots \hat{\varphi (p_l) } \cdots \varphi ( p_r))	
+\end{align*}
+となるが，
+\begin{align*}
+&	(	\varphi ( p_0 ) \cdots \varphi ( p_k ) \cdots \hat{\varphi ( p_l) } \cdots \varphi (p_r)) \\
+&	\quad (-1)^{l-k-1} ( \varphi (p_0 ) \cdots \hat{\varphi ( p_k ) } \cdots \varphi ( p_k ) \cdots \varphi ( p_r)),
+\end{align*}
+$	\varphi ( p_k) = \varphi ( p_l)$であるから，$C_{r-1} ( \varphi ) ( \partial_r ( \sigma )) = 0$となる．
+
+(c)
+$	\tau $の次元が$r-2$以下の場合は，$	\varphi ( p_{i+1} ) , \cdots, \varphi ( p_r) $の中に
+同じものが2個以上あるので，$C_{r-1} ( \varphi ) ( \partial_r ( \sigma) ) = 0$である．
+
+\■
+
+\補題{13} 単体写像$	\varphi : K \to L$に対して
+\[
+	C_r ( \varphi ) (Z_r ( K )) \subset Z_r ( L ) , \quad C_r ( \varphi ) B_r (K )) \subset B_r (L).
+\]
+
+\証明
+前半．$ c \in Z_r ( K )$ならば$	\partial_r (c) = 0 $．補題12により$	\partial_r (C_r ( \varphi ) (c ) = 
+C_{r-1} ( \varphi ) ( \partial_r (c)) = 0$．ゆえに，$C_r ( \varphi ) (c) \in Z_r (L).$
+
+後半．$	c = \partial_{r+1} (d ) \in B_r (K) \: ( d \in C_{r+1} (K ) )$ならば，
+補題12により$	\partial_{r+1} ( C_{r+1} ( \varphi ) ( d )) = C_r ( \varphi ) ( \partial_{r+1} (d)) = C_r ( \varphi ) (c)$．
+ゆえに，$C_r ( \varphi ) (c) \in B_r (L) $．
+\■
+
+補題13により，与えられた単体写像　$	\varphi : K \to L$に対して，
+準同形
+\[
+	H_r ( \varphi ) : H_r (K) \to H_r (L)
+\]
+が$H_r ( \varphi ) ( [ c ] ) = [ C_r ( \varphi ) ( c ) ] \: ( c \in Z_r ( K ))$により
+定義される．実際，$[c] =[c'] \: ( c,c' \in Z_r ( K ) )$ならば
+$ c - c' \in B_r ( K )$であり，補題13により，$C_r ( \varphi ) ( c ),
+C_r ( \varphi ) ( c') \in Z_r ( L ) $
+および
+$C_r ( \varphi ) ( c) - C_r ( \varphi ) (c') = C_r ( \varphi ) (c-c') \in B_r ( L)$
+が導かれるから，$[C_r ( \varphi )  (c) ] = \ C_r ( \varphi ) (c') ] $となる．
+$ H_r ( \varphi ) $をを単体写像$	\varphi )$によって誘導された準同型，または
+$	\varphi $による誘導準同形とよぶ．記号を簡単にするために
+$ H_r ( \varphi )$を$\varphi_{*}$と書く．
+
+
+次の定理は補題11から直ちに従う．
+
+\定理{14}
+\begin{list}{}{}
+	\item	(1) $ \text{id} : K \to K$を恒等写像とすると，$\text{id}_* : H_r(K) \to H_r (K)$は恒等写像.
+	\item (2) $\varphi : K \to L , \psi : L \to M$を単体写像とすると，$	( \psi \circ \varphi )_* = \psi_* \circ \varphi_* $
+\end{list}
+
+\問{2}
+単体写像$	\varphi : K \to L $がが複体の間の同形写像であるならば，$	\varphi $による誘導準同型
+$	\varphi_*$は群の間の同型写像であることを証明せよ．
+
+\証明
+単体写像$	\varphi^{-1} : L \to K $で$	\varphi^{-1} \circ \varphi = \text{id}, \varphi \circ \varphi^{-1} = \text{id}$を
+満たすものが存在するから，定理14より$ ( \varphi^{-1}_* \circ \varphi_* = ( \varphi^{-1} \circ \varphi)_* = \text{id}_* = \text{id}$・
+同様に，$	\varphi_* \circ ( \varphi^{-1}_* = \text{id}$ゆえに，$	\varphi_*$は単射かつ全射したがって，
+同型写像となる．
+
+\■

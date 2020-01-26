@@ -1,0 +1,189 @@
+\section{重心細分}
+
+$r$単体$	\sigma	=	|	p_0	p_1	\cdots	p_r|$に対して，$\text{Int} \sigma$の点
+\[
+	\sum_{i=0}^{r}	\frac{1}{r+1} p_i 
+=	\frac{1}{r+1}p_0	+
+	\frac{1}{r+1}p_1	+	\cdots
+	\frac{1}{r+1}p_r
+\]
+を$\sigma$の重心といい，$b_\sigma$により表す．
+
+\例{13}
+$0$単体$\sigma$に対しては$	b_\sigma$，1単体$	\sigma |p_0p_1$に対しては，$b$は線分
+$|p_0p_1|$の中点，2単体$	\sigma = | p_0 p_1 p_2|$に対しては$p_0,p_1,p_2$を頂点とする
+三角形のいわゆる重心である．次の図において，$	\sigma p_0p_1p_2|, \alpha = | p_1 p_2|. \beta = | p_0 p_2|,
+r	= |p_0p_1|$である．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=1016mm,height=554mm]{sec3x5x1.bmp}
+	\label{sec3x5x1}
+\end{figure}
+
+\補題{5}
+$	\sigma_0	,	\sigma_1,	\cdots	,	\gamma	\:	(	g	\leqq	r)$を
+$r$単体$	\sigma	=	|	p_0	p_1	\cdots	p_r|$の面単体とし，
+\[
+	\sigma_0	<	\sigma_1	<	\sigma_2	<	\cdots	<	\sigma_{g-1}	<	\sigma_q
+\]
+を満たす（すなわち$i=1,2,\cdots,q)$に対し，$	\sigma_{i-1}$は$	\sigma_{i-1}$の固有な
+面単体である）とする．このとき，これらの単体の重心$b_{\sigma_0},b_{\sigma_1},	\cdots	,	b_{\sigma_q}$は
+一般の位置にあり，したがって，$q$単体$|b_{\sigma_0}b_{\sigma_0}b_{\sigma_1} \cdots b_{\sigma_q}|$が定まる．
+
+\証明
+固有な面単体の個数に関する帰納法による．1個の場合は明らかである．
+列$	\sigma_0 < \sigma_1 < \cdots < \sigma_{k-1} < \sigma_k$に対して，
+$	b_{\sigma_0}, b_{\sigma_1}, \cdots , b_{\sigma_{k-1}}$が一般の位置にあると仮定する．
+$b_{\sigma_k} \in \text{Int } \sigma_k$で，$b_{\sigma_0},b_{\sigma_1},	\cdots	,	b_{\sigma_{k-1}} \in \sigma_{k-1}$
+であるから，ベクトル$b_{\sigma_k} - b_{\sigma_0}$は，ベクトル$b_{\sigma_1} - b_{\sigma_0}, b_{\sigma_2} - b_{\sigma_0},
+b_{\sigma_{k-1}} - b_{\sigma_0}$の一次結合として表すことはできない．よって，ベクトル$b_{\sigma_1} - b_{\sigma_0}, 
+b_{\sigma_2} - b_{\sigma_0}, \cdots , b_{\sigma_{k}} - b_{\sigma_0}$は一次独立，すなわち，
+点$b_{\sigma_0},	b_{\sigma_1},	\cdots	, 	b_{\sigma_k}$は一般の位置にある．
+\■
+
+\例{14}
+$2$単体$\sigma = | p_0 p_1 p_2 |$において，1個の面単体$p_0$に対しては，$0$単体$b_{p_0} = p_0$
+2個の面単体$	p_0 < | p_0 p_2| = \beta$に対しては，1単体$|p_0b_\beta$，$p_0 < | p_0 p_1 p_2|$に対しては，
+1単体$|p_0b_\sigma$，$p_0p_2| < | p_0p_1p_2|$に対しては，1単体$|b_\beta b_\sigma |$が
+それぞれ定まる．（例13の図で斜線の部分を参照）．
+
+
+$r$単体$\sigma	=	|p_0 p_1 \cdots p_r|$の面単体の列$	\sigma_0 < \sigma_1 < \cdots < \sigma_q \: (q \leqq r)$を
+すべて考え，それから定まる単体$|b_{\sigma_0} b_{\sigma_1} \cdots b_{\sigma_q}|$全体の集合を$	Sd_\sigma$と書き，
+$\sigma$の重心細分という．複体$K$に対して，$K$に属するすべての単体$\sigma$に対する重心細分の和
+$ Sd_\sigma$の和集合
+\[
+	Sd K = \bigcup_{\sigma \in K} Sd_\sigma
+\]
+を複体$K$の重心細分と呼ぶ．$Sd K(\sigma) $は$Sd_\sigma$に他ならない．$SdK ( \dot{\sigma})$を単に
+$sd \dot{\sigma}$と記す．
+
+\定理{6}
+複体$K$の重心細分$Sd K$は複体であり，$|Sd K| = |K|$が成り立つ．
+
+\証明
+$K$の次元に関する帰納法により証明する．$	\dim K =0$のときは
+$Sd K = K$であるから明らか．
+
+$ r > 0$とし，次元が$r$より小さいすべての複体に対して定理が成り立つと仮定する．
+$ \dim K = $とすると，帰納法の仮定より$K$の$(r-1)$次元切片$K^{(r-1)}$に対して，
+$ Sd K^{(r-1)}$は複体であり，$|Sd K^{(r-1)} | = |K^{(r-1)}|$が成り立つ．
+定理の証明のためには，$K$の任意の$r$単体$	\sigma	$に対して，$	Sd \sigma$が
+が複体であり，$|Sd \sigma | = \sigma$が成り立つことを示せばよい．
+$	\sigma$の重心$	b_\sigma$をとると，$S d \sigma$は$	b_\sigma$を中心として，
+$S d \dot{\sigma}$を底とする錐であること（結複体），すなわち，$Sd \sigma$は，
+\[
+	S d \sigma = b_\sigma * S d \dot{\sigma}
+\]
+を満たす複体であることが，定義および\S \ref{sec3x3} 例11こより容易にわかる．
+仮定により，$|Sd \dot{\sigma}| = \dot{\sigma} \: ( = | K ( \dot{\sigma}) |)$であるから，
+$ | Sd \sigma| = b_\sigma * | Sd \dot{\sigma}| = b_\sigma * \dot{\sigma} = \sigma$
+が成り立つ．
+
+$m$を自然数とする．複体$K$の$m$回重心細分を帰納的に，
+\[
+	Sd^m K = Sd ( Sd^{m-1} K), Sd^0 K = K.
+\]
+により定義する．定理6により$Sd^m K$は複体で
+$|Sd^m K| = |K|$が成り立つ．
+
+\例{15}
+次の図は複体$K=K(|p_0p_1p_2|) \cup K(|p_1p_2|)$の2回重心細分
+$Sd^2 K$を示す．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=1394mm,height=706mm]{sec3x5x2.bmp}
+	\label{sec3x5x2}
+\end{figure}
+単体の直径$d(\sigma)$とは,$\sigma$をユークリッドの部分集合と見たときの直径をいう．
+すなわち，
+\[
+	d	(	\sigma	)	=	\sup \{ d (x,y) \: | \: x,y \in \sigma \}
+\]
+である．複体$K$に属するすべての単体$	\sigma$に対する直径の最大値を$	\text{mesh } K$
+で表す．すなわち，
+\[
+	\text{mesh } K= \sup \{ d ( \sigma ) \: | \: \sigma \in K \}
+\]
+
+\補題{7}
+
+$r$単体 $\sigma = | p_0 p_1 \cdots p_r |$の直径$	d(\sigma) $は
+$	\sigma $の辺$	|	p_i p_j|$の長さ$	d	( p_i, p_j )$の最大値に等しい．
+
+\証明 $x,y \in \sigma$とし，$x	=	\sum_{i=0}^{r}	a_i p_i 
+(	\sum_{i=0}^{r}	a_0 = 1 , a_i \geqq 0 ( i=1, 	\cdots , r))$とする．
+
+距離の定義と三角不等式により，
+\begin{align*}
+	d	(x,y)	-	\|	x-y	\|
+&= 	\| \sum_{i=0}^{r}	ai	p_i	-	(	\sum_{i=0}^{r}	a_i)	y	\\
+&=	\sum_{r=1}^{r}a_i ( p_i - y ) \| \\
+&\leqq \sum_{i=0}^{r}	a_i	\|	p_i	-	y	\|	\leqq	\sum_{i=0}^{r}	a_i	(	\max	\|	p_i	-y	\|	)	\\
+&=	\max_i	\|	p_i	-	y	\|	=	\max_i	d(p_i - y)
+\end{align*}
+となる．したがて，適当な頂点$p_i$を選べば，$d(x,y)	\leqq	d(p_i,y)$が成り立つ．
+
+次に上の議論において$	x,y$として，$y,p_i$ををとることにより，
+$	d(y,	p_i)	\leqq	\max	d	(p_i,p_j)$が成り立つ．
+ゆえに$	d(x,y)	\leqq	\max_{i,j} d(p_i,p_j)$が得られる．
+\■
+
+\定理{8}
+
+$K$を$n$次元複体とすると，
+\[
+	\text{mesh } Sd K \leqq \frac{n}{n+1} \text{mesh } K
+\]
+が成り立つ．したがって，$	\displaystyle	\lim_{m\rightarrow\infty}	\text{mesh } Sd^m K = 0$となる．
+
+\証明
+\underline{$	\tau $を$Sd K $の任意の単体とすれば，}
+$	\tau	\in Sd \sigma$となる$r$単体$	\sigma	=	|	p_0 p_1 \cdots p_r|$
+（$0	\leqq r \leqq n)$が存在する．補題7により，
+$	d	(	\tau	) = d ( b,b')$を満たす$	\tau $の頂点 $b,b'$が存在する．
+必要があれば$	p_0, p_1 , \cdots , p_r$の順序を変えることにして，
+\[
+	b	=	\sum_{i=0}^{s}	\frac{1}{s+1} p_i , b' = \sum_{i=0}^{t}	\frac{1}{t+1}	p_i \quad (t	,	s	\leqq	r)
+\]
+としてよい．補題7の証明の前半より，適当な$P_k	(0	\leqq	k		\leqq	s)$をとれぽ
+$d(b'	,	b)	\leqq	d(p_k	,	b)$となるから，
+\begin{align*}
+	d	(t)	=	d(b,b')	\leqq
+	\|	p_k	-	b	\|	&=	\left\|	\frac{1}{1+s}	\sum_{i=0}^{s}	(	p_k	-	p_i)
+										\right\|
+									&\leqq	\frac{1}{1+s} \sum_{i=0}^{s}	\|	p_k	-	p_i	\|	\\
+									&\leqq	\frac{s}{1+s} \max_{0	\leqq	i	\leqq	s} \| p_k - p_i \|	\\
+									&\leqq	\frac{r}{1+r}	\max_{0	\leqq	i	\leqq	\tau	}	d(p_k , p_i) \leqq \frac{r}{r+1} d( \sigma )	\\
+									&\leqq	\frac{r}{r+1} \text{mesh} K \leqq \frac{n}{1+n}	\text{mesh } K
+\end{align*}
+となる．したがって，$	\text{mesh } Sd K \leqq \frac{n}{n+1} \text{mesh } K$が成り立つ．
+この不等式を繰り返して用いることにより，
+\[
+		\text{mesh } Sd^m K \leqq \left( \frac{n}{n+1} \right)^m \text{mesh } K
+\]
+が得られ，$	\displaystyle	\lim_{m\rightarrow\infty}	\left(	\frac{n}{n+1} \right)^m =0$
+に注意すれば，後半は明らかである．
+
+\■
+
+\問{4}
+$K,L$を複体，$	\varphi	:	K	\to L$を単体写像とする．
+$K$の単体$	\sigma	$の重心$	b_\sigma$に
+$	\varphi	(	\sigma	)$の重心$	b_{\varphi	(	\sigma)	}$を対応させて得られる写像
+$	Sd	(	\varphi	)	:	Sd	K	\to Sd L$は，単体写像であることを証明せよ．
+
+\証明
+$	Sd K$の任意の単体$\tau $は，$K$の固有な単体の列
+$	\sigma_0 < \sigma_1 < \cdots < \sigma_q$のそれぞれの重心
+$	b_{\sigma_0}, b_{\sigma_1}, \cdots , b_{\sigma_q}$により
+$\tau = | b_{\sigma_0} b_{\sigma_1} \cdots b_{\sigma_q}|$と表される．
+このとき，$	\sigma	(	\sigma_0)	\leqq	(	\sigma_1) \leqq \cdots \leqq \varphi(	\sigma_iq)$であるが，
+$	\{	0,1,	\cdots,	q	\}$の部分集合$	\{	i_0 , i_1,	\cdots	,	i_k	\}	\:	(	k	\leqq	q)$
+を選んで，$	\varphi	(	\sigma_{i_0})  < \varphi	(	\sigma_{i_1} ) < \cdots \varphi	(	\sigma_{i_k})$
+とできる．これらの重心$b_0, b_1 , \cdots , b_k$は集合
+$	\{	b_{\varphi( \sigma_0) }, b_{\varphi(\sigma_1)}, \cdots , b_{\varphi(\sigma_q} \}$
+に含まれ，1つの単体の頂点となる．（補題5）
+\■
+

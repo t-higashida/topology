@@ -1,0 +1,72 @@
+\section{鎖複体と鎖写像}
+
+$r$を整数とする．アーベル群$C_r$と準同型$ \partial_r$の系列
+\[
+	\cdots \to C_{r+1} \stackrel{\partial_{r+1}}{\longrightarrow}
+             C_r     \stackrel{\partial_{r}}{\longrightarrow}
+             c_{r-1} \to \cdots
+\]
+ですべての$r$に対して$	\partial_r , \partial_{r+1} = 0$を満たすものを
+鎖複体とよび，
+\[
+	C= \{ C_r \cdot \partial_r \: | \: r \in \Z \}
+\quad \text{あるいは単に} \quad C = \{ C_, \partial_r \}
+\]
+と表す．$C_r$を$C$の$r$次元鎖群，$\partial_r$を$C$の境界作用子という．
+
+\例{7}
+複体$K$の鎖群$C_r (K )$と境界作用子$\partial_r : C_r ( K ) \to C_{r-1} (K)$は，
+補題1により鎖複体$C(K) = \{ C_r (K) , \partial_r | r \in \Z \}$を作る．
+これを複体$K$の鎖複体とよぶ．
+
+鎖複体$C = \{ C_r , \partial_r \}$に対し，$C_r$の部分群
+\[
+	Z_r (c ) = \Ker \partial_r = \partial_r^{-1} (0) , B_r ( c) = \text{Im} \partial_{r+1} = \partial_{r+1} (C_{r+1} ) 
+\]
+をそれぞれ$c$の$r$次元輪体群，$r$次元境界輪体群といい，$Z_r ( c ) , B_r ( c )$の元をそれぞれ
+$c$の$r$輪体，$r$境界輪体という．条件$	\partial_r \circ \partial_{r+1} = 0$により，
+$B_r (c)$は$ Z_r (c)$の部分群である．商群
+\[
+	H_r (c) = Z_r (c) / B_r (C)
+\]
+を鎖複体$C$の$r$次元ホモロジー群という．$c \in Z_r (c)$で代表される
+$H_r(c)$の元を$[c]$で表して$c$のホモロジー類とよぶ．
+
+\例{8}
+複体の$K$の$r$次元ホモロジー群$H_r (K)$は鎖複体$C (K)$の$r$次元ホモロジー群$H_r (C(K))$に他ならない．
+
+$C=\{ C_r , \partial_r\}, C' = \{ C_r' , \partial_r'\}$を2つの鎖複体とする．
+準同型$h_r : c_r - c_r' \: ( r \in \Z )$が存在して，すべての$r \in \Z$に対して，
+$\partial_r' \circ h_r = h_{r-1} \circ \partial_r$が成り立つとき，
+すなわち，次の図式
+\[
+	\begin{CD}
+     C_r     @> \partial_r >> C_{r-1} \\
+      @VV h_r V                @VV h_{r-1} V \\
+     C_r'    @>> >             C'_{r-1}
+  \end{CD}
+\]
+が可換のとき，準同型$_r$の族
+\[
+	h	=	\{	h_r \} : C \to C'
+\]
+を鎖複体$C$から鎖複体$C'$への鎖写像と称する．
+
+\例{9}単体写像
+$	\varphi : K \to L$に対して$c ( \varphi ) = \{ C_r ( \varphi ) \} : C(K) \to C (L) $は
+鎖複体$C (K)$から鎖複体$C (L)$への鎖写像である（補題12）．
+
+\補題{15}
+鎖写像$h = \{ h_r \} C \to C'$に対して，
+\[
+	h_r ( Z_r (C)) \subset Z_r (C'), h_r (B_r (C)) \subset B_r (C').
+\]
+
+\証明
+定義から容易に従う．（補題13の証明を参照）．
+
+補題15により，与えられた鎖写像$h = \{ h_r \} : C \to C'$に対して準同型
+\[
+	H_r (h ) : H_r (C) \to H_r (C')
+\]
+が$H_r (h) ( [ c ] ) = [ h_r (c) ] \quad (c \in Z_r (c))$により定義される

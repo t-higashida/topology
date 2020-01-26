@@ -1,0 +1,403 @@
+\section{単体近似とホモトピー}
+
+
+$p$を複体$K$の1つの頂点とするとき，$p$を頂点としてもつ$K$の
+すべての単体の内部の和集合を$K$における$p$の開星状体といい，
+$O(p;K)$と書く．誤解の恐れがないときには単に$O(p)$と書く．
+すなわち，
+\[
+	O(p)=O(p;K)= \bigcup_{p\in \sigma} \text{Int} \sigma
+\]
+
+\補題{9}
+$O(p)$は$| K |$の開集合である．
+
+\証明
+$| K | - O(p)$が$|K|$の閉集合であることを示せばよい．
+$K$の各単体の内部は互いに共通部分をもたない（補題3）から，
+$| K | - O(p)$は$p$を頂点としないすべての単体の内部の和集合となる．
+$	\sigma $が$ \rho $を頂点としない単体ならば，
+$	\sigma $の面単体はいずれも$p$を頂点としないから，
+結局，$|K| -O(p)$は$p$を頂点としないすべての単体の和集合となる．
+各単体は$| K |$の閉集合であるから，$| K | - O(p)$は，有限個の閉集合の和集合，
+したがって，閉集合である．
+\■
+
+\例{16}
+次の図の斜線の部分は$O(p), O(q)$を表す．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=470mm,height=386mm]{sec3x6x1.bmp}
+	\label{sec3x6x1}
+\end{figure}
+
+
+\補題{10}
+複体$K$の頂点$p_0, p_1, \cdots, p_r$が$K$の1つの単体の頂点であるための必要十分条件は，
+\[
+	O(p_0) \cap O(p_1) \cap \cdots \cap O(p_r) \ne \varnothing
+\]
+となることである．
+
+\証明
+
+必要性．$P_0,p_1, \cdots, p_r$が$K$の1つの単体$	\sigma$の頂点であるならば，
+各$	i (0 \leqq \leqq r)$に対して，$	\text{Int } \subset O(p_i)$が成り立ち，
+$ O(p_0) \cap O(p_1) \cap \cdots \cap O(p_r) \supset \text{Int } \sigma \ne \varnothing$
+である.
+
+十分性．点$x \in  O(p_0) \cap O(p_1) \cap \cdots \cap O(p_r) $が存在するとする．
+補題3により $x \in \text{Int } \tau $がただ1つ存在する．このとき
+$p_0, p_1, \cdots, p_r$は$\tau$の頂点の集合に含まれるから，1つの単体の頂点である．
+\■
+
+\補題{11}
+$K,L$を複体，$f:|K| \to |L|$を連続写像とする．頂点の間の写像
+$ \varphi	:	K^{(0)} \to L^{(0)}$がすべての頂点
+$	p	\in K^{(0)}$に対して
+\[
+	f(O(p;K))	\subset O( \varphi(p); L)
+\]
+を満たすとき，$	\varphi	: K \to L$は単体写像となる．
+
+\証明
+$K$の任意の$r$単体$|p_0 p_1 \cdots p_r|$に対して，補題10より，
+$	\displaystyle	\bigcap_{i=0}^r O(p_i; K) \ne \varnothing$
+である．よって，仮定と第1章定理4(2)により，
+\[
+	\bigcap_{i=0}^r O(\varphi	(	p_i) ; L) \supset \bigcap_{i=0}^r 
+f( O(p_i; K)) \supset f( \bigcap_{i=0}^r O(p_i;K)) \ne \varnothing
+\]
+が成り立つから，補題10により$	\{	\varphi	(p_0) , \cdots , \varphi	(	p_r) \}$
+は$L$の1つの単体の頂点の集合となる．したがって，
+$\varphi$は単体写像である．
+
+
+$K,L$を複体，$f	: |K| \to |L| $を連続写像とする．
+単体写像$	\varphi	:	K	\to L$が$K$のすべての頂点$p$に対して，
+\[
+	f(O	(	p;k))	\subset O( \varphi	(p)	;	L)
+\]
+を満たすとき，$	\varphi$を$f$の単体近似という．
+
+\補題{12}
+$ | \varphi | : |K| \to |L|$を単体写像$	\varphi : K \to L$が定める
+連続写像とすれば，$	\varphi$は$|	\varphi |$の単体近似である．
+
+\証明
+各頂点	$p \in K$に対して，$p$を頂点とする$K$の単体の内部は
+$| \varphi |$によって，$	\varphi	(p)$を頂点とする$L$の単体の内部にうつされるので，
+\[
+	|	\varphi	|	(	O	(p;K)) \subset O (	\varphi	(p); L )
+\]
+が成り立つ．
+\■
+
+\補題{13}
+単体写像$\varphi : K \to L$が連続写像$f	: | K | \to |L|$の
+単体近似である必要十分条件は，任意の$x \ in |K|$に対して，
+\[
+	f(x) \in \text{Int } \tau \quad ( \tau \in L ) \Rightarrow | \varphi | (x) \in \tau
+\]
+が成り立つことである．
+
+\証明
+必要性．任意の$x \in |K|$に対して$ x \in \text{INt } \sigma $となる
+$\sigma = |p_0 p_1 \cdots p_r| \in K$が唯一存在する．（補題3）．
+各$i ( 0 \leqq i \leqq r)$に対して，$ x \in O(p_i ; K)$であるから，
+$	f(O (p_i; K)) \subset O( \varphi	(p_i) ; L)$より$f(x) \in O( \varphi (p_i) ; L)$
+となる．よって，$	f(x) \in \text{Int } \tau \: ( \tau \in L)$ならば，
+$ \text{Int } \subset O( \varphi	(	p_i) ; L)$となり，
+$ \varphi	(p_i) \in \tau$を得る．
+重心座標により，$ x = \sum_{i=0}^{r} a_i p_i,\text{ただし} \sum_{i=0}^{r}	a_i = 1, \: a_i >0 ( 0 \leqq i \\leqq r))$
+とすれば，定義により
+$ | \varphi | (x) = \sum_{i=0}^{r}	a_i \varphi(p_i)$であるから，$ | \varphi | (x) \in \tau$がが成り立つ．
+
+十分性．任意の$	x \in O(p; K)$に対して，$p$を頂点としてもつ$K$の単体$\sigma$で，
+$x \in \text{Int } \sigma$となるものをとり，$f8x) \in |L|$に対して，
+$f (x) \in \text{Int } \tau $となる$ \tau \in L$をとれば，
+仮定より，$|	\varphi | (x) \in \tau $である．一方，$| \varphi| (x) \in |\varphi| ( \text{Int } \sigma )
+\subset \text{Int } ( |\varphi| ( \sigma))$となる
+\footnote{
+\begin{align*}
+	|\varphi| ( \text{Int } \sigma )
+&= | \varphi| ( \{ \sum_{}^{} a_i p_i \: | \: a_i > 0 \}) \\
+&= \{ | \varphi | ( \sum_{}^{} a_i p_i) \: | \: a_i > 0 \} \\
+&= \{ \sum_{}^{} a_i \varphi	(p_i) \: | \: a_i > 0 \} \\
+\text{Int } (|\varphi| ( \sigma ) )
+&= \text{Int } ( \{ |\varphi| (x) \: | \: x \in \sigma \} \\
+&= \text{Int } ( \{ \varphi_\sigma (x) \: | \: x \in \sigma \}) \\
+&= \text{Int } ( \{ \sum_{}^{} a_i \varphi ( p_) \: | \: x \in | p_0 p_1 \cdots p_r | \} ) \\
+\end{align*}
+}
+よって，$	\varphi	(p) \in | \varphi | ( \sigma ) \leqq \tau $が得られる．
+それゆえ，$ f(x) \in \text{Int } \tau \subset O (\varphi(p); L )$が成り立ち，
+したがって，$	f(O(p;K)) \subset O (  \varphi (p) ; L)$が示される．
+\■
+
+\問{5}
+$\R^2$ の点 $ e_0 =(0,0), e_1 =(1,0), e_2=(0,1), b=(0, 1/2)$ に対して
+複体$ K = \{ e_0 ,e_1, |e_0 e_1| \}, L = \{ e_0 , b , e_2 , | e_0 b|, |be_2| \}$を
+考える．
+$	f: |K| \to |L|$を$f(x,0) = ( 0 ,x) \: ( x \in |K|)$によって定義される連続写像とすれば，
+$f$の単体近似$	\varphi	: K \to L$は存在しないことを示せ．
+次に，$	a= ( 1/2 , 0)$として複体$ Sd K = \{ 0 , a, e_1 , |0e_1| , |ae_1| \}$を考える．
+上の連続写像$ f : |Sd K | = (|K|) \to |L|$の単体近似$	\varphi : Sd K \to L$も存在ないことを示せ
+（次図参照）．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=1584mm,height=436mm]{sec3x6x2.bmp}
+	\label{sec3x6x2}
+\end{figure}
+\証明
+$f$の単体近似$	\varphi : K \to L$が存在すると仮定すると，
+補題13より，$f(e_0) = e_0 = \varphi(	e_0), f(e_1) e_2 = \varphi	(e_1)$となるが，
+$	\varphi (|e_0e_1|)$を考えるとき，$\varphi ( e_0 ) , \varphi (e_1)$は
+$L$の1つの単体の頂点ではない．よって，$	\varphi$は単体写像ではないから矛盾．
+次に$f: | Sd K | = |K| \to |L|$の単体近似$	\varphi : Sd K \to L$
+が存在すると仮定すると，補題13より$	\varphi ( e_0) = e_0,
+\varphi (e_1) = e_2, \varphi(a) =e_0$又は$	\varphi (a) =b$である．
+$	\varphi	(a) = e_0$ならば，$	\varphi ( |ae_1| )$を考えるとき，
+$	\varphi (a) , \varphi (e_1)$は$L$の1つの単体の頂点でない．
+よって$	\varphi$は単体写像ではない．
+
+$ \varphi (a) = b$ならば，$	\varphi ( | e_0 a| ) = | e_0 b| , 
+\varphi (|ae_1|) = |be_2|$となり，補題13の条件を満足しない．いずれにしても矛盾である．
+
+\例{17}
+問5において，$Sd^2 K$を考えると，$f : | Sd^2 K | (= |K| \to L$の単体近似
+$	\varPhi : Sd^2 K \to L$は存在する．実際，線分$ | e_0 a | , |a e_1|$の中点をそれぞれ
+$cd$とするとき，$	\varPhi (e_0) \varPhi(c) = e_0, \varPhi (a) = \varPhi (d) = b$によって定まる
+単体写像	$	\varphi ( e_0) = \varphi (c) = e_0, \varphi (a) = \varPhi (d) =b, \varPhi (e_1) = e_2$
+によって定まる単体写像	$	\varPhi : Sd^2 K \to L$は，
+$\varphi$の単体近似であることが，補題13を用いて容易に確かめられる（上図右参照）．
+
+位相空間$X$から位相空間$Y$への2つの連続写像$ f , g : X \to Y$に対して頽空間
+$ X \times I \: (I = [0,1]$は単位閉区間）から$Y$への連続写像
+\[
+	F : X \times I \to U
+\]
+で，任意の$ x \in X$に対し，$F(x,0) = f(x), F(x,1) = g(x)$が成り立つものが存在するとき，
+$f$と$g$はホモトープであるといい，$ f \\cong g$と書く．$F$を$f$と$g$の間のホモトピーという．
+
+\定理{14}
+$K,L$を複体とする．単体写像$	 \varphi : K \to L$が$f: | K | \to | L | $の単体近似ならば，
+$f$と$ | \varphi |$はホモトープである．
+
+\証明
+補題13により任意の$x \in |K|$に対して，$f(x) \in \text{Int } \tau \: ( \tau \in L )$ならば，
+$ | \varphi | (x) \in \tau $であり，\S \ref{sec3x2} 例4により$\tau$は凸集合であるから，
+$f(x)$と$ | \varphi | (x)$は$\tau$の中の線分で結べる．この線分を
+$t : (1-t)$に内分する点を$F(x,t)$と定義する．すなわち，
+\[
+	F(x,t) = (1-t) f(x) + t | \varphi | (x) \quad (t \in I)
+\]
+このとき，$F: |K| \times I \to |L|$は連続で，
+$F(x,0) = f(x), F(x,1) = | \varphi | (x)$となるから，$f \cong | \varphi |$　である．
+\■
+
+複体$K,L$が与えられたとき，すべての連続写像$ f: |K| \to |L|$に対してその単体近似
+$ \varphi : K \to L$は存在するとは限らない（問5参照）.しかし，$K$を適当な$m$回重心細分
+$Sd^m K$でおきかえれば，それが存在することが，次の定理によりわかる．
+
+\定理{15}（単体近似定理）$K,L$を複体とする．任意の連続写像
+$ f: |K| \to |L|$に対して，適当な整数$ m \geqq 0$をとれば，$ f: | Sd^m | K | ( = |K|) \to |L|$の単体
+近似$ \varphi : Sd^m K \to L$が存在する．
+
+\証明
+
+補題9より，$(q:L) (q \in L^{(0)}$は$|L|$の開集合であり，補題3より，
+すべての点$ y \in | L |$に対して $ y \in \text{Int } \tau $なる
+$ \tau \in L$が存在するから，$\{ O(q;L) \: | \: q \in L^{(0)} \}$は
+$|L|$の開被覆である．$f$は連続であるから，
+\[
+	\{ f^{-1} ( O(g;L)) \: | \: q \in +^{(0)} \}
+\]
+は$|K|$の開被覆である．$f$は連続であるから，
+\[
+	\{ f^{-1} ( O (q;L)) \: | \: q \in L^{(0)} \}
+\]
+は$|K|$の開被覆である．$| K | $はコンパクト距離空間であるから，この開被覆に
+対し，Lebesque 数 $ \rho > 0$，すなわち，次の性質を満たす正数$	\rho$が存在する
+（第2章 補題20）．
+\[
+	d(A) < \rho, A \subset |K| \Rightarrow
+  \quad
+  \text{適当な$q \in L^{(0)}$をとれば} A \subset f^{-1} (O(q;L)) 
+\]
+定理8により，この$\rho$に対して，$\text{mesh } Sd-m K < \rho /2 $となる整数
+$ m \geqq 0$が存在する．また，任意の頂点$ \rho \in ( Sd^m K )^{(0)}$に対して，
+開星状体の定義より，
+$ d(O ( p ; Sd^m K)) \leqq 2 \text{mesh } Sd^m K < \rho $となるから，
+$ O( p : Sd^m K) \subset f^{-1} (O ( q;L))$，すなわち，$f(O(p;Sd^m K)) \subset O(q:L)$
+となる$q \in L^{(0)}$が存在する．$	\varphi (p) = q$と定義すれば，写像$	\varphi : (Sd^m K)^{(0)}
+\to L^{(0)}$が得られる．$	\varphi $はそのつくり方かから各頂点$p \in (Sd^m K)^{(0)}$に対して
+\[
+	f(O ( p ; Sd^m K)) \subset O ( \varphi ( p ) ; L)
+\]
+を満たすので，補題11より，$	\varphi : Sd^m K \to L$は単体写像であり，$f$の単体近似となる．
+
+\subsubsection{第3章の問題}
+
+1. $\R^n$の点$v_0, v_1 , \cdots , v_r$が一般の位置にあるための必要十分条件は，
+$	\sum_{i=0}^{r}	\lambda_i v_i = 0,	\sum_{i=0}^{r} \lambda_i =0$，
+$	\lambda_i \in \R ( 0 \leqq i \leqq r)$ならば，$	\lambda_0 = \lambda_1 = \cdots = \lambda_r = 0$
+が成り立つことである.
+
+\証明
+必要性．$0 = \sum_{i=0}^{r}	\lambda_i v_i =(-\lambda_1 - \lambda_2 - \cdots - \lambda_r) v_0 + \lambda_1 v_1 + \cdots + \lambda_r v_r
+= \sum_{i=1}^{r} \lambda_i(v_i - v_0)$．$v_0, \cdots , v_r$が一般の位置にあることから，
+$\lambda_1 = \lambda_2 = \cdots = \lambda_r =0 = \lambda_0$．
+
+十分性．$\sum_{i=1}^{r}	r_i ( v_i - v_0) = 0 \: ( a_i \in \R )$と仮定すると，
+$(-a_1 -a_2 - \cdots - r_r)v_0 + a_1 v_1 + \cdots + a_r v_r =0$で係数の和$=0$であるから，
+$a_1 = a_2 = \cdots = a_r =0$となり，$v_0 , v_1 , \cdots , v_r$は一般の位置にある．
+\■
+
+2. $\R^n$の点$v_0, v_1 , \cdots, v_n$が一般の位置にあるための必要十分条件は，$v_i \: ( 0 \leqq i \leqq n)$
+の成分を$ (v{i1}, v_{i2}, \cdots , v_{in} \: ( v_{ij} \in \R)$とするとき，
+\[
+	\begin{pmatrix}
+		v_{01} & v_{02} & \cdots & v_{0n} & 1 \\
+		v_{11} & v_{12} & \cdots & v_{1n} & 1 \\
+		\cdots	\\
+		v_{n1} & v_{n2} & \cdots & v_{nn} & 1
+	\end{pmatrix}
+\ne 0
+\]
+が成り立つことである．
+
+\証明
+
+\begin{align*}
+	D &= \begin{pmatrix}
+						v_{01}          & v_{02}           & \cdots & v_{0n}           & 1 \\
+						v_{11} - v_{01} & v_{12}  - v_{02} & \cdots & v_{1n}  - v_{0n} & 0 \\
+            \cdots \\
+						v_{n1} - v_{01} & v_{n2}  - v_{02} & \cdots & v_{nn}  - v_{0n} & 0
+			 \end{pmatrix}	\\
+  &= (-1)^n 
+       \begin{pmatrix}
+						v_{11} - v_{01} & v_{12}  - v_{02} & \cdots & v_{1n}  - v_{0n} \\
+            \cdots \\
+						v_{n1} - v_{01} & v_{n2}  - v_{02} & \cdots & v_{nn}  - v_{0n}
+			 \end{pmatrix}	\\
+	&\ne 0
+\end{align*}
+であるから$ \Leftrightarrow v_1 - v_0 , v_2 - v_0 , \cdots , v_n - v_0$は一次独立である．
+$ \Leftrightarrow v_0,v_1, \cdots , v_n$は一般の位置にある．
+
+\■
+
+
+3.
+$r$単体のすべての面単体の個数は$2^{r+1}-1$である．
+
+\証明
+$r$単体の$q$次元面単体の個数は$r+1$から$q+1$をとる組み合わせの個数
+$\binom{r+1}{q+1}$であるから$r$単体のすべての面単体の個数は
+$	\displaystyle	\sum_{q=0}^{r}	\binom{r+1}{q+1} = 2^{r+1} -1$である．
+（$2^{r+1} = (1+1)^{r-1}$の2項展開より）．
+
+\■
+
+4.
+
+$a,b$を正数とする．$\R^2$における集合$ \{ (x,y) \in \R^2 \: | \: \frac{x^2}{a^2} + \frac{y^2}{b^2} \leqq 1 \} = S_{(a,b)}$は
+凸集合である．
+
+\証明
+
+$ \frac{x^2}{a^2} + \frac{y^2}{b^2} \leqq 1 , \frac{u^2}{a^2} + \frac{v^2}{b^2} \leqq 1$，
+$ 0 \leqq t \leqq 1$とする．
+\begin{align*}
+	\frac{ \{ (1-t)x + tu \}^2 }{ a^2 } + \frac{ \{(1-t)y + tv \}^2 }{b^2}
+= (1-t)^2 \left(	\frac{x^2}{a^2} + \frac{y^2}{b^2} \right)
++ t^2 
+  \left( \frac{x^2}{a^2} + \frac{y^2}{b^2} \right)
++ 2(1-t)t
+  \left(	\frac{xu}{a^2} + \frac{yv}{b^2} \right).
+\end{align*}
+
+$ \displaystyle xu \leqq \frac{x^2 + u^2}{2}, yv \leqq \frac{y^2 + v^2}{2}$より，
+$	\frac{xu}{a^2} + \frac{yv}{b^2} \leqq \frac{1}{2}
+\left( \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{u^2}{a^2} + \frac{v^2}{b^2}
+\right) \leqq 1$であるから，
+$	\displaystyle	\frac{ \{ (1-t)x + tu \}^2 }{a^2} + \frac{ \{ (1-t)y + tv \}^2 }{b^2} \leqq 1$．
+\[
+	\begin{pmatrix}
+		(1-t) x + tu \\
+    (1-t) y + tv 
+	\end{pmatrix}
+  =
+  (1-t)
+  \begin{pmatrix}
+		x \\
+    y
+	\end{pmatrix}
+  + t
+  \begin{pmatrix}
+		u \\
+    v
+	\end{pmatrix}
+  \in S^1_{(a,b)}
+\]
+\■
+
+5.
+
+$	\varPhi : K \to L$を単体写像とする．単体写像$	\varphi : K \to L$が
+連続写像 $ |\varphi | : | K | \to | L |$の単体近似であるならば，
+$ | \varphi | = | \varPhi |$である．
+
+\証明
+
+$p$を$K$の任意の頂点とする．$	\varphi ( p  \in | \varphi |( O ( p;K)) \subset O ( \varPhi (p) ; L)$であるが
+$ O ( \varPhi (p), L)$はただ1つの頂点$ \varPhi (p)$をもつから
+$ \varphi (p ) = \varPhi (p)$．よって$\varphi $と$\varPhi$はすべての頂点で一致し，
+$ | \varphi | = | \varPhi |$となる．
+\■
+
+6.
+
+連続写像$ f: |K| \to |L|, g: |L| \to |M|$がそれぞ単体近似
+$ \varphi * K \to L$，$	\varPhi : L \to M$をもつとき，$	\varPhi \circ \varphi$は
+$g \circ f$の単体近似である．
+
+\証明
+
+$\varPhi \circ \varphi$は単体写像で，$K$の任意の頂点$p$に対して$g (f (O(p;K)) \subset g( O ( \varphi (p) ; L)) 
+\subset O ( \varPhi ( \varphi (p)); M)$が成り立つから
+$ \varPhi \circ \varphi $は$g \circ f$の単体近似である．
+\■
+
+7.
+
+$K$を複体とする $ Sd K$の頂点$b_\sigma ( \sigma \in K )$に対して，
+$ \sigma$の1つの頂点$ p$を任意にとって，$\pi ( b_\sigma = p$と定めて，
+写像$ \pi : Sd K^{(0)} \to K^{(0)}$を定義すると，
+$ \pi : Sd K \to K$は単体写像となる．更に，$\pi$は恒等写像
+$ \text{id } : | Sd K | \to |K|$の単体近似である．
+
+\証明
+
+$\text{Sd} K $の$k$単体$|b_{\sigma_0} b_{\sigma_1} \cdots b_{\sigma_k}|
+\: ( \sigma_0 < \sigma_1 < \cdots < \sigma_k, \sigma_i \in K )
+$に対し，$	\pi ( b_{\sigma_0}), \pi ( b_{\sigma_1}, \cdots , \pi ( b_{\sigma_k} )$
+はいずれも$	\sigma_k$の頂点であるから，$\pi$は単体写像である．
+次に，$	\sigma = | p_0 p_1 \cdots p_r |$を$K$の任意の$r$単体とすると，
+$b_\sigma$は$\text{Sd} K$の1つの頂点である．次に，$\sigma = | p_0 p_1 \cdots p_r |$
+を$K$の任意の$r$単体とすると，$b_\sigma$は$\text{Sd} K$の1つの頂点である．
+$	b_\sigma$を頂点としてもつ$\text{Sd } K$の単体を$\tau = | b_{\sigma_0} b_{\sigma_1} \cdots
+b_\sigma \cdots b_{\sigma_k} | $ （$\sigma_0 < \sigma_1 < \cdots < \sigma \cdots < \sigma_k$）
+とすると，
+$\text{Int} \tau \subset O ( p_i ; K)$である．なぜならば，$\text{Int} \tau$の
+任意の点を重心座標で$	\lambda_0 b0 + \cdots + \lambda b_\sigma + \cdots + \lambda_k b_{\sigma_k}$
+と表したとき，$b_\sigma = \sum_{i=0}^{r} (r+1)^{-1} p_i$
+であるから，$p_i$の係数 $ \geqq (r+1)^{-1} \lambda > 0$となるからである．
+ゆえに，$O ( b_\sigma ; \text{Sd} K) \subset O ( \pi (b_\sigma) ; K)$が成り立つ．
+これは恒等写像 $ \text{id } : |\text{Sd } \to | K |$の単体近似であることを意味する．
+\■
+
+
