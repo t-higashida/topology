@@ -10,7 +10,3 @@ platex kensaku
 
 call dellog.bat
 REM dviout.exe topology.dvi
-
-pause
-
-goto replatex
